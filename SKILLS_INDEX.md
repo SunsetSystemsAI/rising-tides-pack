@@ -3,7 +3,7 @@
 > **For Claude Code Use Only** - This file helps Claude quickly identify which skills to use for a given project or task. Read this file when asked to "check skills" or "recommend skills for this project."
 
 **Total Skills Installed:** 85
-**Plugins Available:** 10
+**Plugins Available:** 12
 **Last Updated:** January 23, 2026
 
 **Related Files:**
@@ -24,8 +24,10 @@ Located at: `./plugins/` (relative to repo root)
 |--------|-------|-----|-----------------|
 | `react-dev-plugin` | react-dev | context7 | `claude --plugin-dir ./plugins/react-dev-plugin` |
 | `frontend-design-plugin` | frontend-design | context7 | `claude --plugin-dir ./plugins/frontend-design-plugin` |
+| `frontend-ui-plugin` | frontend-ui | context7 + shadcn | `claude --plugin-dir ./plugins/frontend-ui-plugin` |
 | `mcp-builder-plugin` | mcp-builder | context7 | `claude --plugin-dir ./plugins/mcp-builder-plugin` |
 | `webapp-testing-plugin` | webapp-testing | playwright | `claude --plugin-dir ./plugins/webapp-testing-plugin` |
+| `browser-automation-plugin` | browser-automation | claude-in-chrome | `claude --plugin-dir ./plugins/browser-automation-plugin` |
 | `video-generator-plugin` | video-generator | remotion | `claude --plugin-dir ./plugins/video-generator-plugin` |
 | `git-workflow-plugin` | commit-work | github | `claude --plugin-dir ./plugins/git-workflow-plugin` |
 

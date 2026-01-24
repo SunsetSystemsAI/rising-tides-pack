@@ -1,6 +1,6 @@
 # Global Skills System for Claude Code
 
-> **84 skills + 10 plugins** to supercharge your Claude Code experience.
+> **84 skills + 12 plugins** to supercharge your Claude Code experience.
 
 A curated collection of Claude Code skills for React development, marketing, SEO, CRO, documentation, architecture, and more. Includes MCP integrations via a plugin system for zero-config setup.
 
@@ -12,7 +12,7 @@ A curated collection of Claude Code skills for React development, marketing, SEO
 
 **This collection includes:**
 - **84 skills** covering React, marketing, SEO, CRO, documentation, architecture, and utilities
-- **10 plugins** that bundle skills with MCP servers for seamless integration
+- **12 plugins** that bundle skills with MCP servers for seamless integration
 - **Organized index** for easy discovery and project matching
 - **Attribution tracking** so you know where each skill came from
 
@@ -136,8 +136,10 @@ graph LR
 |--------|-------|-----|---------|
 | `react-dev-plugin` | react-dev | context7 | React development with live docs |
 | `frontend-design-plugin` | frontend-design | context7 | Frontend architecture with docs |
+| `frontend-ui-plugin` | frontend-ui | context7 + shadcn | Full frontend with component registry |
 | `mcp-builder-plugin` | mcp-builder | context7 | Build MCP servers |
 | `webapp-testing-plugin` | webapp-testing | playwright | E2E browser testing |
+| `browser-automation-plugin` | browser-automation | claude-in-chrome | Chrome automation, screenshots, forms |
 | `video-generator-plugin` | video-generator | remotion | Programmatic video creation |
 | `git-workflow-plugin` | commit-work | github | Git commit automation |
 
