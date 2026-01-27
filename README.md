@@ -211,7 +211,17 @@ cp -r skills/* ~/.claude/skills/
 cp SKILLS_INDEX.json MCP_REGISTRY.md ATTRIBUTION.md ~/.claude/
 ```
 
-### 2. Set Up Memory (Recommended)
+### 2. Copy Plugins to Global Location
+
+```bash
+# Create plugins directory and copy all plugins
+mkdir -p ~/.claude/plugins
+cp -r plugins/* ~/.claude/plugins/
+```
+
+This installs 12 plugin bundles that pair skills with MCP servers (context7, playwright, etc.).
+
+### 3. Set Up Memory (Recommended)
 
 ```bash
 # Add memory MCP globally (only MCP that should be global)
@@ -223,14 +233,15 @@ Configure the memory file path to your Desktop for visibility:
 - **Mac:** `/Users/[USERNAME]/Desktop/claude-memory.jsonl`
 - **Linux:** `/home/[USERNAME]/Desktop/claude-memory.jsonl`
 
-### 3. Use Plugins for MCP-Dependent Skills
+### 4. Use Plugins for MCP-Dependent Skills
 
 ```bash
-# Copy plugins to your project
-cp -r plugins/ /path/to/your/project/
-
 # Start Claude with a plugin
-claude --plugin-dir ./plugins/react-dev-plugin
+claude --plugin-dir ~/.claude/plugins/react-dev-plugin
+
+# Multiple plugins
+claude --plugin-dir ~/.claude/plugins/react-dev-plugin \
+       --plugin-dir ~/.claude/plugins/webapp-testing-plugin
 ```
 
 ---

@@ -26,22 +26,24 @@ These CLIs enhance specific skills. Install them as needed:
 
 ---
 
-## Step 1: Copy Skills (1 minute)
+## Step 1: Copy Skills and Plugins
 
 ```bash
-# Create the global skills directory
+# Create directories
 mkdir -p ~/.claude/skills
+mkdir -p ~/.claude/plugins
 
 # Clone or download this repo, then:
 cp -r skills/* ~/.claude/skills/
+cp -r plugins/* ~/.claude/plugins/
 cp SKILLS_INDEX.json MCP_REGISTRY.md ATTRIBUTION.md ~/.claude/
 ```
 
-**Done.** Skills are now available globally.
+**Done.** Skills and plugins are now available globally.
 
 ---
 
-## Step 2: Verify Installation (30 seconds)
+## Step 2: Verify Installation
 
 ```bash
 # Check skills are there
@@ -51,6 +53,15 @@ ls ~/.claude/skills/ | head -10
 # ab-test-setup
 # agent-md-refactor
 # analytics-tracking
+# ...
+
+# Check plugins are there
+ls ~/.claude/plugins/
+
+# Should see folders like:
+# react-dev-plugin
+# webapp-testing-plugin
+# frontend-ui-plugin
 # ...
 ```
 
@@ -90,19 +101,28 @@ When prompted, set the memory file path to your Desktop:
 
 ---
 
-## Step 5: Use Plugins (Optional)
+## Step 5: Use Plugins (For MCP-Dependent Skills)
 
-For MCP-dependent skills, use plugins instead of manual MCP setup:
+Some skills need MCP servers (context7 for docs, playwright for testing). Use plugins:
 
 ```bash
-# Copy plugins to your project
-cp -r plugins/ /path/to/your/project/
+# Start Claude with a plugin (uses global plugin location)
+claude --plugin-dir ~/.claude/plugins/react-dev-plugin
 
-# Start Claude with a plugin
-claude --plugin-dir ./plugins/react-dev-plugin
+# Multiple plugins
+claude --plugin-dir ~/.claude/plugins/react-dev-plugin \
+       --plugin-dir ~/.claude/plugins/webapp-testing-plugin
 ```
 
 Plugins bundle the skill + MCP together - no separate configuration needed.
+
+**Available plugins:**
+| Plugin | MCP | Purpose |
+|--------|-----|---------|
+| `react-dev-plugin` | context7 | React development with live docs |
+| `webapp-testing-plugin` | playwright | E2E browser testing |
+| `frontend-ui-plugin` | context7 + shadcn | Full UI with component registry |
+| `video-generator-plugin` | remotion | Programmatic video creation |
 
 ---
 
@@ -190,6 +210,13 @@ See `MCP_REGISTRY.md` for all available MCP configurations.
 2. Test the npx command directly in terminal
 3. Restart Claude Code after config changes
 
+### Plugin MCP Not Loading
+
+1. Verify plugins were copied: `ls ~/.claude/plugins/`
+2. Check the plugin has `.mcp.json`: `cat ~/.claude/plugins/react-dev-plugin/.mcp.json`
+3. Use full path: `claude --plugin-dir ~/.claude/plugins/react-dev-plugin`
+4. Test MCP availability: ask "What MCPs are available?"
+
 ### Need More Help
 
 - `MCP_REGISTRY.md` - MCP troubleshooting
@@ -202,9 +229,9 @@ See `MCP_REGISTRY.md` for all available MCP configurations.
 
 | Step | Command |
 |------|---------|
-| 1. Copy skills | `cp -r skills/* ~/.claude/skills/` |
-| 2. Verify | `ls ~/.claude/skills/` |
+| 1. Copy skills & plugins | `cp -r skills/* ~/.claude/skills/ && cp -r plugins/* ~/.claude/plugins/` |
+| 2. Verify | `ls ~/.claude/skills/ && ls ~/.claude/plugins/` |
 | 3. Try it | `/recommend skills` |
 | 4. Memory (opt) | `claude mcp add memory --scope user` |
-| 5. Plugins (opt) | `claude --plugin-dir ./plugins/[name]` |
+| 5. Use plugins | `claude --plugin-dir ~/.claude/plugins/[name]` |
 | 6. Status line (opt) | `./scripts/setup-statusline.sh` |
