@@ -34,7 +34,7 @@ mkdir -p ~/.claude/skills
 
 # Clone or download this repo, then:
 cp -r skills/* ~/.claude/skills/
-cp SKILLS_INDEX.md MCP_REGISTRY.md ATTRIBUTION.md ~/.claude/
+cp SKILLS_INDEX.json MCP_REGISTRY.md ATTRIBUTION.md ~/.claude/
 ```
 
 **Done.** Skills are now available globally.
@@ -61,13 +61,14 @@ ls ~/.claude/skills/ | head -10
 Open any project and run:
 
 ```
-/recommend-skills
+/recommend skills
 ```
 
 Claude will:
-1. Analyze your project
-2. Suggest relevant skills
-3. Show you how to use them
+1. Analyze your project context (planning docs, README, structure)
+2. Show which skills to **IMPORT** (directly relevant)
+3. Show which skills to **SKIP** (not relevant, with reasons)
+4. Recommend plugins for MCP-dependent skills
 
 ---
 
@@ -130,13 +131,13 @@ opus-4 | [########------------] 40% | 80k | main | my-project
 
 ### Browse Available Skills
 
-Open `SKILLS_INDEX.md` to see all 95 skills organized by category.
+Open `SKILLS_INDEX.json` to see all 78 skills organized by category.
 
 ### Common Skill Commands
 
 | Command | What It Does |
 |---------|--------------|
-| `/recommend-skills` | Get suggestions for current project |
+| `/recommend skills` | Get suggestions for current project |
 | `/react-dev` | React development guidance |
 | `/copywriting` | Marketing copy assistance |
 | `/seo-audit` | SEO analysis |
@@ -199,13 +200,11 @@ See `MCP_REGISTRY.md` for all available MCP configurations.
 
 ## Summary
 
-| Step | Command | Time |
-|------|---------|------|
-| 1. Copy skills | `cp -r skills/* ~/.claude/skills/` | 1 min |
-| 2. Verify | `ls ~/.claude/skills/` | 30 sec |
-| 3. Try it | `/recommend-skills` | 1 min |
-| 4. Memory (opt) | `claude mcp add memory --scope user` | 2 min |
-| 5. Plugins (opt) | `claude --plugin-dir ./plugins/[name]` | 1 min |
-| 6. Status line (opt) | `./scripts/setup-statusline.sh` | 1 min |
-
-**Total: ~5-7 minutes to full setup**
+| Step | Command |
+|------|---------|
+| 1. Copy skills | `cp -r skills/* ~/.claude/skills/` |
+| 2. Verify | `ls ~/.claude/skills/` |
+| 3. Try it | `/recommend skills` |
+| 4. Memory (opt) | `claude mcp add memory --scope user` |
+| 5. Plugins (opt) | `claude --plugin-dir ./plugins/[name]` |
+| 6. Status line (opt) | `./scripts/setup-statusline.sh` |

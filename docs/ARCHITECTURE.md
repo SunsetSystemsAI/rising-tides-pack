@@ -76,15 +76,15 @@ Skills use a **three-tier loading system** that dramatically reduces context usa
 ### Why This Matters
 
 **Without progressive disclosure:**
-- 90 skills × 2k tokens average = 180k tokens consumed at startup
+- 78 skills × 2k tokens average = 156k tokens consumed at startup
 - That's most of your context window gone before you ask a question
 
 **With progressive disclosure:**
-- 90 skills × 100 tokens (metadata) = 9k tokens for scanning
+- 78 skills × 100 tokens (metadata) = ~8k tokens for scanning
 - Only relevant skills load fully
-- Typical session: 9k + 5k (one skill) = 14k tokens
+- Typical session: 8k + 5k (one skill) = 13k tokens
 
-**The difference:** 180k vs 14k — a 92% reduction.
+**The difference:** 156k vs 13k — a 92% reduction.
 
 ---
 

@@ -11,7 +11,7 @@ graph TB
     subgraph "Safe (Markdown Only)"
         SKILLS["Skills<br/>SKILL.md files"]
         DOCS["Documentation<br/>*.md files"]
-        INDEX["Index files<br/>SKILLS_INDEX.md"]
+        INDEX["Index files<br/>SKILLS_INDEX.json"]
     end
 
     subgraph "Requires Trust"

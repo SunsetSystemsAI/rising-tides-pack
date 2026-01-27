@@ -340,4 +340,4 @@ EOF
 
 - [ARCHITECTURE-DEEP-DIVE.md](./ARCHITECTURE-DEEP-DIVE.md) — Technical details on progressive disclosure and Tool Search
 - [MCP-SETUP-GUIDE.md](./MCP-SETUP-GUIDE.md) — Manual MCP configuration (if not using plugins)
-- [SKILLS_INDEX.md](../SKILLS_INDEX.md) — Full list of available skills and plugins
+- [SKILLS_INDEX.json](../SKILLS_INDEX.json) — Full list of available skills and plugins

@@ -279,7 +279,7 @@ With Tool Search:
 1. **Add to this registry** with both scopes documented
 2. **Recommended scope** should be "Project" unless truly needed everywhere
 3. **Create wrapper skill** (optional) in `skills/_mcp-wrappers/[name]/`
-4. **Update SKILLS_INDEX.md** with `[MCP: name]` tags
+4. **Update SKILLS_INDEX.json** with `[MCP: name]` tags
 5. **Update affected skills** with MCP setup instructions
 
 ---
@@ -287,7 +287,7 @@ With Tool Search:
 ## Removing an MCP
 
 1. Remove from this registry
-2. Remove `[MCP: name]` tags from SKILLS_INDEX.md
+2. Remove `[MCP: name]` tags from SKILLS_INDEX.json
 3. (Optional) Delete wrapper from `_mcp-wrappers/`
 4. Remove from skills' MCP instructions
 5. Uninstall: `claude mcp remove [name] --scope [user|project]`

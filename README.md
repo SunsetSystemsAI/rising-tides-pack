@@ -1,8 +1,58 @@
 # Rising Tides Skills Pack
 
-> **77 skills + 12 plugins + 9 CLI integrations + 8 MCPs** — everything you need to supercharge Claude Code.
+> **78 skills + 12 plugins + 9 CLI integrations + 8 MCPs** — everything you need to supercharge Claude Code.
 
 A curated collection of Claude Code skills for React development, marketing, SEO, CRO, documentation, architecture, CLI integrations, and more. Includes MCP integrations via a plugin system for zero-config setup.
+
+---
+
+## How It Works
+
+The Rising Tides system uses **progressive disclosure** — you don't load 78 skills into context. Instead, Claude discovers what's available through a lightweight index and loads full skill content only when needed.
+
+### The Flow: Project-Level Up
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                      YOUR PROJECT                                │
+│  You're here, building something. You have a plan.              │
+│  .claude/skills/ ← Skills get pulled here                       │
+└─────────────────────────────────────────────────────────────────┘
+         │                                           ▲
+         │ "What skills would help?"                 │ Selected skills
+         ▼                                           │ pulled down
+┌─────────────────────────────────────────────────────────────────┐
+│                    /recommend skills                             │
+│  The bridge between your project and the global library         │
+│  Analyzes your project → Queries index → Shows recommendations  │
+└─────────────────────────────────────────────────────────────────┘
+         │                                           │
+         │ Queries                                   │
+         ▼                                           │
+┌─────────────────────────────────────────────────────────────────┐
+│                    SKILLS_INDEX.json                             │
+│  Lightweight catalog: names, triggers, cli/mcp refs             │
+│  Fast discovery without loading 78 SKILL.md files               │
+└─────────────────────────────────────────────────────────────────┘
+         │                                           │
+         │ References                                │
+         ▼                                           │
+┌─────────────────────────────────────────────────────────────────┐
+│                    GLOBAL SKILLS REPO                            │
+│  ~/.claude/skills/ — all 78 skill folders                       │
+│  plugins/ — 12 MCP bundles                                      │
+│  Source of truth. User reaches up to access.                    │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### The Mental Model
+
+- **Global repo** = Library of available skills (this repo, installed to `~/.claude/`)
+- **SKILLS_INDEX.json** = The catalog (fast discovery)
+- **/recommend skills** = The librarian (helps you find what you need)
+- **Project level** = Your workspace (where skills get used)
+
+**You stay at project level.** You reach UP to the global library when needed, pull DOWN what helps.
 
 ---
 
@@ -18,7 +68,7 @@ A curated collection of Claude Code skills for React development, marketing, SEO
         ┌─────────────────────┼─────────────────────┐
         ▼                     ▼                     ▼
 ┌───────────────┐    ┌───────────────┐    ┌───────────────┐
-│  SKILLS (77)  │    │   MCPs (8)    │    │   CLIs (9)    │
+│  SKILLS (78)  │    │   MCPs (8)    │    │   CLIs (9)    │
 │  Knowledge &  │    │  Rich API     │    │  Auth &       │
 │  workflows    │    │  operations   │    │  simple ops   │
 │               │    │               │    │               │
@@ -57,17 +107,17 @@ This installs Node.js, Git, Claude Code, and the full skills pack automatically.
 **Skills** are markdown instruction files that teach Claude Code specialized behaviors. Instead of explaining what you want every time, skills pre-load expertise for specific domains.
 
 **This collection includes:**
-- **77 skills** covering React, marketing, SEO, CRO, documentation, architecture, CLI integrations, and utilities
+- **78 skills** covering React, marketing, SEO, CRO, documentation, architecture, CLI integrations, and utilities
 - **12 plugins** that bundle skills with MCP servers for seamless integration
 - **CLI-first approach** for GitHub, Stripe, Supabase, Firebase, Vercel, Netlify, and Google Cloud
-- **Organized index** for easy discovery and project matching
+- **Organized index** (`SKILLS_INDEX.json`) for fast discovery without loading all skills
 - **Attribution tracking** so you know where each skill came from
 
 ---
 
 ## Context Efficiency (Tested & Proven)
 
-**The big question:** Won't 77 skills bloat my context window?
+**The big question:** Won't 78 skills bloat my context window?
 
 **Answer:** No. We tested it. Here's the proof:
 
@@ -76,33 +126,33 @@ This installs Node.js, Git, Claude Code, and the full skills pack automatically.
 | Condition | Total Context | Skills Category | Notes |
 |-----------|---------------|-----------------|-------|
 | **Without skills** | 29k (14%) | 548 tokens | Baseline |
-| **With 77 skills** | 32k (16%) | 7.9k tokens | +7.35k for skills |
-| **After /recommend-skills** | 51k (25%) | 7.9k tokens | Skills unchanged |
+| **With 78 skills** | 32k (16%) | 7.9k tokens | +7.35k for skills |
+| **After /recommend skills** | 51k (25%) | 7.9k tokens | Skills unchanged |
 | **After invoking skill** | 75k (38%) | 7.9k tokens | Skills still unchanged |
 
 ### What This Proves
 
-1. **Fixed overhead:** 77 skills cost only **7.35k tokens** (~3.5% of context)
-2. **Frontmatter only:** That's ~77 tokens per skill (just triggers/descriptions)
+1. **Fixed overhead:** 78 skills cost only **~8k tokens** (~4% of context)
+2. **Frontmatter only:** That's ~100 tokens per skill (just triggers/descriptions)
 3. **On-demand loading:** Full skill content loads into Messages when invoked, not Skills
-4. **Index-based recommendations:** `/recommend-skills` reads the lightweight index, not all 95 SKILL.md files
+4. **Index-based recommendations:** `/recommend skills` reads the lightweight index, not all 78 SKILL.md files
 
 ### The Math
 
 | What | Tokens | When Loaded |
 |------|--------|-------------|
-| Skill frontmatter (triggers) | ~77 per skill | Session start (fixed) |
+| Skill frontmatter (triggers) | ~100 per skill | Session start (fixed) |
 | Full SKILL.md content | 500-2000 per skill | On invoke only |
 | Reference files | 200-1000 each | On invoke only |
 
-**You're paying <4% context for 77 skills.** Full content would cost 50-100x more.
+**You're paying ~4% context for 78 skills.** Full content would cost 50-100x more.
 
 ### How It Works
 
 ```
 Session Start
     ↓
-Load 95 skill frontmatter (7.35k fixed)
+Load 78 skill frontmatter (~8k fixed)
     ↓
 User asks question
     ↓
@@ -119,29 +169,29 @@ Execute with full expertise
 
 ```mermaid
 graph TB
-    subgraph "Your Installation"
-        SKILLS["~/.claude/skills/<br/>95 skill folders"]
-        INDEX["SKILLS_INDEX.md"]
-        REGISTRY["MCP_REGISTRY.md"]
-        MEMORY["claude-memory.jsonl<br/>(Desktop)"]
-    end
-
-    subgraph "Per Project"
+    subgraph "Project Level (Where You Work)"
         PROJECT[".claude/skills/<br/>Project-specific skills"]
         MCPJSON[".mcp.json<br/>Project MCP config"]
         PLUGINS["--plugin-dir<br/>Plugin loading"]
     end
 
-    subgraph "Orchestration"
-        RECOMMEND["recommend-skills<br/>Analyzes project, suggests skills"]
+    subgraph "Discovery Layer"
+        RECOMMEND["/recommend skills<br/>Analyzes project, queries index"]
+        INDEX["SKILLS_INDEX.json<br/>Lightweight catalog"]
     end
 
-    SKILLS --> RECOMMEND
-    INDEX --> RECOMMEND
-    REGISTRY --> RECOMMEND
-    RECOMMEND --> PROJECT
-    RECOMMEND --> PLUGINS
-    RECOMMEND --> MCPJSON
+    subgraph "Global Library (~/.claude/)"
+        SKILLS["skills/<br/>78 skill folders"]
+        REGISTRY["MCP_REGISTRY.md"]
+        MEMORY["memory MCP<br/>(Desktop file)"]
+    end
+
+    PROJECT -->|"I need skills"| RECOMMEND
+    RECOMMEND -->|"Query"| INDEX
+    INDEX -->|"Reference"| SKILLS
+    RECOMMEND -->|"Pull to project"| PROJECT
+    RECOMMEND -->|"Suggest"| PLUGINS
+    RECOMMEND -->|"Suggest"| MCPJSON
 ```
 
 ---
@@ -158,7 +208,7 @@ mkdir -p ~/.claude/skills
 cp -r skills/* ~/.claude/skills/
 
 # Copy index files
-cp SKILLS_INDEX.md MCP_REGISTRY.md ATTRIBUTION.md ~/.claude/
+cp SKILLS_INDEX.json MCP_REGISTRY.md ATTRIBUTION.md ~/.claude/
 ```
 
 ### 2. Set Up Memory (Recommended)
@@ -209,9 +259,9 @@ claude --plugin-dir ./plugins/react-dev-plugin
 | **Utilities** | 7 | humanizer, naming, web testing |
 | **Orchestration** | 3 | recommend-skills, index updates |
 
-**Total: 77 skills**
+**Total: 78 skills**
 
-See `SKILLS_INDEX.md` for the complete list with invoke commands.
+See `SKILLS_INDEX.json` for the complete list with invoke commands.
 
 ---
 
@@ -288,34 +338,45 @@ See `MCP_REGISTRY.md` for detailed configuration.
 
 ## Usage Examples
 
-### Get Skill Recommendations
+### Step 1: Get Skill Recommendations
+
+When you're in a project and want to know which skills would help:
 
 ```
-/recommend-skills
+/recommend skills
 ```
 
-Claude reads your project files and suggests relevant skills with installation commands.
+Claude reads your project context (planning docs, README, structure) and:
+- Shows which skills to **IMPORT** (directly relevant)
+- Shows which skills to **SKIP** (not relevant, with reasons)
+- Recommends plugins for MCP-dependent skills
 
-### Use a Skill Directly
+### Step 2: Pull Skills to Your Project
 
-```
-/react-dev
-```
-
-Invokes the react-dev skill for React development guidance.
-
-### Pull Library Documentation
-
-```
-/context7
-```
-
-Uses Context7 to fetch live documentation for any library.
-
-### Import a Skill to Your Project
+After reviewing recommendations, import the skills you need:
 
 ```bash
 cp -r ~/.claude/skills/react-dev .claude/skills/
+```
+
+### Step 3: Use Skills Automatically
+
+Once skills are at project level, Claude auto-invokes them based on triggers:
+
+```
+Help me build a React component with authentication
+```
+
+Claude matches "React component" → invokes `react-dev` skill automatically.
+
+### Direct Skill Invocation
+
+You can also invoke skills directly:
+
+```
+/react-dev       # React development guidance
+/context7        # Pull live library documentation
+/stripe-integration  # Stripe payments setup
 ```
 
 ---
@@ -338,24 +399,24 @@ All skills have been reviewed and attributed. See `ATTRIBUTION.md` for details a
 ## File Structure
 
 ```
-~/.claude/
-├── skills/                  # All 77 skills
+~/.claude/                          # GLOBAL LIBRARY
+├── skills/                         # All 78 skills
 │   ├── react-dev/
 │   │   └── SKILL.md
 │   ├── copywriting/
 │   │   └── SKILL.md
-│   └── ... (95 folders)
-├── SKILLS_INDEX.md          # Master skill list
-├── MCP_REGISTRY.md          # MCP configurations
-└── ATTRIBUTION.md           # Skill sources
+│   └── ... (78 folders)
+├── SKILLS_INDEX.json               # Master skill catalog
+├── MCP_REGISTRY.md                 # MCP configurations
+└── ATTRIBUTION.md                  # Skill sources
 
 ~/Desktop/
-└── claude-memory.jsonl      # Persistent memory (human-readable)
+└── claude-memory.jsonl             # Persistent memory (human-readable)
 
-your-project/
-├── .claude/skills/          # Project-specific skills
-├── .mcp.json                # Project MCP config
-└── plugins/                 # Plugin folders
+your-project/                       # PROJECT LEVEL (where you work)
+├── .claude/skills/                 # Skills pulled from global
+├── .mcp.json                       # Project MCP config
+└── plugins/                        # Plugin folders (if using)
 ```
 
 ---
@@ -364,13 +425,14 @@ your-project/
 
 | Document | Purpose |
 |----------|---------|
-| `SKILLS_INDEX.md` | Complete skill list with categories and invoke commands |
+| `SKILLS_INDEX.json` | Complete skill list with categories and invoke commands |
 | `MCP_REGISTRY.md` | MCP configuration snippets and troubleshooting |
 | `ATTRIBUTION.md` | Original sources for all skills |
 | `docs/QUICKSTART.md` | 5-minute setup guide |
 | `docs/PLUGIN-GUIDE.md` | How plugins work |
 | `docs/MCP-SETUP-GUIDE.md` | Detailed MCP configuration |
 | `docs/ARCHITECTURE.md` | System design deep-dive |
+| `docs/rising-tides-flow.excalidraw` | Architecture diagram (import into excalidraw.com) |
 | `SECURITY.md` | Security model and MCP audit |
 
 ---
@@ -394,7 +456,7 @@ See `SECURITY.md` for the complete security model and approved MCP list.
 
 | Command | Purpose |
 |---------|---------|
-| `/recommend-skills` | Get skill suggestions for current project |
+| `/recommend skills` | Get skill suggestions for current project |
 | `/github-workflow` | Full GitHub lifecycle with gh CLI |
 | `/stripe-integration` | Stripe payments setup |
 | `/saas-starter-setup` | One-shot SaaS scaffolding |
@@ -433,7 +495,7 @@ All curated skills use permissive open-source licenses (MIT/Apache 2.0). See `AT
 1. **Join the community:** [skool.com/rising-tides](https://skool.com/rising-tides)
 2. Check `docs/QUICKSTART.md` for setup issues
 3. Check `MCP_REGISTRY.md` for MCP troubleshooting
-4. Run `/recommend-skills` in any project for guidance
+4. Run `/recommend skills` in any project for guidance
 
 ---
 

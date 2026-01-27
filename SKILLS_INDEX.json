@@ -2,8 +2,8 @@
   "meta": {
     "name": "Rising Tides Skills Pack",
     "version": "1.0.0",
-    "lastUpdated": "2026-01-26",
-    "totalSkills": 77,
+    "lastUpdated": "2026-01-27",
+    "totalSkills": 78,
     "totalPlugins": 12,
     "totalCLIs": 9,
     "totalMCPs": 8
@@ -826,6 +826,16 @@
       "mcp": null,
       "plugin": null,
       "source": "softaworks"
+    },
+    {
+      "id": "saas-from-scratch",
+      "name": "SaaS From Scratch",
+      "category": "backend",
+      "triggers": ["build saas from scratch", "custom saas", "learn saas stack", "saas tutorial", "manual saas setup"],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "nickmohler"
     },
     {
       "id": "schema-markup",

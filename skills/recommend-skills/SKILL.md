@@ -16,12 +16,14 @@ Invoke when user says:
 
 Read the index file at:
 ```
-~/.claude/SKILLS_INDEX.md
+~/.claude/SKILLS_INDEX.json
 ```
 
 The Skills Index contains:
-- 84 global skills organized by category
-- 10 plugins for MCP-dependent skills
+- 77 global skills organized by category
+- 12 plugins for MCP-dependent skills
+- CLI and MCP definitions
+- Triggers for each skill (for matching against project needs)
 
 ### Step 2: Inventory What's Already Available
 
@@ -269,4 +271,5 @@ export ENABLE_TOOL_SEARCH=auto
 ## File Locations
 
 Global skills: `~/.claude/skills/`
-Plugins: `./plugins/` (relative to repo root)
+Global index: `~/.claude/SKILLS_INDEX.json`
+Plugins: `~/.claude/plugins/` or `./plugins/` (project-level)
