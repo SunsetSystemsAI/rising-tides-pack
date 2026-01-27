@@ -2,6 +2,8 @@
 
 Analyze the current project and recommend which global skills or plugins to use.
 
+**CRITICAL: When recommending plugins, NEVER show `--plugin-dir` commands. Instead, configure MCPs in the project's `.mcp.json` file. This is the new architecture.**
+
 ## Trigger
 
 Invoke when user says:
@@ -76,10 +78,7 @@ Show FOUR sections:
 |--------|-------|-----|--------------|
 | [plugin-name] | [skill-name] | [mcp] | [specific reason] |
 
-**Install Command:**
-```bash
-claude --plugin-dir ./plugins/[plugin-name]
-```
+**IMPORTANT: Do NOT show `--plugin-dir` commands. MCPs will be configured in `.mcp.json` after user confirms.**
 
 **3. Skills to Import (no MCP needed)**
 | Skill | Category | Why It Helps |
@@ -95,24 +94,48 @@ claude --plugin-dir ./plugins/[plugin-name]
 
 Ask user which skills/plugins to use. Confirm before proceeding.
 
-### Step 7: Install Plugins (if any)
+### Step 7: Install Plugins (Configure MCPs at Project Level)
 
 For each confirmed plugin:
 
-1. **Show the install command:**
+1. **Copy the skill to project level:**
    ```bash
-   claude --plugin-dir ./plugins/[plugin-name]
+   mkdir -p .claude/skills
+   cp -r ~/.claude/plugins/[plugin-name]/skills/* .claude/skills/
    ```
 
-2. **For multiple plugins:**
+2. **Read the plugin's MCP configuration:**
    ```bash
-   claude --plugin-dir ./plugins/react-dev-plugin --plugin-dir ./plugins/webapp-testing-plugin
+   cat ~/.claude/plugins/[plugin-name]/.mcp.json
    ```
 
-3. **Explain what happens:**
-   - Plugin includes both the skill AND the MCP
-   - No separate MCP configuration needed
-   - MCP loads automatically when skill is invoked
+3. **Create or merge into project's `.mcp.json`:**
+
+   If project has no `.mcp.json`, create it with the plugin's MCP config.
+
+   If project already has `.mcp.json`, merge the new MCP servers into the existing `mcpServers` object.
+
+   **Example: After importing react-dev-plugin and webapp-testing-plugin:**
+   ```json
+   {
+     "mcpServers": {
+       "context7": {
+         "command": "npx",
+         "args": ["-y", "@upstash/context7-mcp"]
+       },
+       "playwright": {
+         "command": "npx",
+         "args": ["-y", "@playwright/mcp"]
+       }
+     }
+   }
+   ```
+
+4. **Explain what happens:**
+   - Skill files are now at project level (`.claude/skills/`)
+   - MCP configuration is in project's `.mcp.json`
+   - MCPs auto-load when Claude restarts in this project
+   - No `--plugin-dir` flags needed
    - Uses Tool Search for deferred loading (near-zero context cost)
 
 ### Step 8: Import Skills (if any)
@@ -127,12 +150,18 @@ cp -r ~/.claude/skills/[skill-name] .claude/skills/
 
 Summarize what was done:
 ```
-Plugins to use: [list with install commands]
-Skills imported: [list]
-Ready to use: [skill/plugin commands]
+Skills imported to .claude/skills/: [list]
+MCPs configured in .mcp.json: [list]
+Ready to use: [skill commands]
 
-To start a new session with plugins:
-claude --plugin-dir ./plugins/[plugin1] --plugin-dir ./plugins/[plugin2]
+Restart Claude to activate MCPs:
+exit
+claude
+```
+
+**Tip:** Enable Tool Search for optimal MCP context efficiency:
+```bash
+export ENABLE_TOOL_SEARCH=auto
 ```
 
 ---
@@ -189,12 +218,6 @@ Does the skill need an MCP?
 | react-dev-plugin | react-dev | context7 | Phase 2 involves new React components |
 | webapp-testing-plugin | webapp-testing | playwright | E2E tests for Phase 3 |
 
-**Install Command (for this session):**
-```bash
-claude --plugin-dir ./plugins/react-dev-plugin \
-       --plugin-dir ./plugins/webapp-testing-plugin
-```
-
 ### Skills to Import (1 skill)
 | Skill | Category | Why It Helps |
 |-------|----------|--------------|
@@ -213,19 +236,23 @@ After user confirms:
 ```
 ## Summary
 
-**Plugins:** Start Claude with:
-```bash
-claude --plugin-dir ./plugins/react-dev-plugin \
-       --plugin-dir ./plugins/webapp-testing-plugin
-```
-
-**Skills imported:**
+**Skills imported to .claude/skills/:**
+- react-dev
+- webapp-testing
 - mermaid-diagrams
 
+**MCPs configured in .mcp.json:**
+- context7 (for react-dev)
+- playwright (for webapp-testing)
+
 **Ready to use:**
-- /react-dev (via plugin - includes context7 MCP)
-- /webapp-testing (via plugin - includes playwright MCP)
+- /react-dev (context7 MCP auto-loads)
+- /webapp-testing (playwright MCP auto-loads)
 - /mermaid (imported skill)
+
+**Restart Claude to activate MCPs:**
+exit
+claude
 
 **Tip:** Enable Tool Search for optimal MCP loading:
 ```bash
@@ -240,9 +267,9 @@ export ENABLE_TOOL_SEARCH=auto
 1. **Never modify existing project skills/plugins** - They were added for a reason
 2. **ALWAYS recommend plugins for MCP-dependent skills** - Not standalone skills
 3. **Tie recommendations to specific roadmap items** - Not generic "could be useful"
-4. **Show plugin install commands** - Don't leave user to figure it out
+4. **NEVER show `--plugin-dir` commands** - Configure MCPs in project's `.mcp.json` instead
 5. **Mention Tool Search** - When recommending multiple plugins
-6. **Plugins are self-contained** - No separate MCP configuration needed
+6. **Prompt user to restart Claude** - MCPs only load on session start
 
 ---
 

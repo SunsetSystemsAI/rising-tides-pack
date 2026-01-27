@@ -233,15 +233,31 @@ Configure the memory file path to your Desktop for visibility:
 - **Mac:** `/Users/[USERNAME]/Desktop/claude-memory.jsonl`
 - **Linux:** `/home/[USERNAME]/Desktop/claude-memory.jsonl`
 
-### 4. Use Plugins for MCP-Dependent Skills
+### 4. Enable Tool Search (Recommended)
+
+For optimal context efficiency with MCPs:
 
 ```bash
-# Start Claude with a plugin
-claude --plugin-dir ~/.claude/plugins/react-dev-plugin
+# Add to your shell profile (.bashrc, .zshrc, etc.)
+export ENABLE_TOOL_SEARCH=auto
+```
 
-# Multiple plugins
-claude --plugin-dir ~/.claude/plugins/react-dev-plugin \
-       --plugin-dir ~/.claude/plugins/webapp-testing-plugin
+This defers MCP schema loading until tools are actually used (~500 tokens on-demand vs ~20k+ upfront).
+
+### 5. Let /recommend-skills Configure MCPs
+
+When you run `/recommend skills` in a project and confirm plugin imports, the skill will:
+1. Copy skill files to `.claude/skills/`
+2. Create/merge MCP configs into project's `.mcp.json`
+3. MCPs auto-load when you restart Claude
+
+**No `--plugin-dir` flags needed!**
+
+**Alternative: Manual Plugin Loading**
+
+You can still use `--plugin-dir` for manual control:
+```bash
+claude --plugin-dir ~/.claude/plugins/react-dev-plugin
 ```
 
 ---
@@ -319,6 +335,15 @@ graph LR
 
 ### Using Plugins
 
+**Recommended: Via /recommend-skills**
+
+Run `/recommend skills` in your project. When you confirm plugin imports:
+- Skills copy to `.claude/skills/`
+- MCP configs merge into `.mcp.json`
+- MCPs auto-load on Claude restart
+
+**Alternative: Manual --plugin-dir**
+
 ```bash
 # Single plugin
 claude --plugin-dir ./plugins/react-dev-plugin
@@ -337,7 +362,7 @@ MCPs (Model Context Protocol servers) extend Claude's capabilities. This system 
 |-----|---------|---------|--------|
 | **memory** | `@modelcontextprotocol/server-memory` | Persistent knowledge | All projects |
 | **context7** | `@upstash/context7-mcp` | Live documentation | react-dev, frontend-design |
-| **playwright** | `@anthropic-ai/mcp-server-playwright` | Browser automation | webapp-testing |
+| **playwright** | `@playwright/mcp` | Browser automation | webapp-testing |
 | **github** | `@anthropic-ai/mcp-server-github` | Repo operations | commit-work |
 | **remotion** | `@anthropic-ai/mcp-server-remotion` | Video generation | video-generator |
 

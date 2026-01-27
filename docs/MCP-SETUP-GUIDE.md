@@ -113,7 +113,7 @@ Create `.mcp.json` in your project root:
     },
     "playwright": {
       "command": "npx",
-      "args": ["-y", "@anthropic-ai/mcp-server-playwright"]
+      "args": ["-y", "@playwright/mcp"]
     }
   }
 }
@@ -224,7 +224,7 @@ Add to project's `.mcp.json`:
   "mcpServers": {
     "playwright": {
       "command": "npx",
-      "args": ["-y", "@anthropic-ai/mcp-server-playwright"]
+      "args": ["-y", "@playwright/mcp"]
     }
   }
 }

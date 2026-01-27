@@ -13,7 +13,7 @@
     "_note_playwright": "Browser automation - great for testing",
     "playwright": {
       "command": "npx",
-      "args": ["-y", "@anthropic-ai/mcp-server-playwright"]
+      "args": ["-y", "@playwright/mcp"]
     },
 
     "_note_remotion": "Video generation - for video projects",

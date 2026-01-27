@@ -93,7 +93,7 @@ Only use MCPs from verified sources. Here are the approved MCPs for this system:
 |-----|-------------|-------------------|------------|
 | **memory** | `@modelcontextprotocol/server-memory` | [github.com/modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) | Anthropic |
 | **context7** | `@upstash/context7-mcp` | [github.com/upstash/context7](https://github.com/upstash/context7) | Upstash |
-| **playwright** | `@anthropic-ai/mcp-server-playwright` | [github.com/anthropics/mcp-servers](https://github.com/anthropics/mcp-servers) | Anthropic |
+| **playwright** | `@playwright/mcp` | [github.com/anthropics/mcp-servers](https://github.com/anthropics/mcp-servers) | Anthropic |
 | **github** | `@anthropic-ai/mcp-server-github` | [github.com/anthropics/mcp-servers](https://github.com/anthropics/mcp-servers) | Anthropic |
 | **remotion** | `@anthropic-ai/mcp-server-remotion` | [github.com/anthropics/mcp-servers](https://github.com/anthropics/mcp-servers) | Anthropic |
 

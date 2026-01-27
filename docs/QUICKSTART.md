@@ -101,9 +101,35 @@ When prompted, set the memory file path to your Desktop:
 
 ---
 
-## Step 5: Use Plugins (For MCP-Dependent Skills)
+## Step 5: Enable Tool Search (Recommended)
 
-Some skills need MCP servers (context7 for docs, playwright for testing). Use plugins:
+For optimal context efficiency with MCPs:
+
+```bash
+# Add to your shell profile (.bashrc, .zshrc, etc.)
+export ENABLE_TOOL_SEARCH=auto
+```
+
+This defers MCP schema loading until tools are actually used:
+- Without Tool Search: All MCP schemas preload (~20k+ tokens)
+- With Tool Search: Schemas load on-demand (~500 tokens per tool when used)
+
+---
+
+## Step 6: Use Plugins (For MCP-Dependent Skills)
+
+Some skills need MCP servers (context7 for docs, playwright for testing).
+
+### Recommended: Automatic Configuration via /recommend-skills
+
+When you run `/recommend skills` and confirm plugin imports, the skill will:
+1. Copy skill files to `.claude/skills/`
+2. Create/merge MCP configs into project's `.mcp.json`
+3. Prompt you to restart Claude
+
+After restart, MCPs auto-load for that project. **No `--plugin-dir` flags needed!**
+
+### Alternative: Manual Plugin Loading
 
 ```bash
 # Start Claude with a plugin (uses global plugin location)
@@ -113,8 +139,6 @@ claude --plugin-dir ~/.claude/plugins/react-dev-plugin
 claude --plugin-dir ~/.claude/plugins/react-dev-plugin \
        --plugin-dir ~/.claude/plugins/webapp-testing-plugin
 ```
-
-Plugins bundle the skill + MCP together - no separate configuration needed.
 
 **Available plugins:**
 | Plugin | MCP | Purpose |
@@ -126,7 +150,7 @@ Plugins bundle the skill + MCP together - no separate configuration needed.
 
 ---
 
-## Step 6: Set Up Status Line (Optional, 1 minute)
+## Step 7: Set Up Status Line (Optional, 1 minute)
 
 Add a status line showing model, context usage, and git branch:
 
@@ -233,5 +257,6 @@ See `MCP_REGISTRY.md` for all available MCP configurations.
 | 2. Verify | `ls ~/.claude/skills/ && ls ~/.claude/plugins/` |
 | 3. Try it | `/recommend skills` |
 | 4. Memory (opt) | `claude mcp add memory --scope user` |
-| 5. Use plugins | `claude --plugin-dir ~/.claude/plugins/[name]` |
-| 6. Status line (opt) | `./scripts/setup-statusline.sh` |
+| 5. Tool Search (opt) | `export ENABLE_TOOL_SEARCH=auto` (add to shell profile) |
+| 6. Use plugins | Via `/recommend skills` (auto-configures .mcp.json) |
+| 7. Status line (opt) | `./scripts/setup-statusline.sh` |

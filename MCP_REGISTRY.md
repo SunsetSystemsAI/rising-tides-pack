@@ -116,7 +116,7 @@ claude mcp add playwright --scope project
   "mcpServers": {
     "playwright": {
       "command": "npx",
-      "args": ["-y", "@anthropic-ai/mcp-server-playwright"]
+      "args": ["-y", "@playwright/mcp"]
     }
   }
 }
