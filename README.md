@@ -520,7 +520,7 @@ All curated skills use permissive open-source licenses (MIT/Apache 2.0). See `AT
 
 ## Community & Support
 
-- **Community:** [Rising Tides on Skool](https://skool.com/rising-tides) — Get help, share wins
+- **Community:** [Rising Tides on Skool](https://www.skool.com/rising-tides-9034) — Get help, share wins
 - **Issues:** [GitHub Issues](https://github.com/TinyShaft22/rising-tides-pack/issues)
 - **Starter Pack:** [rising-tides-starter](https://github.com/TinyShaft22/rising-tides-starter)
 
@@ -528,7 +528,7 @@ All curated skills use permissive open-source licenses (MIT/Apache 2.0). See `AT
 
 ## Getting Help
 
-1. **Join the community:** [skool.com/rising-tides](https://skool.com/rising-tides)
+1. **Join the community:** [skool.com/rising-tides](https://www.skool.com/rising-tides-9034)
 2. Check `docs/QUICKSTART.md` for setup issues
 3. Check `MCP_REGISTRY.md` for MCP troubleshooting
 4. Run `/recommend skills` in any project for guidance
