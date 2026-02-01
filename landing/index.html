@@ -12,12 +12,17 @@
 </head>
 <body>
 
+<!-- SUN RAYS — persistent rays radiating down the page -->
+<div class="sun-rays" aria-hidden="true"></div>
+<div class="sun-rays sun-rays-2" aria-hidden="true"></div>
+
 <!-- NAV -->
 <nav class="nav">
   <div class="nav-inner">
     <a href="#" class="nav-logo">
       <span class="logo-wave">~</span> Rising Tides
     </a>
+    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
     <div class="nav-links">
       <a href="#features">Features</a>
       <a href="#pricing">Pricing</a>
@@ -34,7 +39,7 @@
     <h1>Stop building skills.<br>Start shipping code.</h1>
     <p class="hero-sub">A curated library of 80 production-ready skills for Claude Code — from React patterns to Stripe integration, SEO audits to deployment pipelines. One install. 3% context cost.</p>
     <div class="hero-ctas">
-      <a href="#pricing" class="btn btn-primary">Get the Pack</a>
+      <a href="#pricing" class="btn btn-primary btn-hero-primary">Get the Pack</a>
       <a href="#demo" class="btn btn-ghost">See It in Action</a>
     </div>
     <div class="hero-proof">
@@ -62,6 +67,8 @@
   <div class="hero-glow"></div>
 </header>
 
+<hr class="section-divider">
+
 <!-- PROBLEM -->
 <section class="section section-problem">
   <div class="container">
@@ -85,6 +92,8 @@
     </div>
   </div>
 </section>
+
+<hr class="section-divider">
 
 <!-- SOLUTION -->
 <section class="section section-solution" id="features">
@@ -128,42 +137,9 @@
   </div>
 </section>
 
-<!-- CATEGORIES -->
-<section class="section section-categories">
-  <div class="container">
-    <h2 class="section-label">What's inside</h2>
-    <h3 class="section-title">80 skills across 13 categories</h3>
-    <div class="categories-grid">
-      <div class="cat-pill"><span class="cat-count">16</span> Marketing &amp; SEO</div>
-      <div class="cat-pill"><span class="cat-count">11</span> Documentation</div>
-      <div class="cat-pill"><span class="cat-count">11</span> Workflow</div>
-      <div class="cat-pill"><span class="cat-count">9</span> Utilities</div>
-      <div class="cat-pill"><span class="cat-count">7</span> Backend</div>
-      <div class="cat-pill"><span class="cat-count">7</span> Frontend</div>
-      <div class="cat-pill"><span class="cat-count">7</span> CRO</div>
-      <div class="cat-pill"><span class="cat-count">6</span> Architecture</div>
-      <div class="cat-pill"><span class="cat-count">6</span> Design</div>
-      <div class="cat-pill"><span class="cat-count">5</span> Integrations</div>
-      <div class="cat-pill"><span class="cat-count">4</span> Communication</div>
-      <div class="cat-pill"><span class="cat-count">4</span> Deployment</div>
-      <div class="cat-pill"><span class="cat-count">1</span> Payments</div>
-    </div>
-  </div>
-</section>
+<hr class="section-divider">
 
-<!-- DEMO / VIDEO -->
-<section class="section section-demo" id="demo">
-  <div class="container">
-    <h2 class="section-label">See it work</h2>
-    <h3 class="section-title">Watch the 5-minute walkthrough</h3>
-    <div class="video-placeholder">
-      <div class="video-play">&#9654;</div>
-      <p>Video coming soon</p>
-    </div>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
+<!-- HOW IT WORKS (moved up) -->
 <section class="section section-steps">
   <div class="container">
     <h2 class="section-label">How it works</h2>
@@ -188,6 +164,81 @@
     </div>
   </div>
 </section>
+
+<hr class="section-divider">
+
+<!-- DEMO / TERMINAL + PROMO VIDEO (combined) -->
+<section class="section section-demo" id="demo">
+  <div class="container">
+    <h2 class="section-label">See it in action</h2>
+    <h3 class="section-title">Skills activate automatically</h3>
+    <div class="terminal-demo">
+      <div class="terminal-bar">
+        <div class="terminal-dot"></div>
+        <div class="terminal-dot"></div>
+        <div class="terminal-dot"></div>
+        <span class="terminal-title">claude</span>
+      </div>
+      <div class="terminal-body">
+        <div class="terminal-line terminal-line-typed">
+          <span class="terminal-prompt">&gt; </span><span class="terminal-command">Help me set up Stripe payments</span>
+        </div>
+        <div class="terminal-line">
+          <span class="terminal-response">  &#8627; Matched: </span><span class="terminal-highlight">stripe-integration</span><span class="terminal-response"> skill</span>
+        </div>
+        <div class="terminal-line">
+          <span class="terminal-response">  &#8627; Loading CLI auth workflow...</span>
+        </div>
+        <div class="terminal-line">
+          <span class="terminal-response">  &#8627; Configuring checkout, webhooks, products</span>
+        </div>
+        <div class="terminal-line">
+          <span class="terminal-prompt">&gt; </span><span class="terminal-cursor"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="promo-video-wrap">
+      <video
+        src="video/out/rising-tides-promo.mp4"
+        poster="video/out/poster.png"
+        preload="metadata"
+        muted
+        loop
+        playsinline
+        controls
+        controlsList="nodownload"
+      ></video>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- CATEGORIES -->
+<section class="section section-categories">
+  <div class="container">
+    <h2 class="section-label">What's inside</h2>
+    <h3 class="section-title">80 skills across 13 categories</h3>
+    <div class="categories-grid">
+      <div class="cat-pill"><span class="cat-count">16</span> Marketing &amp; SEO</div>
+      <div class="cat-pill"><span class="cat-count">11</span> Documentation</div>
+      <div class="cat-pill"><span class="cat-count">11</span> Workflow</div>
+      <div class="cat-pill"><span class="cat-count">9</span> Utilities</div>
+      <div class="cat-pill"><span class="cat-count">7</span> Backend</div>
+      <div class="cat-pill"><span class="cat-count">7</span> Frontend</div>
+      <div class="cat-pill"><span class="cat-count">7</span> CRO</div>
+      <div class="cat-pill"><span class="cat-count">6</span> Architecture</div>
+      <div class="cat-pill"><span class="cat-count">6</span> Design</div>
+      <div class="cat-pill"><span class="cat-count">5</span> Integrations</div>
+      <div class="cat-pill"><span class="cat-count">4</span> Communication</div>
+      <div class="cat-pill"><span class="cat-count">4</span> Deployment</div>
+      <div class="cat-pill"><span class="cat-count">1</span> Payments</div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
 
 <!-- COMPARISON -->
 <section class="section section-compare">
@@ -229,43 +280,47 @@
   </div>
 </section>
 
+<hr class="section-divider">
+
 <!-- PRICING -->
 <section class="section section-pricing" id="pricing">
   <div class="container">
     <h2 class="section-label">Pricing</h2>
     <h3 class="section-title">One purchase. Lifetime access.</h3>
-    <p class="section-sub">No subscriptions. No recurring fees. Pay once, use forever.</p>
+    <p class="section-sub" style="margin-left:auto;margin-right:auto;">No subscriptions. No recurring fees. Pay once, use forever.</p>
 
-    <div class="pricing-grid">
-      <div class="pricing-card">
-        <div class="pricing-name">Starter Pack</div>
-        <div class="pricing-price">$49</div>
+    <div class="pricing-grid pricing-grid-two">
+      <!-- PRO -->
+      <div class="pricing-card pricing-card-pro">
+        <div class="pricing-name">Pro</div>
+        <div class="pricing-price">$79</div>
         <div class="pricing-desc">Everything you need to supercharge Claude Code</div>
         <ul class="pricing-features">
-          <li>80 production-ready skills</li>
+          <li>All 80 production-ready skills</li>
           <li>12 MCP plugin bundles</li>
           <li>9 CLI integration guides</li>
-          <li>SKILLS_INDEX.json for auto-discovery</li>
-          <li>One-command setup scripts (Mac/Linux/Win)</li>
+          <li>One-command setup scripts</li>
           <li>Private GitHub repo access</li>
+          <li>Lifetime updates</li>
           <li>Community access</li>
         </ul>
         <!-- Replace href with your Stripe Payment Link -->
-        <a href="#" class="btn btn-primary btn-full">Get the Starter Pack</a>
+        <a href="#" class="btn btn-primary btn-full">Get Pro</a>
       </div>
 
+      <!-- DONE-FOR-YOU -->
       <div class="pricing-card pricing-card-highlight">
         <div class="pricing-badge">Best Value</div>
         <div class="pricing-name">Done-For-You</div>
-        <div class="pricing-price">$199</div>
+        <div class="pricing-price">$249</div>
         <div class="pricing-desc">Get set up on a call with Nick</div>
         <ul class="pricing-features">
-          <li>Everything in Starter Pack</li>
+          <li>Everything in Pro</li>
           <li>30-minute 1:1 setup call</li>
           <li>Full installation on your machine</li>
           <li>MCP + memory configuration</li>
+          <li>Custom CLAUDE.md for your project</li>
           <li>Project-specific skill recommendations</li>
-          <li>30-day email support</li>
           <li>Priority community access</li>
         </ul>
         <!-- Replace href with your Stripe Payment Link -->
@@ -274,6 +329,8 @@
     </div>
   </div>
 </section>
+
+<hr class="section-divider">
 
 <!-- FAQ -->
 <section class="section section-faq" id="faq">
@@ -306,7 +363,7 @@
       </details>
       <details class="faq-item">
         <summary>What's the refund policy?</summary>
-        <p>If the pack doesn't work for you, email within 14 days for a full refund. No questions asked.</p>
+        <p>If you're not satisfied, reach out within 14 days and we'll make it right — whether that's a walkthrough call, troubleshooting, or a refund.</p>
       </details>
       <details class="faq-item">
         <summary>What happens after I buy?</summary>
@@ -341,6 +398,11 @@
 </footer>
 
 <script>
+// Mobile nav toggle
+document.querySelector('.nav-toggle').addEventListener('click', () => {
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
@@ -352,16 +414,37 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-// Intersection Observer for fade-in animations
+// Intersection Observer for fade-in animations + staggered children
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
+
+      // Stagger child elements
+      const staggerTargets = entry.target.querySelectorAll(
+        '.feature-card, .problem-card, .cat-pill, .pricing-card, .step, .step-arrow'
+      );
+      staggerTargets.forEach((el, i) => {
+        el.style.setProperty('--delay', `${i * 100}ms`);
+      });
     }
   });
 }, { threshold: 0.1 });
 
 document.querySelectorAll('.section').forEach(s => observer.observe(s));
+
+// Lazy autoplay promo video when scrolled into view
+const promoVideo = document.querySelector('.promo-video-wrap video');
+if (promoVideo) {
+  promoVideo.pause();
+  const vidObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) promoVideo.play();
+      else promoVideo.pause();
+    });
+  }, { threshold: 0.3 });
+  vidObserver.observe(promoVideo);
+}
 </script>
 
 </body>
