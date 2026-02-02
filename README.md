@@ -1,6 +1,6 @@
 # Rising Tides Skills Pack
 
-> **78 skills + 12 plugins + 9 CLI integrations + 8 MCPs** — everything you need to supercharge Claude Code.
+> **196 skills + 37 plugins + 9 CLI integrations + 17 MCPs** — everything you need to supercharge Claude Code.
 
 A curated collection of Claude Code skills for React development, marketing, SEO, CRO, documentation, architecture, CLI integrations, and more. Includes MCP integrations via a plugin system for zero-config setup.
 
@@ -8,7 +8,7 @@ A curated collection of Claude Code skills for React development, marketing, SEO
 
 ## How It Works
 
-The Rising Tides system uses **progressive disclosure** — you don't load 78 skills into context. Instead, Claude discovers what's available through a lightweight index and loads full skill content only when needed.
+The Rising Tides system uses **progressive disclosure** — you don't load 196 skills into context. Instead, Claude discovers what's available through a lightweight index and loads full skill content only when needed.
 
 ### The Flow: Project-Level Up
 
@@ -112,60 +112,73 @@ This installs Node.js, Git, Claude Code, and the full skills pack automatically.
 **Skills** are markdown instruction files that teach Claude Code specialized behaviors. Instead of explaining what you want every time, skills pre-load expertise for specific domains.
 
 **This collection includes:**
-- **78 skills** covering React, marketing, SEO, CRO, documentation, architecture, CLI integrations, and utilities
-- **12 plugins** that bundle skills with MCP servers for seamless integration
+- **196 skills** covering React, marketing, SEO, CRO, documentation, architecture, CLI integrations, security, DevOps, and more
+- **37 plugins** that bundle skills with MCP servers for seamless integration
 - **CLI-first approach** for GitHub, Stripe, Supabase, Firebase, Vercel, Netlify, and Google Cloud
 - **Organized index** (`SKILLS_INDEX.json`) for fast discovery without loading all skills
 - **Attribution tracking** so you know where each skill came from
 
 ---
 
-## Context Efficiency (Tested & Proven)
+## Context Efficiency (Tested & Verified)
 
-**The big question:** Won't 78 skills bloat my context window?
+**The big question:** Won't 196 skills bloat my context window?
 
-**Answer:** No. We tested it. Here's the proof:
+**Answer:** No. Verified with a full test suite (February 2026, Claude Code v2.1.29).
 
-### Test Results (January 2026)
+### Verified Baselines
 
-| Condition | Total Context | Skills Category | Notes |
-|-----------|---------------|-----------------|-------|
-| **Without skills** | 29k (14%) | 548 tokens | Baseline |
-| **With 78 skills** | 32k (16%) | 7.9k tokens | +7.35k for skills |
-| **After /recommend skills** | 51k (25%) | 7.9k tokens | Skills unchanged |
-| **After invoking skill** | 75k (38%) | 7.9k tokens | Skills still unchanged |
+| Configuration | Skills | MCP Tokens | Total Baseline | Free Space |
+|--------------|--------|------------|----------------|------------|
+| 196 skills, Tool Search ON | 20.4k | 0 | **24k (12%)** | **143k (71.5%)** |
+| 196 skills, Tool Search OFF | 20.4k | 11.3k | 35k (18%) | 132k (66%) |
+| 78 skills (original) | 7.9k | — | 32k (16%) | 134k (67%) |
 
-### What This Proves
+### How It Works — Two Layers of Progressive Disclosure
 
-1. **Fixed overhead:** 78 skills cost only **~8k tokens** (~4% of context)
-2. **Frontmatter only:** That's ~100 tokens per skill (just triggers/descriptions)
-3. **On-demand loading:** Full skill content loads into Messages when invoked, not Skills
-4. **Index-based recommendations:** `/recommend skills` reads the lightweight index, not all 78 SKILL.md files
+**Layer 1: Skills** — Built into Claude Code
+- Only skill descriptions load at startup (~100 tokens per skill)
+- Full SKILL.md content loads on-demand when invoked (500-5k tokens)
+- Reference files load on-demand when referenced
+
+**Layer 2: MCP Tool Search** — `ENABLE_TOOL_SEARCH=true`
+- MCP servers start at session init (unavoidable)
+- Tool schemas are NOT injected into context (replaced by search tool)
+- When Claude needs a tool, it searches and loads just that schema
+- ~85% token reduction (per Anthropic)
+- Use `true` not `auto` — auto mode has a known triggering bug
+
+**What does NOT defer MCP loading:**
+- Bundling MCPs inside plugins (plugins are distribution, not context hiding)
+- Transport type (stdio, HTTP, SSE all load at init)
+- The SKILLS_INDEX.json (index is for skill discovery, not MCP deferral)
 
 ### The Math
 
 | What | Tokens | When Loaded |
 |------|--------|-------------|
-| Skill frontmatter (triggers) | ~100 per skill | Session start (fixed) |
-| Full SKILL.md content | 500-2000 per skill | On invoke only |
+| Skill description (frontmatter) | ~100 per skill | Session start (fixed) |
+| Full SKILL.md content | 500-5000 per skill | On invoke only |
 | Reference files | 200-1000 each | On invoke only |
+| MCP tool schemas (Tool Search ON) | ~0 at startup | On-demand via search |
+| MCP tool schemas (Tool Search OFF) | ~231 per tool | Session start (all preloaded) |
 
-**You're paying ~4% context for 78 skills.** Full content would cost 50-100x more.
+**You're paying ~12% context for 196 skills + deferred MCPs.** That leaves 71.5% free for work.
 
 ### How It Works
 
 ```
 Session Start
     ↓
-Load 78 skill frontmatter (~8k fixed)
+Load 196 skill descriptions (~20.4k fixed)
+Start MCP servers (schemas deferred by Tool Search)
     ↓
 User asks question
     ↓
-Claude matches to skill trigger
+Claude matches to skill trigger → loads full SKILL.md on-demand
+Claude searches for MCP tools → loads specific schemas on-demand
     ↓
-Read SKILL.md + references on-demand → goes to Messages
-    ↓
-Execute with full expertise
+Execute with full expertise + tool access
 ```
 
 ---

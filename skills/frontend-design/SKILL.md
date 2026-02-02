@@ -1,6 +1,6 @@
 ---
 name: frontend-design
-description: Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic AI aesthetics.
+description: Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, mockups, prototypes, or when styling/beautifying any web UI). Generates creative, polished, accessible code and UI design that avoids generic AI aesthetics.
 license: Complete terms in LICENSE.txt
 mcp: context7
 ---
@@ -25,7 +25,7 @@ Fetch framer-motion documentation
 
 ---
 
-This skill guides creation of distinctive, production-grade frontend interfaces that avoid generic "AI slop" aesthetics. Implement real working code with exceptional attention to aesthetic details and creative choices.
+This skill guides creation of distinctive, production-grade frontend interfaces that avoid generic "AI slop" aesthetics. Implement real working code with exceptional attention to aesthetic details, creative choices, and accessibility.
 
 The user provides frontend requirements: a component, page, application, or interface to build. They may include context about the purpose, audience, or technical constraints.
 
@@ -34,7 +34,7 @@ The user provides frontend requirements: a component, page, application, or inte
 Before coding, understand the context and commit to a BOLD aesthetic direction:
 - **Purpose**: What problem does this interface solve? Who uses it?
 - **Tone**: Pick an extreme: brutally minimal, maximalist chaos, retro-futuristic, organic/natural, luxury/refined, playful/toy-like, editorial/magazine, brutalist/raw, art deco/geometric, soft/pastel, industrial/utilitarian, etc. There are so many flavors to choose from. Use these for inspiration but design one that is true to the aesthetic direction.
-- **Constraints**: Technical requirements (framework, performance, accessibility).
+- **Constraints**: Technical requirements (framework, performance, accessibility, WCAG level).
 - **Differentiation**: What makes this UNFORGETTABLE? What's the one thing someone will remember?
 
 **CRITICAL**: Choose a clear conceptual direction and execute it with precision. Bold maximalism and refined minimalism both work - the key is intentionality, not intensity.
@@ -44,13 +44,14 @@ Then implement working code (HTML/CSS/JS, React, Vue, etc.) that is:
 - Visually striking and memorable
 - Cohesive with a clear aesthetic point-of-view
 - Meticulously refined in every detail
+- Accessible to all users
 
 ## Frontend Aesthetics Guidelines
 
 Focus on:
 - **Typography**: Choose fonts that are beautiful, unique, and interesting. Avoid generic fonts like Arial and Inter; opt instead for distinctive choices that elevate the frontend's aesthetics; unexpected, characterful font choices. Pair a distinctive display font with a refined body font.
-- **Color & Theme**: Commit to a cohesive aesthetic. Use CSS variables for consistency. Dominant colors with sharp accents outperform timid, evenly-distributed palettes.
-- **Motion**: Use animations for effects and micro-interactions. Prioritize CSS-only solutions for HTML. Use Motion library for React when available. Focus on high-impact moments: one well-orchestrated page load with staggered reveals (animation-delay) creates more delight than scattered micro-interactions. Use scroll-triggering and hover states that surprise.
+- **Color & Theme**: Commit to a cohesive aesthetic. Use CSS variables for consistency. Dominant colors with sharp accents outperform timid, evenly-distributed palettes. Ensure color contrast meets WCAG 4.5:1 minimum for text.
+- **Motion**: Use animations for effects and micro-interactions. Prioritize CSS-only solutions for HTML. Use Motion library for React when available. Focus on high-impact moments: one well-orchestrated page load with staggered reveals (animation-delay) creates more delight than scattered micro-interactions. Use scroll-triggering and hover states that surprise. Respect `prefers-reduced-motion`.
 - **Spatial Composition**: Unexpected layouts. Asymmetry. Overlap. Diagonal flow. Grid-breaking elements. Generous negative space OR controlled density.
 - **Backgrounds & Visual Details**: Create atmosphere and depth rather than defaulting to solid colors. Add contextual effects and textures that match the overall aesthetic. Apply creative forms like gradient meshes, noise textures, geometric patterns, layered transparencies, dramatic shadows, decorative borders, custom cursors, and grain overlays.
 
@@ -61,6 +62,19 @@ Interpret creatively and make unexpected choices that feel genuinely designed fo
 **IMPORTANT**: Match implementation complexity to the aesthetic vision. Maximalist designs need elaborate code with extensive animations and effects. Minimalist or refined designs need restraint, precision, and careful attention to spacing, typography, and subtle details. Elegance comes from executing the vision well.
 
 Remember: Claude is capable of extraordinary creative work. Don't hold back, show what can truly be created when thinking outside the box and committing fully to a distinctive vision.
+
+## Accessibility
+
+Every design must be usable by everyone:
+
+- **Semantic HTML5**: Use proper elements (`header`, `nav`, `main`, `footer`, `section`, `article`). Maintain correct heading hierarchy (h1 through h6).
+- **Keyboard navigation**: All interactive elements reachable via Tab. Visible focus indicators on every focusable element. Logical tab order. No keyboard traps.
+- **ARIA**: Add landmarks, labels, and live regions where semantic HTML alone is insufficient. Use `aria-expanded`, `aria-modal`, `aria-required`, `aria-describedby` on interactive components.
+- **Forms**: Every input has an associated `<label>`. Required fields use `aria-required="true"`. Error messages use `role="alert"` and are linked via `aria-describedby`.
+- **Skip links**: Include a "Skip to main content" link as the first focusable element.
+- **Screen readers**: Alt text on all images. Dynamic content changes announced via ARIA live regions.
+
+Accessibility is not optional and does not conflict with bold design. The most creative interfaces can also be the most inclusive.
 
 ## Image Strategy
 
