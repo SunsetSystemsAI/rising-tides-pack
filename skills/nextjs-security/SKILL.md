@@ -31,6 +31,15 @@ Run these in sequence. Each builds on the previous:
 | 9 | `nextjs-security-operations` | Deployment checklist, env vars, monitoring, maintenance |
 | 10 | `nextjs-security-testing` | CSRF tests, rate limit tests, header verification, penetration testing |
 
+## Checkpoints
+
+This orchestrator pauses between phases to confirm direction. At each checkpoint, the user can:
+- **Review and confirm** — "looks good, continue"
+- **Adjust** — "skip payments, focus on auth"
+- **Auto-accept** — "auto-accept" or "just go" to skip all remaining checkpoints
+
+Once auto-accept is enabled, the orchestrator runs through remaining phases without pausing.
+
 ## Workflow
 
 ### Quick Audit (Targeted)

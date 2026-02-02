@@ -22,7 +22,7 @@ Read the index file at:
 ```
 
 The Skills Index contains:
-- 173 global skills organized by category
+- 176 global skills organized by category
 - 37 plugins (skill + optional MCP bundles)
 - 17 MCPs and 9 CLI definitions
 - Triggers for each skill (for matching against project needs)

@@ -3,7 +3,7 @@
     "name": "Rising Tides Skills Pack",
     "version": "1.0.0",
     "lastUpdated": "2026-02-01",
-    "totalSkills": 173,
+    "totalSkills": 176,
     "totalPlugins": 37,
     "totalCLIs": 9,
     "totalMCPs": 17,
@@ -3425,6 +3425,84 @@
       }
     },
     {
+      "id": "fullstack-dev",
+      "name": "Full-Stack Dev Orchestrator",
+      "category": "workflow",
+      "triggers": [
+        "full-stack app",
+        "build a web app",
+        "end-to-end development",
+        "frontend backend database",
+        "new project setup"
+      ],
+      "cli": "gh",
+      "mcp": null,
+      "plugin": null,
+      "source": "nickmohler",
+      "toolImportance": {
+        "context7": "recommended",
+        "playwright": "recommended",
+        "github": "recommended",
+        "postgres": "recommended"
+      },
+      "relatedPlugins": [
+        "react-dev-plugin",
+        "frontend-ui-plugin",
+        "webapp-testing-plugin",
+        "git-workflow-plugin"
+      ]
+    },
+    {
+      "id": "saas-setup",
+      "name": "SaaS Setup Orchestrator",
+      "category": "backend",
+      "triggers": [
+        "SaaS setup",
+        "launch SaaS",
+        "subscription app",
+        "build a SaaS",
+        "Stripe Supabase Vercel"
+      ],
+      "cli": "stripe",
+      "mcp": null,
+      "plugin": null,
+      "source": "nickmohler",
+      "toolImportance": {
+        "stripe": "essential",
+        "supabase": "essential",
+        "vercel": "recommended",
+        "playwright": "recommended"
+      },
+      "relatedPlugins": [
+        "webapp-testing-plugin"
+      ]
+    },
+    {
+      "id": "security-audit",
+      "name": "Security Audit Orchestrator",
+      "category": "security",
+      "triggers": [
+        "security audit",
+        "vulnerability scan",
+        "secure my app",
+        "code security review",
+        "OWASP compliance",
+        "penetration testing"
+      ],
+      "cli": null,
+      "mcp": null,
+      "plugin": null,
+      "source": "nickmohler",
+      "toolImportance": {
+        "github": "optional"
+      },
+      "relatedPlugins": [
+        "security-static-analysis-plugin",
+        "security-audit-context-plugin",
+        "git-workflow-plugin"
+      ]
+    },
+    {
       "id": "terraform-pro",
       "name": "Terraform Pro",
       "category": "devops",
@@ -3883,7 +3961,7 @@
     },
     "nickmohler": {
       "name": "Nick Mohler",
-      "count": 17,
+      "count": 20,
       "description": "CLI integrations and orchestration"
     },
     "obra": {
