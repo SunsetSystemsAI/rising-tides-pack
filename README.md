@@ -85,7 +85,7 @@ The Rising Tides system uses **progressive disclosure** — you don't load 196 s
 
 ### Mac
 ```bash
-curl -fsSL https://raw.githubusercontent.com/TinyShaft22/rising-tides-starter/main/scripts/setup-mac.sh -o /tmp/setup.sh && bash /tmp/setup.sh
+curl -fsSL https://raw.githubusercontent.com/SunsetSystemsAI/rising-tides-starter/main/scripts/setup-mac.sh -o /tmp/setup.sh && bash /tmp/setup.sh
 ```
 
 > **Do NOT use `sudo`.** The script will ask for your password when it needs admin access.
@@ -94,13 +94,13 @@ curl -fsSL https://raw.githubusercontent.com/TinyShaft22/rising-tides-starter/ma
 ```powershell
 Set-ExecutionPolicy Bypass -Scope Process -Force
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/TinyShaft22/rising-tides-starter/main/scripts/setup-windows.ps1' -OutFile "$env:TEMP\setup-windows.ps1"
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/SunsetSystemsAI/rising-tides-starter/main/scripts/setup-windows.ps1' -OutFile "$env:TEMP\setup-windows.ps1"
 & "$env:TEMP\setup-windows.ps1"
 ```
 
 ### Linux / WSL2
 ```bash
-curl -fsSL https://raw.githubusercontent.com/TinyShaft22/rising-tides-starter/main/scripts/setup-linux.sh -o /tmp/setup.sh && bash /tmp/setup.sh
+curl -fsSL https://raw.githubusercontent.com/SunsetSystemsAI/rising-tides-starter/main/scripts/setup-linux.sh -o /tmp/setup.sh && bash /tmp/setup.sh
 ```
 
 This installs Node.js, Git, Claude Code, and the full skills pack automatically.
@@ -539,8 +539,8 @@ All curated skills use permissive open-source licenses (MIT/Apache 2.0). See `AT
 ## Community & Support
 
 - **Community:** [Rising Tides on Skool](https://www.skool.com/rising-tides-9034) — Get help, share wins
-- **Issues:** [GitHub Issues](https://github.com/TinyShaft22/rising-tides-pack/issues)
-- **Starter Pack:** [rising-tides-starter](https://github.com/TinyShaft22/rising-tides-starter)
+- **Issues:** [GitHub Issues](https://github.com/SunsetSystemsAI/rising-tides-pack/issues)
+- **Starter Pack:** [rising-tides-starter](https://github.com/SunsetSystemsAI/rising-tides-starter)
 
 ---
 
