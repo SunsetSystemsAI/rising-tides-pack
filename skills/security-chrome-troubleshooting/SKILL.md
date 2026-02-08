@@ -17,11 +17,44 @@ Use this skill when Claude in Chrome MCP tools fail to connect or work unreliabl
 
 ## When NOT to Use
 
-- **Linux or Windows users** - This skill covers macOS-specific paths and tools (`~/Library/Application Support/`, `osascript`)
 - General Chrome automation issues unrelated to the Claude extension
 - Claude.app desktop issues (not browser-related)
 - Network connectivity problems
 - Chrome extension installation issues (use Chrome Web Store support)
+
+## Platform-Specific Notes
+
+### Windows Users
+
+Claude in Chrome works natively in Windows when running Claude Code from **PowerShell** (not WSL).
+
+**Key requirement:** Both Chrome and Claude Code must run in the same OS environment.
+
+```powershell
+# Verify Chrome extension connection
+claude --chrome
+# Then test: "Get my browser tabs"
+```
+
+If not connecting:
+1. Ensure Chrome extension is installed from https://claude.ai/chrome
+2. Restart Chrome completely (quit and reopen)
+3. Restart Claude Code
+4. Try `claude --chrome` explicitly
+
+### WSL Users (IMPORTANT)
+
+**Claude in Chrome does NOT work from WSL.** The native messaging bridge cannot cross the Windows/WSL boundary.
+
+- Chrome runs in Windows
+- Claude Code (in WSL) runs in Linux
+- The bridge cannot connect across these environments
+
+**Solution:** Run Claude Code from Windows PowerShell for browser automation tasks.
+
+### macOS Users
+
+See the detailed macOS troubleshooting below for Claude.app vs Claude Code conflicts.
 
 ## The Claude.app vs Claude Code Conflict (Primary Issue)
 
