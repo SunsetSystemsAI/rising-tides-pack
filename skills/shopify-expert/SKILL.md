@@ -1,22 +1,26 @@
 ---
 name: shopify-expert
-description: Use when building Shopify themes, apps, custom storefronts, or e-commerce solutions. Invoke for Liquid templating, Storefront API, app development, checkout customization, Shopify Plus features.
+description: Use when building Shopify themes, apps, custom storefronts, or e-commerce
+  solutions. Invoke for Liquid templating, Storefront API, app development, checkout
+  customization, Shopify Plus features.
 triggers:
-  - Shopify
-  - Liquid
-  - Storefront API
-  - Shopify Plus
-  - Hydrogen
-  - Shopify app
-  - checkout extensions
-  - Shopify Functions
-  - App Bridge
-  - theme development
-  - e-commerce
-  - Polaris
+- Shopify
+- Liquid
+- Storefront API
+- Shopify Plus
+- Hydrogen
+- Shopify app
+- checkout extensions
+- Shopify Functions
+- App Bridge
+- theme development
+- e-commerce
+- Polaris
 role: expert
 scope: implementation
 output-format: code
+dependencies:
+  recommended: [api-designer]
 ---
 
 # Shopify Expert

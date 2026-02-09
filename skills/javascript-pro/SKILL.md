@@ -1,19 +1,23 @@
 ---
 name: javascript-pro
-description: Use when building JavaScript applications with modern ES2023+ features, async patterns, or Node.js development. Invoke for vanilla JavaScript, browser APIs, performance optimization, module systems.
+description: Use when building JavaScript applications with modern ES2023+ features,
+  async patterns, or Node.js development. Invoke for vanilla JavaScript, browser APIs,
+  performance optimization, module systems.
 triggers:
-  - JavaScript
-  - ES2023
-  - async await
-  - Node.js
-  - vanilla JavaScript
-  - Web Workers
-  - Fetch API
-  - browser API
-  - module system
+- JavaScript
+- ES2023
+- async await
+- Node.js
+- vanilla JavaScript
+- Web Workers
+- Fetch API
+- browser API
+- module system
 role: specialist
 scope: implementation
 output-format: code
+dependencies:
+  recommended: [fullstack-guardian]
 ---
 
 # JavaScript Pro

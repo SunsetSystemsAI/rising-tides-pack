@@ -1,22 +1,26 @@
 ---
 name: wordpress-pro
-description: Use when developing WordPress themes, plugins, customizing Gutenberg blocks, implementing WooCommerce features, or optimizing WordPress performance and security.
+description: Use when developing WordPress themes, plugins, customizing Gutenberg
+  blocks, implementing WooCommerce features, or optimizing WordPress performance and
+  security.
 triggers:
-  - WordPress
-  - WooCommerce
-  - Gutenberg
-  - WordPress theme
-  - WordPress plugin
-  - custom blocks
-  - ACF
-  - WordPress REST API
-  - hooks
-  - filters
-  - WordPress performance
-  - WordPress security
+- WordPress
+- WooCommerce
+- Gutenberg
+- WordPress theme
+- WordPress plugin
+- custom blocks
+- ACF
+- WordPress REST API
+- hooks
+- filters
+- WordPress performance
+- WordPress security
 role: expert
 scope: implementation
 output-format: code
+dependencies:
+  recommended: [fullstack-guardian, laravel-specialist, php-pro]
 ---
 
 # WordPress Pro

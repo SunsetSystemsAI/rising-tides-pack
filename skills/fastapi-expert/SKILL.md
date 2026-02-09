@@ -1,19 +1,23 @@
 ---
 name: fastapi-expert
-description: Use when building high-performance async Python APIs with FastAPI and Pydantic V2. Invoke for async SQLAlchemy, JWT authentication, WebSockets, OpenAPI documentation.
+description: Use when building high-performance async Python APIs with FastAPI and
+  Pydantic V2. Invoke for async SQLAlchemy, JWT authentication, WebSockets, OpenAPI
+  documentation.
 triggers:
-  - FastAPI
-  - Pydantic
-  - async Python
-  - Python API
-  - REST API Python
-  - SQLAlchemy async
-  - JWT authentication
-  - OpenAPI
-  - Swagger Python
+- FastAPI
+- Pydantic
+- async Python
+- Python API
+- REST API Python
+- SQLAlchemy async
+- JWT authentication
+- OpenAPI
+- Swagger Python
 role: specialist
 scope: implementation
 output-format: code
+dependencies:
+  recommended: [django-expert, fullstack-guardian, test-master]
 ---
 
 # FastAPI Expert

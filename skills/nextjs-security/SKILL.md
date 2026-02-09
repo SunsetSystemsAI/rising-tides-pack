@@ -1,6 +1,21 @@
 ---
 name: nextjs-security
-description: "Use when performing a full Next.js security audit or securing a Next.js application end-to-end. Invoke for comprehensive security review, security audit, secure my Next.js app, OWASP compliance. Next.js security audit, secure Next.js, full security review, OWASP Next.js, harden Next.js"
+description: Use when performing a full Next.js security audit or securing a Next.js
+  application end-to-end. Invoke for comprehensive security review, security audit,
+  secure my Next.js app, OWASP compliance. Next.js security audit, secure Next.js,
+  full security review, OWASP Next.js, harden Next.js
+dependencies:
+  required:
+  - nextjs-auth-security
+  - nextjs-csrf-protection
+  - nextjs-dependency-security
+  - nextjs-input-validation
+  - nextjs-payment-security
+  - nextjs-rate-limiting
+  - nextjs-security-headers
+  - nextjs-security-operations
+  - nextjs-security-overview
+  - nextjs-security-testing
 ---
 
 # Next.js Security Orchestrator

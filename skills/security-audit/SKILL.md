@@ -1,6 +1,16 @@
 ---
 name: security-audit
-description: "Use when performing a comprehensive security audit on any codebase (not just Next.js). Invoke for security audit, vulnerability scan, secure my app, code security review, OWASP compliance, penetration testing prep."
+description: Use when performing a comprehensive security audit on any codebase (not
+  just Next.js). Invoke for security audit, vulnerability scan, secure my app, code
+  security review, OWASP compliance, penetration testing prep.
+dependencies:
+  required:
+  - security-code-review
+  - security-entry-points
+  - security-insecure-defaults
+  - security-sharp-edges
+  - security-static-analysis
+  - security-variant-analysis
 ---
 
 # Security Audit Orchestrator

@@ -1,19 +1,23 @@
 ---
 name: rails-expert
-description: Use when building Rails 7+ web applications with Hotwire, real-time features, or background job processing. Invoke for Active Record optimization, Turbo Frames/Streams, Action Cable, Sidekiq.
+description: Use when building Rails 7+ web applications with Hotwire, real-time features,
+  or background job processing. Invoke for Active Record optimization, Turbo Frames/Streams,
+  Action Cable, Sidekiq.
 triggers:
-  - Rails
-  - Ruby on Rails
-  - Hotwire
-  - Turbo Frames
-  - Turbo Streams
-  - Action Cable
-  - Active Record
-  - Sidekiq
-  - RSpec Rails
+- Rails
+- Ruby on Rails
+- Hotwire
+- Turbo Frames
+- Turbo Streams
+- Action Cable
+- Active Record
+- Sidekiq
+- RSpec Rails
 role: specialist
 scope: implementation
 output-format: code
+dependencies:
+  recommended: [fullstack-guardian]
 ---
 
 # Rails Expert

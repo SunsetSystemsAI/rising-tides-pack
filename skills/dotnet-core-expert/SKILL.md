@@ -1,19 +1,23 @@
 ---
 name: dotnet-core-expert
-description: Use when building .NET 8 applications with minimal APIs, clean architecture, or cloud-native microservices. Invoke for Entity Framework Core, CQRS with MediatR, JWT authentication, AOT compilation.
+description: Use when building .NET 8 applications with minimal APIs, clean architecture,
+  or cloud-native microservices. Invoke for Entity Framework Core, CQRS with MediatR,
+  JWT authentication, AOT compilation.
 triggers:
-  - .NET Core
-  - .NET 8
-  - ASP.NET Core
-  - C# 12
-  - minimal API
-  - Entity Framework Core
-  - microservices .NET
-  - CQRS
-  - MediatR
+- .NET Core
+- .NET 8
+- ASP.NET Core
+- C# 12
+- minimal API
+- Entity Framework Core
+- microservices .NET
+- CQRS
+- MediatR
 role: specialist
 scope: implementation
 output-format: code
+dependencies:
+  recommended: [cloud-architect, fullstack-guardian, microservices-architect, test-master]
 ---
 
 # .NET Core Expert

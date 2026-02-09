@@ -736,7 +736,14 @@
       "mcp": null,
       "plugin": null,
       "source": "coreyhaines",
-      "description": "When the user wants to plan, design, or implement an A/B test or experiment. Also use when the user mentions \"A/B test,\" \"split test,\" \"experiment,\" \"test this change,\" \"variant copy,\" \"multivariate test,\" or \"hypothesis.\" For tracking implementation, see analytics-tracking."
+      "description": "When the user wants to plan, design, or implement an A/B test or experiment. Also use when the user mentions \"A/B test,\" \"split test,\" \"experiment,\" \"test this change,\" \"variant copy,\" \"multivariate test,\" or \"hypothesis.\" For tracking implementation, see analytics-tracking.",
+      "dependencies": {
+        "recommended": [
+          "analytics-tracking",
+          "copywriting",
+          "page-cro"
+        ]
+      }
     },
     {
       "id": "analytics-tracking",
@@ -753,7 +760,14 @@
       "mcp": null,
       "plugin": null,
       "source": "coreyhaines",
-      "description": "When the user wants to set up, improve, or audit analytics tracking and measurement. Also use when the user mentions \"set up tracking,\" \"GA4,\" \"Google Analytics,\" \"conversion tracking,\" \"event tracking,\" \"UTM parameters,\" \"tag manager,\" \"GTM,\" \"analytics implementation,\" or \"tracking plan.\" For A/B test measurement, see ab-test-setup."
+      "description": "When the user wants to set up, improve, or audit analytics tracking and measurement. Also use when the user mentions \"set up tracking,\" \"GA4,\" \"Google Analytics,\" \"conversion tracking,\" \"event tracking,\" \"UTM parameters,\" \"tag manager,\" \"GTM,\" \"analytics implementation,\" or \"tracking plan.\" For A/B test measurement, see ab-test-setup.",
+      "dependencies": {
+        "recommended": [
+          "ab-test-setup",
+          "page-cro",
+          "seo-audit"
+        ]
+      }
     },
     {
       "id": "backend-to-frontend-handoff-docs",
@@ -849,7 +863,15 @@
       "mcp": null,
       "plugin": null,
       "source": "coreyhaines",
-      "description": "When the user wants to create competitor comparison or alternative pages for SEO and sales enablement. Also use when the user mentions 'alternative page,' 'vs page,' 'competitor comparison,' 'comparison page,' '[Product] vs [Product],' '[Product] alternative,' or 'competitive landing pages.' Covers four formats: singular alternative, plural alternatives, you vs competitor, and competitor vs competitor. Emphasizes deep research, modular content architecture, and varied section types beyond feature tables."
+      "description": "When the user wants to create competitor comparison or alternative pages for SEO and sales enablement. Also use when the user mentions 'alternative page,' 'vs page,' 'competitor comparison,' 'comparison page,' '[Product] vs [Product],' '[Product] alternative,' or 'competitive landing pages.' Covers four formats: singular alternative, plural alternatives, you vs competitor, and competitor vs competitor. Emphasizes deep research, modular content architecture, and varied section types beyond feature tables.",
+      "dependencies": {
+        "recommended": [
+          "copywriting",
+          "programmatic-seo",
+          "schema-markup",
+          "seo-audit"
+        ]
+      }
     },
     {
       "id": "copy-editing",
@@ -865,7 +887,15 @@
       "mcp": null,
       "plugin": null,
       "source": "coreyhaines",
-      "description": "When the user wants to edit, review, or improve existing marketing copy. Also use when the user mentions 'edit this copy,' 'review my copy,' 'copy feedback,' 'proofread,' 'polish this,' 'make this better,' or 'copy sweep.' This skill provides a systematic approach to editing marketing copy through multiple focused passes."
+      "description": "When the user wants to edit, review, or improve existing marketing copy. Also use when the user mentions 'edit this copy,' 'review my copy,' 'copy feedback,' 'proofread,' 'polish this,' 'make this better,' or 'copy sweep.' This skill provides a systematic approach to editing marketing copy through multiple focused passes.",
+      "dependencies": {
+        "recommended": [
+          "ab-test-setup",
+          "copywriting",
+          "marketing-psychology",
+          "page-cro"
+        ]
+      }
     },
     {
       "id": "copywriting",
@@ -882,7 +912,16 @@
       "mcp": null,
       "plugin": null,
       "source": "coreyhaines",
-      "description": "When the user wants to write, rewrite, or improve marketing copy for any page — including homepage, landing pages, pricing pages, feature pages, about pages, or product pages. Also use when the user says \"write copy for,\" \"improve this copy,\" \"rewrite this page,\" \"marketing copy,\" \"headline help,\" or \"CTA copy.\" For email copy, see email-sequence. For popup copy, see popup-cro."
+      "description": "When the user wants to write, rewrite, or improve marketing copy for any page — including homepage, landing pages, pricing pages, feature pages, about pages, or product pages. Also use when the user says \"write copy for,\" \"improve this copy,\" \"rewrite this page,\" \"marketing copy,\" \"headline help,\" or \"CTA copy.\" For email copy, see email-sequence. For popup copy, see popup-cro.",
+      "dependencies": {
+        "recommended": [
+          "ab-test-setup",
+          "copy-editing",
+          "email-sequence",
+          "page-cro",
+          "popup-cro"
+        ]
+      }
     },
     {
       "id": "crafting-effective-readmes",
@@ -1046,7 +1085,15 @@
       "mcp": null,
       "plugin": null,
       "source": "coreyhaines",
-      "description": "When the user wants to create or optimize an email sequence, drip campaign, automated email flow, or lifecycle email program. Also use when the user mentions \"email sequence,\" \"drip campaign,\" \"nurture sequence,\" \"onboarding emails,\" \"welcome sequence,\" \"re-engagement emails,\" \"email automation,\" or \"lifecycle emails.\" For in-app onboarding, see onboarding-cro."
+      "description": "When the user wants to create or optimize an email sequence, drip campaign, automated email flow, or lifecycle email program. Also use when the user mentions \"email sequence,\" \"drip campaign,\" \"nurture sequence,\" \"onboarding emails,\" \"welcome sequence,\" \"re-engagement emails,\" \"email automation,\" or \"lifecycle emails.\" For in-app onboarding, see onboarding-cro.",
+      "dependencies": {
+        "recommended": [
+          "ab-test-setup",
+          "copywriting",
+          "onboarding-cro",
+          "popup-cro"
+        ]
+      }
     },
     {
       "id": "excalidraw",
@@ -1115,7 +1162,15 @@
       "mcp": null,
       "plugin": null,
       "source": "coreyhaines",
-      "description": "When the user wants to optimize any form that is NOT signup/registration — including lead capture forms, contact forms, demo request forms, application forms, survey forms, or checkout forms. Also use when the user mentions \"form optimization,\" \"lead form conversions,\" \"form friction,\" \"form fields,\" \"form completion rate,\" or \"contact form.\" For signup/registration forms, see signup-flow-cro. For popups containing forms, see popup-cro."
+      "description": "When the user wants to optimize any form that is NOT signup/registration — including lead capture forms, contact forms, demo request forms, application forms, survey forms, or checkout forms. Also use when the user mentions \"form optimization,\" \"lead form conversions,\" \"form friction,\" \"form fields,\" \"form completion rate,\" or \"contact form.\" For signup/registration forms, see signup-flow-cro. For popups containing forms, see popup-cro.",
+      "dependencies": {
+        "recommended": [
+          "ab-test-setup",
+          "page-cro",
+          "popup-cro",
+          "signup-flow-cro"
+        ]
+      }
     },
     {
       "id": "free-tool-strategy",
@@ -1131,7 +1186,16 @@
       "mcp": null,
       "plugin": null,
       "source": "coreyhaines",
-      "description": "When the user wants to plan, evaluate, or build a free tool for marketing purposes — lead generation, SEO value, or brand awareness. Also use when the user mentions \"engineering as marketing,\" \"free tool,\" \"marketing tool,\" \"calculator,\" \"generator,\" \"interactive tool,\" \"lead gen tool,\" \"build a tool for leads,\" or \"free resource.\" This skill bridges engineering and marketing — useful for founders and technical marketers."
+      "description": "When the user wants to plan, evaluate, or build a free tool for marketing purposes — lead generation, SEO value, or brand awareness. Also use when the user mentions \"engineering as marketing,\" \"free tool,\" \"marketing tool,\" \"calculator,\" \"generator,\" \"interactive tool,\" \"lead gen tool,\" \"build a tool for leads,\" or \"free resource.\" This skill bridges engineering and marketing — useful for founders and technical marketers.",
+      "dependencies": {
+        "recommended": [
+          "analytics-tracking",
+          "email-sequence",
+          "page-cro",
+          "programmatic-seo",
+          "seo-audit"
+        ]
+      }
     },
     {
       "id": "frontend-design",
@@ -1205,7 +1269,7 @@
       "mcp": null,
       "plugin": null,
       "source": "softaworks",
-      "description": "|"
+      "description": "Remove signs of AI-generated writing from text. Use when editing or reviewing\ntext to make it sound more natural and human-written. Based on Wikipedia's\ncomprehensive \"Signs of AI writing\" guide. Detects and fixes patterns including:\ninflated symbolism, promotional language, superficial -ing analyses, vague\nattributions, em dash overuse, rule of three, AI vocabulary words, negative\nparallelisms, and excessive conjunctive phrases.\n\nCredits: Original skill by @blader - https://github.com/blader/humanizer\n"
     },
     {
       "id": "jira",
@@ -1242,7 +1306,15 @@
       "mcp": null,
       "plugin": null,
       "source": "coreyhaines",
-      "description": "When the user wants to plan a product launch, feature announcement, or release strategy. Also use when the user mentions 'launch,' 'Product Hunt,' 'feature release,' 'announcement,' 'go-to-market,' 'beta launch,' 'early access,' 'waitlist,' or 'product update.' This skill covers phased launches, channel strategy, and ongoing launch momentum."
+      "description": "When the user wants to plan a product launch, feature announcement, or release strategy. Also use when the user mentions 'launch,' 'Product Hunt,' 'feature release,' 'announcement,' 'go-to-market,' 'beta launch,' 'early access,' 'waitlist,' or 'product update.' This skill covers phased launches, channel strategy, and ongoing launch momentum.",
+      "dependencies": {
+        "recommended": [
+          "email-sequence",
+          "marketing-psychology",
+          "page-cro",
+          "programmatic-seo"
+        ]
+      }
     },
     {
       "id": "marketing-psychology",
@@ -1259,7 +1331,15 @@
       "mcp": null,
       "plugin": null,
       "source": "coreyhaines",
-      "description": "When the user wants to apply psychological principles, mental models, or behavioral science to marketing. Also use when the user mentions 'psychology,' 'mental models,' 'cognitive bias,' 'persuasion,' 'behavioral science,' 'why people buy,' 'decision-making,' or 'consumer behavior.' This skill provides 70+ mental models organized for marketing application."
+      "description": "When the user wants to apply psychological principles, mental models, or behavioral science to marketing. Also use when the user mentions 'psychology,' 'mental models,' 'cognitive bias,' 'persuasion,' 'behavioral science,' 'why people buy,' 'decision-making,' or 'consumer behavior.' This skill provides 70+ mental models organized for marketing application.",
+      "dependencies": {
+        "recommended": [
+          "ab-test-setup",
+          "copywriting",
+          "page-cro",
+          "popup-cro"
+        ]
+      }
     },
     {
       "id": "marp-slide",
@@ -1363,7 +1443,15 @@
       "mcp": null,
       "plugin": null,
       "source": "coreyhaines",
-      "description": "When the user wants to optimize post-signup onboarding, user activation, first-run experience, or time-to-value. Also use when the user mentions \"onboarding flow,\" \"activation rate,\" \"user activation,\" \"first-run experience,\" \"empty states,\" \"onboarding checklist,\" \"aha moment,\" or \"new user experience.\" For signup/registration optimization, see signup-flow-cro. For ongoing email sequences, see email-sequence."
+      "description": "When the user wants to optimize post-signup onboarding, user activation, first-run experience, or time-to-value. Also use when the user mentions \"onboarding flow,\" \"activation rate,\" \"user activation,\" \"first-run experience,\" \"empty states,\" \"onboarding checklist,\" \"aha moment,\" or \"new user experience.\" For signup/registration optimization, see signup-flow-cro. For ongoing email sequences, see email-sequence.",
+      "dependencies": {
+        "recommended": [
+          "ab-test-setup",
+          "email-sequence",
+          "paywall-upgrade-cro",
+          "signup-flow-cro"
+        ]
+      }
     },
     {
       "id": "openapi-to-typescript",
@@ -1399,7 +1487,16 @@
       "mcp": null,
       "plugin": null,
       "source": "coreyhaines",
-      "description": "When the user wants to optimize, improve, or increase conversions on any marketing page — including homepage, landing pages, pricing pages, feature pages, or blog posts. Also use when the user says \"CRO,\" \"conversion rate optimization,\" \"this page isn't converting,\" \"improve conversions,\" or \"why isn't this page working.\" For signup/registration flows, see signup-flow-cro. For post-signup activation, see onboarding-cro. For forms outside of signup, see form-cro. For popups/modals, see popup-cro."
+      "description": "When the user wants to optimize, improve, or increase conversions on any marketing page — including homepage, landing pages, pricing pages, feature pages, or blog posts. Also use when the user says \"CRO,\" \"conversion rate optimization,\" \"this page isn't converting,\" \"improve conversions,\" or \"why isn't this page working.\" For signup/registration flows, see signup-flow-cro. For post-signup activation, see onboarding-cro. For forms outside of signup, see form-cro. For popups/modals, see popup-cro.",
+      "dependencies": {
+        "recommended": [
+          "ab-test-setup",
+          "copywriting",
+          "form-cro",
+          "popup-cro",
+          "signup-flow-cro"
+        ]
+      }
     },
     {
       "id": "paid-ads",
@@ -1416,7 +1513,15 @@
       "mcp": null,
       "plugin": null,
       "source": "coreyhaines",
-      "description": "When the user wants help with paid advertising campaigns on Google Ads, Meta (Facebook/Instagram), LinkedIn, Twitter/X, or other ad platforms. Also use when the user mentions 'PPC,' 'paid media,' 'ad copy,' 'ad creative,' 'ROAS,' 'CPA,' 'ad campaign,' 'retargeting,' or 'audience targeting.' This skill covers campaign strategy, ad creation, audience targeting, and optimization."
+      "description": "When the user wants help with paid advertising campaigns on Google Ads, Meta (Facebook/Instagram), LinkedIn, Twitter/X, or other ad platforms. Also use when the user mentions 'PPC,' 'paid media,' 'ad copy,' 'ad creative,' 'ROAS,' 'CPA,' 'ad campaign,' 'retargeting,' or 'audience targeting.' This skill covers campaign strategy, ad creation, audience targeting, and optimization.",
+      "dependencies": {
+        "recommended": [
+          "ab-test-setup",
+          "analytics-tracking",
+          "copywriting",
+          "page-cro"
+        ]
+      }
     },
     {
       "id": "paywall-upgrade-cro",
@@ -1433,7 +1538,15 @@
       "mcp": null,
       "plugin": null,
       "source": "coreyhaines",
-      "description": "When the user wants to create or optimize in-app paywalls, upgrade screens, upsell modals, or feature gates. Also use when the user mentions \"paywall,\" \"upgrade screen,\" \"upgrade modal,\" \"upsell,\" \"feature gate,\" \"convert free to paid,\" \"freemium conversion,\" \"trial expiration screen,\" \"limit reached screen,\" \"plan upgrade prompt,\" or \"in-app pricing.\" Distinct from public pricing pages (see page-cro) — this skill focuses on in-product upgrade moments where the user has already experienced value."
+      "description": "When the user wants to create or optimize in-app paywalls, upgrade screens, upsell modals, or feature gates. Also use when the user mentions \"paywall,\" \"upgrade screen,\" \"upgrade modal,\" \"upsell,\" \"feature gate,\" \"convert free to paid,\" \"freemium conversion,\" \"trial expiration screen,\" \"limit reached screen,\" \"plan upgrade prompt,\" or \"in-app pricing.\" Distinct from public pricing pages (see page-cro) — this skill focuses on in-product upgrade moments where the user has already experienced value.",
+      "dependencies": {
+        "recommended": [
+          "ab-test-setup",
+          "analytics-tracking",
+          "onboarding-cro",
+          "page-cro"
+        ]
+      }
     },
     {
       "id": "pdf",
@@ -1506,7 +1619,15 @@
       "mcp": null,
       "plugin": null,
       "source": "coreyhaines",
-      "description": "When the user wants to create or optimize popups, modals, overlays, slide-ins, or banners for conversion purposes. Also use when the user mentions \"exit intent,\" \"popup conversions,\" \"modal optimization,\" \"lead capture popup,\" \"email popup,\" \"announcement banner,\" or \"overlay.\" For forms outside of popups, see form-cro. For general page conversion optimization, see page-cro."
+      "description": "When the user wants to create or optimize popups, modals, overlays, slide-ins, or banners for conversion purposes. Also use when the user mentions \"exit intent,\" \"popup conversions,\" \"modal optimization,\" \"lead capture popup,\" \"email popup,\" \"announcement banner,\" or \"overlay.\" For forms outside of popups, see form-cro. For general page conversion optimization, see page-cro.",
+      "dependencies": {
+        "recommended": [
+          "ab-test-setup",
+          "email-sequence",
+          "form-cro",
+          "page-cro"
+        ]
+      }
     },
     {
       "id": "pptx",
@@ -1539,7 +1660,16 @@
       "mcp": null,
       "plugin": null,
       "source": "coreyhaines",
-      "description": "When the user wants help with pricing decisions, packaging, or monetization strategy. Also use when the user mentions 'pricing,' 'pricing tiers,' 'freemium,' 'free trial,' 'packaging,' 'price increase,' 'value metric,' 'Van Westendorp,' 'willingness to pay,' or 'monetization.' This skill covers pricing research, tier structure, and packaging strategy."
+      "description": "When the user wants help with pricing decisions, packaging, or monetization strategy. Also use when the user mentions 'pricing,' 'pricing tiers,' 'freemium,' 'free trial,' 'packaging,' 'price increase,' 'value metric,' 'Van Westendorp,' 'willingness to pay,' or 'monetization.' This skill covers pricing research, tier structure, and packaging strategy.",
+      "dependencies": {
+        "recommended": [
+          "ab-test-setup",
+          "analytics-tracking",
+          "copywriting",
+          "marketing-psychology",
+          "page-cro"
+        ]
+      }
     },
     {
       "id": "professional-communication",
@@ -1574,7 +1704,15 @@
       "mcp": null,
       "plugin": null,
       "source": "coreyhaines",
-      "description": "When the user wants to create SEO-driven pages at scale using templates and data. Also use when the user mentions \"programmatic SEO,\" \"template pages,\" \"pages at scale,\" \"directory pages,\" \"location pages,\" \"[keyword] + [city] pages,\" \"comparison pages,\" \"integration pages,\" or \"building many pages for SEO.\" For auditing existing SEO issues, see seo-audit."
+      "description": "When the user wants to create SEO-driven pages at scale using templates and data. Also use when the user mentions \"programmatic SEO,\" \"template pages,\" \"pages at scale,\" \"directory pages,\" \"location pages,\" \"[keyword] + [city] pages,\" \"comparison pages,\" \"integration pages,\" or \"building many pages for SEO.\" For auditing existing SEO issues, see seo-audit.",
+      "dependencies": {
+        "recommended": [
+          "analytics-tracking",
+          "copywriting",
+          "schema-markup",
+          "seo-audit"
+        ]
+      }
     },
     {
       "id": "qa-test-planner",
@@ -1705,7 +1843,14 @@
       "mcp": null,
       "plugin": null,
       "source": "coreyhaines",
-      "description": "When the user wants to add, fix, or optimize schema markup and structured data on their site. Also use when the user mentions \"schema markup,\" \"structured data,\" \"JSON-LD,\" \"rich snippets,\" \"schema.org,\" \"FAQ schema,\" \"product schema,\" \"review schema,\" or \"breadcrumb schema.\" For broader SEO issues, see seo-audit."
+      "description": "When the user wants to add, fix, or optimize schema markup and structured data on their site. Also use when the user mentions \"schema markup,\" \"structured data,\" \"JSON-LD,\" \"rich snippets,\" \"schema.org,\" \"FAQ schema,\" \"product schema,\" \"review schema,\" or \"breadcrumb schema.\" For broader SEO issues, see seo-audit.",
+      "dependencies": {
+        "recommended": [
+          "analytics-tracking",
+          "programmatic-seo",
+          "seo-audit"
+        ]
+      }
     },
     {
       "id": "seo-audit",
@@ -1721,7 +1866,15 @@
       "mcp": null,
       "plugin": null,
       "source": "coreyhaines",
-      "description": "When the user wants to audit, review, or diagnose SEO issues on their site. Also use when the user mentions \"SEO audit,\" \"technical SEO,\" \"why am I not ranking,\" \"SEO issues,\" \"on-page SEO,\" \"meta tags review,\" or \"SEO health check.\" For building pages at scale to target keywords, see programmatic-seo. For adding structured data, see schema-markup."
+      "description": "When the user wants to audit, review, or diagnose SEO issues on their site. Also use when the user mentions \"SEO audit,\" \"technical SEO,\" \"why am I not ranking,\" \"SEO issues,\" \"on-page SEO,\" \"meta tags review,\" or \"SEO health check.\" For building pages at scale to target keywords, see programmatic-seo. For adding structured data, see schema-markup.",
+      "dependencies": {
+        "recommended": [
+          "analytics-tracking",
+          "page-cro",
+          "programmatic-seo",
+          "schema-markup"
+        ]
+      }
     },
     {
       "id": "session-handoff",
@@ -1756,7 +1909,15 @@
       "mcp": null,
       "plugin": null,
       "source": "coreyhaines",
-      "description": "When the user wants to optimize signup, registration, account creation, or trial activation flows. Also use when the user mentions \"signup conversions,\" \"registration friction,\" \"signup form optimization,\" \"free trial signup,\" \"reduce signup dropoff,\" or \"account creation flow.\" For post-signup onboarding, see onboarding-cro. For lead capture forms (not account creation), see form-cro."
+      "description": "When the user wants to optimize signup, registration, account creation, or trial activation flows. Also use when the user mentions \"signup conversions,\" \"registration friction,\" \"signup form optimization,\" \"free trial signup,\" \"reduce signup dropoff,\" or \"account creation flow.\" For post-signup onboarding, see onboarding-cro. For lead capture forms (not account creation), see form-cro.",
+      "dependencies": {
+        "recommended": [
+          "ab-test-setup",
+          "form-cro",
+          "onboarding-cro",
+          "page-cro"
+        ]
+      }
     },
     {
       "id": "skill-creator",
@@ -2024,7 +2185,13 @@
       "relatedPlugins": [
         "webapp-testing-plugin"
       ],
-      "description": "Use when building Angular 17+ applications with standalone components or signals. Invoke for enterprise apps, RxJS patterns, NgRx state management, performance optimization, advanced routing."
+      "description": "Use when building Angular 17+ applications with standalone components or signals. Invoke for enterprise apps, RxJS patterns, NgRx state management, performance optimization, advanced routing.",
+      "dependencies": {
+        "recommended": [
+          "test-master",
+          "typescript-pro"
+        ]
+      }
     },
     {
       "id": "api-designer",
@@ -2048,7 +2215,14 @@
       "toolImportance": {
         "context7": "recommended"
       },
-      "description": "Use when designing REST or GraphQL APIs, creating OpenAPI specifications, or planning API architecture. Invoke for resource modeling, versioning strategies, pagination patterns, error handling standards."
+      "description": "Use when designing REST or GraphQL APIs, creating OpenAPI specifications, or planning API architecture. Invoke for resource modeling, versioning strategies, pagination patterns, error handling standards.",
+      "dependencies": {
+        "recommended": [
+          "fastapi-expert",
+          "nestjs-expert",
+          "spring-boot-engineer"
+        ]
+      }
     },
     {
       "id": "architecture-designer",
@@ -2068,7 +2242,13 @@
       "mcp": null,
       "plugin": null,
       "source": "jeffallan",
-      "description": "Use when designing new system architecture, reviewing existing designs, or making architectural decisions. Invoke for system design, architecture review, design patterns, ADRs, scalability planning."
+      "description": "Use when designing new system architecture, reviewing existing designs, or making architectural decisions. Invoke for system design, architecture review, design patterns, ADRs, scalability planning.",
+      "dependencies": {
+        "recommended": [
+          "devops-engineer",
+          "fullstack-guardian"
+        ]
+      }
     },
     {
       "id": "aws-cost-optimization",
@@ -2106,7 +2286,13 @@
       "mcp": null,
       "plugin": null,
       "source": "jeffallan",
-      "description": "Use when designing chaos experiments, implementing failure injection frameworks, or conducting game day exercises. Invoke for chaos experiments, resilience testing, blast radius control, game days, antifragile systems."
+      "description": "Use when designing chaos experiments, implementing failure injection frameworks, or conducting game day exercises. Invoke for chaos experiments, resilience testing, blast radius control, game days, antifragile systems.",
+      "dependencies": {
+        "recommended": [
+          "devops-engineer",
+          "kubernetes-specialist"
+        ]
+      }
     },
     {
       "id": "chrome-extension-troubleshooting",
@@ -2154,7 +2340,12 @@
       "toolImportance": {
         "context7": "recommended"
       },
-      "description": "Use when building CLI tools, implementing argument parsing, or adding interactive prompts. Invoke for CLI design, argument parsing, interactive prompts, progress indicators, shell completions."
+      "description": "Use when building CLI tools, implementing argument parsing, or adding interactive prompts. Invoke for CLI design, argument parsing, interactive prompts, progress indicators, shell completions.",
+      "dependencies": {
+        "recommended": [
+          "devops-engineer"
+        ]
+      }
     },
     {
       "id": "cloud-architect",
@@ -2180,7 +2371,14 @@
       "mcp": null,
       "plugin": null,
       "source": "jeffallan",
-      "description": "Use when designing cloud architectures, planning migrations, or optimizing multi-cloud deployments. Invoke for Well-Architected Framework, cost optimization, disaster recovery, landing zones, security architecture, serverless design."
+      "description": "Use when designing cloud architectures, planning migrations, or optimizing multi-cloud deployments. Invoke for Well-Architected Framework, cost optimization, disaster recovery, landing zones, security architecture, serverless design.",
+      "dependencies": {
+        "recommended": [
+          "devops-engineer",
+          "kubernetes-specialist",
+          "microservices-architect"
+        ]
+      }
     },
     {
       "id": "code-documenter",
@@ -2226,7 +2424,13 @@
       "relatedPlugins": [
         "git-workflow-plugin"
       ],
-      "description": "Use when reviewing pull requests, conducting code quality audits, or identifying security vulnerabilities. Invoke for PR reviews, code quality checks, refactoring suggestions."
+      "description": "Use when reviewing pull requests, conducting code quality audits, or identifying security vulnerabilities. Invoke for PR reviews, code quality checks, refactoring suggestions.",
+      "dependencies": {
+        "recommended": [
+          "architecture-designer",
+          "test-master"
+        ]
+      }
     },
     {
       "id": "cpp-pro",
@@ -2251,7 +2455,12 @@
       "toolImportance": {
         "context7": "recommended"
       },
-      "description": "Use when building C++ applications requiring modern C++20/23 features, template metaprogramming, or high-performance systems. Invoke for concepts, ranges, coroutines, SIMD optimization, memory management."
+      "description": "Use when building C++ applications requiring modern C++20/23 features, template metaprogramming, or high-performance systems. Invoke for concepts, ranges, coroutines, SIMD optimization, memory management.",
+      "dependencies": {
+        "recommended": [
+          "rust-engineer"
+        ]
+      }
     },
     {
       "id": "csharp-developer",
@@ -2275,7 +2484,13 @@
       "toolImportance": {
         "context7": "recommended"
       },
-      "description": "Use when building C# applications with .NET 8+, ASP.NET Core APIs, or Blazor web apps. Invoke for Entity Framework Core, minimal APIs, async patterns, CQRS with MediatR."
+      "description": "Use when building C# applications with .NET 8+, ASP.NET Core APIs, or Blazor web apps. Invoke for Entity Framework Core, minimal APIs, async patterns, CQRS with MediatR.",
+      "dependencies": {
+        "recommended": [
+          "api-designer",
+          "devops-engineer"
+        ]
+      }
     },
     {
       "id": "devops-engineer",
@@ -2331,7 +2546,14 @@
         "context7": "recommended",
         "postgres": "recommended"
       },
-      "description": "Use when building Django web applications or REST APIs with Django REST Framework. Invoke for Django models, ORM optimization, DRF serializers, viewsets, authentication with JWT."
+      "description": "Use when building Django web applications or REST APIs with Django REST Framework. Invoke for Django models, ORM optimization, DRF serializers, viewsets, authentication with JWT.",
+      "dependencies": {
+        "recommended": [
+          "fastapi-expert",
+          "fullstack-guardian",
+          "test-master"
+        ]
+      }
     },
     {
       "id": "docker-management",
@@ -2373,7 +2595,15 @@
       "toolImportance": {
         "context7": "recommended"
       },
-      "description": "Use when building .NET 8 applications with minimal APIs, clean architecture, or cloud-native microservices. Invoke for Entity Framework Core, CQRS with MediatR, JWT authentication, AOT compilation."
+      "description": "Use when building .NET 8 applications with minimal APIs, clean architecture, or cloud-native microservices. Invoke for Entity Framework Core, CQRS with MediatR, JWT authentication, AOT compilation.",
+      "dependencies": {
+        "recommended": [
+          "cloud-architect",
+          "fullstack-guardian",
+          "microservices-architect",
+          "test-master"
+        ]
+      }
     },
     {
       "id": "fastapi-expert",
@@ -2398,7 +2628,14 @@
         "context7": "recommended",
         "postgres": "recommended"
       },
-      "description": "Use when building high-performance async Python APIs with FastAPI and Pydantic V2. Invoke for async SQLAlchemy, JWT authentication, WebSockets, OpenAPI documentation."
+      "description": "Use when building high-performance async Python APIs with FastAPI and Pydantic V2. Invoke for async SQLAlchemy, JWT authentication, WebSockets, OpenAPI documentation.",
+      "dependencies": {
+        "recommended": [
+          "django-expert",
+          "fullstack-guardian",
+          "test-master"
+        ]
+      }
     },
     {
       "id": "feature-forge",
@@ -2416,7 +2653,13 @@
       "mcp": null,
       "plugin": null,
       "source": "chriswiles",
-      "description": "Use when defining new features, gathering requirements, or writing specifications. Invoke for feature definition, requirements gathering, user stories, EARS format specs."
+      "description": "Use when defining new features, gathering requirements, or writing specifications. Invoke for feature definition, requirements gathering, user stories, EARS format specs.",
+      "dependencies": {
+        "recommended": [
+          "fullstack-guardian",
+          "test-master"
+        ]
+      }
     },
     {
       "id": "fine-tuning-expert",
@@ -2445,7 +2688,12 @@
       "toolImportance": {
         "context7": "recommended"
       },
-      "description": "Use when fine-tuning LLMs, training custom models, or optimizing model performance for specific tasks. Invoke for parameter-efficient methods, dataset preparation, or model adaptation."
+      "description": "Use when fine-tuning LLMs, training custom models, or optimizing model performance for specific tasks. Invoke for parameter-efficient methods, dataset preparation, or model adaptation.",
+      "dependencies": {
+        "recommended": [
+          "devops-engineer"
+        ]
+      }
     },
     {
       "id": "flutter-expert",
@@ -2467,7 +2715,14 @@
       "toolImportance": {
         "context7": "recommended"
       },
-      "description": "Use when building cross-platform applications with Flutter 3+ and Dart. Invoke for widget development, Riverpod/Bloc state management, GoRouter navigation, platform-specific implementations, performance optimization."
+      "description": "Use when building cross-platform applications with Flutter 3+ and Dart. Invoke for widget development, Riverpod/Bloc state management, GoRouter navigation, platform-specific implementations, performance optimization.",
+      "dependencies": {
+        "recommended": [
+          "fullstack-guardian",
+          "react-native-expert",
+          "test-master"
+        ]
+      }
     },
     {
       "id": "fullstack-guardian",
@@ -2495,7 +2750,14 @@
       "mcp": null,
       "plugin": null,
       "source": "jeffallan",
-      "description": "Use when implementing features across frontend and backend, building APIs with UI, or creating end-to-end data flows. Invoke for feature implementation, API development, UI building, cross-stack work."
+      "description": "Use when implementing features across frontend and backend, building APIs with UI, or creating end-to-end data flows. Invoke for feature implementation, API development, UI building, cross-stack work.",
+      "dependencies": {
+        "recommended": [
+          "devops-engineer",
+          "feature-forge",
+          "test-master"
+        ]
+      }
     },
     {
       "id": "github-actions-management",
@@ -2566,7 +2828,14 @@
       "toolImportance": {
         "context7": "recommended"
       },
-      "description": "Use when building Go applications requiring concurrent programming, microservices architecture, or high-performance systems. Invoke for goroutines, channels, Go generics, gRPC integration."
+      "description": "Use when building Go applications requiring concurrent programming, microservices architecture, or high-performance systems. Invoke for goroutines, channels, Go generics, gRPC integration.",
+      "dependencies": {
+        "recommended": [
+          "devops-engineer",
+          "microservices-architect",
+          "test-master"
+        ]
+      }
     },
     {
       "id": "java-architect",
@@ -2590,7 +2859,14 @@
       "toolImportance": {
         "context7": "recommended"
       },
-      "description": "Use when building enterprise Java applications with Spring Boot 3.x, microservices, or reactive programming. Invoke for WebFlux, JPA optimization, Spring Security, cloud-native patterns."
+      "description": "Use when building enterprise Java applications with Spring Boot 3.x, microservices, or reactive programming. Invoke for WebFlux, JPA optimization, Spring Security, cloud-native patterns.",
+      "dependencies": {
+        "recommended": [
+          "api-designer",
+          "devops-engineer",
+          "fullstack-guardian"
+        ]
+      }
     },
     {
       "id": "javascript-pro",
@@ -2617,7 +2893,12 @@
       "relatedPlugins": [
         "react-dev-plugin"
       ],
-      "description": "Use when building JavaScript applications with modern ES2023+ features, async patterns, or Node.js development. Invoke for vanilla JavaScript, browser APIs, performance optimization, module systems."
+      "description": "Use when building JavaScript applications with modern ES2023+ features, async patterns, or Node.js development. Invoke for vanilla JavaScript, browser APIs, performance optimization, module systems.",
+      "dependencies": {
+        "recommended": [
+          "fullstack-guardian"
+        ]
+      }
     },
     {
       "id": "jest-testing-patterns",
@@ -2681,7 +2962,12 @@
       "toolImportance": {
         "context7": "recommended"
       },
-      "description": "Use when building Kotlin applications requiring coroutines, multiplatform development, or Android with Compose. Invoke for Flow API, KMP projects, Ktor servers, DSL design, sealed classes."
+      "description": "Use when building Kotlin applications requiring coroutines, multiplatform development, or Android with Compose. Invoke for Flow API, KMP projects, Ktor servers, DSL design, sealed classes.",
+      "dependencies": {
+        "recommended": [
+          "test-master"
+        ]
+      }
     },
     {
       "id": "kubernetes-specialist",
@@ -2722,7 +3008,13 @@
       "relatedPlugins": [
         "docker-plugin"
       ],
-      "description": "Use when deploying or managing Kubernetes workloads requiring cluster configuration, security hardening, or troubleshooting. Invoke for Helm charts, RBAC policies, NetworkPolicies, storage configuration, performance optimization."
+      "description": "Use when deploying or managing Kubernetes workloads requiring cluster configuration, security hardening, or troubleshooting. Invoke for Helm charts, RBAC policies, NetworkPolicies, storage configuration, performance optimization.",
+      "dependencies": {
+        "recommended": [
+          "cloud-architect",
+          "devops-engineer"
+        ]
+      }
     },
     {
       "id": "laravel-specialist",
@@ -2749,7 +3041,14 @@
         "context7": "recommended",
         "postgres": "recommended"
       },
-      "description": "Use when building Laravel 10+ applications requiring Eloquent ORM, API resources, or queue systems. Invoke for Laravel models, Livewire components, Sanctum authentication, Horizon queues."
+      "description": "Use when building Laravel 10+ applications requiring Eloquent ORM, API resources, or queue systems. Invoke for Laravel models, Livewire components, Sanctum authentication, Horizon queues.",
+      "dependencies": {
+        "recommended": [
+          "devops-engineer",
+          "fullstack-guardian",
+          "test-master"
+        ]
+      }
     },
     {
       "id": "legacy-modernizer",
@@ -2769,7 +3068,13 @@
       "mcp": null,
       "plugin": null,
       "source": "jeffallan",
-      "description": "Use when modernizing legacy systems, implementing incremental migration strategies, or reducing technical debt. Invoke for strangler fig pattern, monolith decomposition, framework upgrades."
+      "description": "Use when modernizing legacy systems, implementing incremental migration strategies, or reducing technical debt. Invoke for strangler fig pattern, monolith decomposition, framework upgrades.",
+      "dependencies": {
+        "recommended": [
+          "devops-engineer",
+          "test-master"
+        ]
+      }
     },
     {
       "id": "mcp-developer",
@@ -2795,7 +3100,14 @@
       "relatedPlugins": [
         "mcp-builder-plugin"
       ],
-      "description": "Use when building MCP servers or clients that connect AI systems with external tools and data sources. Invoke for MCP protocol compliance, TypeScript/Python SDKs, resource providers, tool functions."
+      "description": "Use when building MCP servers or clients that connect AI systems with external tools and data sources. Invoke for MCP protocol compliance, TypeScript/Python SDKs, resource providers, tool functions.",
+      "dependencies": {
+        "recommended": [
+          "devops-engineer",
+          "fastapi-expert",
+          "typescript-pro"
+        ]
+      }
     },
     {
       "id": "microservices-architect",
@@ -2825,7 +3137,14 @@
       "relatedPlugins": [
         "docker-plugin"
       ],
-      "description": "Use when designing distributed systems, decomposing monoliths, or implementing microservices patterns. Invoke for service boundaries, DDD, saga patterns, event sourcing, service mesh, distributed tracing."
+      "description": "Use when designing distributed systems, decomposing monoliths, or implementing microservices patterns. Invoke for service boundaries, DDD, saga patterns, event sourcing, service mesh, distributed tracing.",
+      "dependencies": {
+        "recommended": [
+          "architecture-designer",
+          "devops-engineer",
+          "kubernetes-specialist"
+        ]
+      }
     },
     {
       "id": "ml-pipeline",
@@ -2855,7 +3174,15 @@
       "toolImportance": {
         "context7": "recommended"
       },
-      "description": "Use when building ML pipelines, orchestrating training workflows, automating model lifecycle, implementing feature stores, or managing experiment tracking systems."
+      "description": "Use when building ML pipelines, orchestrating training workflows, automating model lifecycle, implementing feature stores, or managing experiment tracking systems.",
+      "dependencies": {
+        "recommended": [
+          "cloud-architect",
+          "devops-engineer",
+          "kubernetes-specialist",
+          "python-pro"
+        ]
+      }
     },
     {
       "id": "modern-python",
@@ -2902,7 +3229,14 @@
         "context7": "recommended",
         "postgres": "recommended"
       },
-      "description": "Use when building NestJS applications requiring modular architecture, dependency injection, or TypeScript backend development. Invoke for modules, controllers, services, DTOs, guards, interceptors, TypeORM/Prisma."
+      "description": "Use when building NestJS applications requiring modular architecture, dependency injection, or TypeScript backend development. Invoke for modules, controllers, services, DTOs, guards, interceptors, TypeORM/Prisma.",
+      "dependencies": {
+        "recommended": [
+          "devops-engineer",
+          "fullstack-guardian",
+          "test-master"
+        ]
+      }
     },
     {
       "id": "nextjs-auth-security",
@@ -3103,7 +3437,20 @@
       "toolImportance": {
         "context7": "recommended"
       },
-      "description": "Use when building secure Next.js applications. Invoke for defense-in-depth architecture, 5-layer security stack, OWASP scoring, security layer decisions. security, OWASP, Next.js, defense in depth, security architecture, security layers, security overview, security principles"
+      "description": "Use when building secure Next.js applications. Invoke for defense-in-depth architecture, 5-layer security stack, OWASP scoring, security layer decisions. security, OWASP, Next.js, defense in depth, security architecture, security layers, security overview, security principles",
+      "dependencies": {
+        "recommended": [
+          "nextjs-auth-security",
+          "nextjs-csrf-protection",
+          "nextjs-dependency-security",
+          "nextjs-error-handling",
+          "nextjs-input-validation",
+          "nextjs-payment-security",
+          "nextjs-rate-limiting",
+          "nextjs-security-headers",
+          "nextjs-security-testing"
+        ]
+      }
     },
     {
       "id": "nextjs-security-testing",
@@ -3155,7 +3502,12 @@
       "toolImportance": {
         "context7": "recommended"
       },
-      "description": "Use when working with pandas DataFrames, data cleaning, aggregation, merging, or time series analysis. Invoke for data manipulation, missing value handling, groupby operations, or performance optimization."
+      "description": "Use when working with pandas DataFrames, data cleaning, aggregation, merging, or time series analysis. Invoke for data manipulation, missing value handling, groupby operations, or performance optimization.",
+      "dependencies": {
+        "recommended": [
+          "python-pro"
+        ]
+      }
     },
     {
       "id": "php-pro",
@@ -3179,7 +3531,13 @@
       "toolImportance": {
         "context7": "recommended"
       },
-      "description": "Use when building PHP applications with modern PHP 8.3+ features, Laravel, or Symfony frameworks. Invoke for strict typing, PHPStan level 9, async patterns with Swoole, PSR standards."
+      "description": "Use when building PHP applications with modern PHP 8.3+ features, Laravel, or Symfony frameworks. Invoke for strict typing, PHPStan level 9, async patterns with Swoole, PSR standards.",
+      "dependencies": {
+        "recommended": [
+          "fastapi-expert",
+          "fullstack-guardian"
+        ]
+      }
     },
     {
       "id": "prompt-engineer",
@@ -3201,7 +3559,12 @@
       "mcp": null,
       "plugin": null,
       "source": "jeffallan",
-      "description": "Use when designing prompts for LLMs, optimizing model performance, building evaluation frameworks, or implementing advanced prompting techniques like chain-of-thought, few-shot learning, or structured outputs."
+      "description": "Use when designing prompts for LLMs, optimizing model performance, building evaluation frameworks, or implementing advanced prompting techniques like chain-of-thought, few-shot learning, or structured outputs.",
+      "dependencies": {
+        "recommended": [
+          "test-master"
+        ]
+      }
     },
     {
       "id": "property-based-testing",
@@ -3263,7 +3626,13 @@
         "modern-python-plugin",
         "property-based-testing-plugin"
       ],
-      "description": "Use when building Python 3.11+ applications requiring type safety, async programming, or production-grade patterns. Invoke for type hints, pytest, async/await, dataclasses, mypy configuration."
+      "description": "Use when building Python 3.11+ applications requiring type safety, async programming, or production-grade patterns. Invoke for type hints, pytest, async/await, dataclasses, mypy configuration.",
+      "dependencies": {
+        "recommended": [
+          "devops-engineer",
+          "fastapi-expert"
+        ]
+      }
     },
     {
       "id": "rag-architect",
@@ -3289,7 +3658,13 @@
         "context7": "recommended",
         "postgres": "optional"
       },
-      "description": "Use when building RAG systems, vector databases, or knowledge-grounded AI applications requiring semantic search, document retrieval, or context augmentation."
+      "description": "Use when building RAG systems, vector databases, or knowledge-grounded AI applications requiring semantic search, document retrieval, or context augmentation.",
+      "dependencies": {
+        "recommended": [
+          "api-designer",
+          "python-pro"
+        ]
+      }
     },
     {
       "id": "rails-expert",
@@ -3314,7 +3689,12 @@
         "context7": "recommended",
         "postgres": "recommended"
       },
-      "description": "Use when building Rails 7+ web applications with Hotwire, real-time features, or background job processing. Invoke for Active Record optimization, Turbo Frames/Streams, Action Cable, Sidekiq."
+      "description": "Use when building Rails 7+ web applications with Hotwire, real-time features, or background job processing. Invoke for Active Record optimization, Turbo Frames/Streams, Action Cable, Sidekiq.",
+      "dependencies": {
+        "recommended": [
+          "fullstack-guardian"
+        ]
+      }
     },
     {
       "id": "react-native-expert",
@@ -3336,7 +3716,13 @@
       "toolImportance": {
         "context7": "recommended"
       },
-      "description": "Use when building cross-platform mobile applications with React Native or Expo. Invoke for navigation patterns, platform-specific code, native modules, FlatList optimization."
+      "description": "Use when building cross-platform mobile applications with React Native or Expo. Invoke for navigation patterns, platform-specific code, native modules, FlatList optimization.",
+      "dependencies": {
+        "recommended": [
+          "flutter-expert",
+          "test-master"
+        ]
+      }
     },
     {
       "id": "rust-engineer",
@@ -3361,7 +3747,12 @@
       "toolImportance": {
         "context7": "recommended"
       },
-      "description": "Use when building Rust applications requiring memory safety, systems programming, or zero-cost abstractions. Invoke for ownership patterns, lifetimes, traits, async/await with tokio."
+      "description": "Use when building Rust applications requiring memory safety, systems programming, or zero-cost abstractions. Invoke for ownership patterns, lifetimes, traits, async/await with tokio.",
+      "dependencies": {
+        "recommended": [
+          "test-master"
+        ]
+      }
     },
     {
       "id": "salesforce-developer",
@@ -3390,7 +3781,15 @@
       "toolImportance": {
         "context7": "recommended"
       },
-      "description": "Use when developing Salesforce applications, Apex code, Lightning Web Components, SOQL queries, triggers, integrations, or CRM customizations. Invoke for governor limits, bulk processing, platform events, Salesforce DX."
+      "description": "Use when developing Salesforce applications, Apex code, Lightning Web Components, SOQL queries, triggers, integrations, or CRM customizations. Invoke for governor limits, bulk processing, platform events, Salesforce DX.",
+      "dependencies": {
+        "recommended": [
+          "api-designer",
+          "cloud-architect",
+          "devops-engineer",
+          "java-architect"
+        ]
+      }
     },
     {
       "id": "security-burpsuite-parser",
@@ -3650,7 +4049,12 @@
       "toolImportance": {
         "context7": "recommended"
       },
-      "description": "Use when building Shopify themes, apps, custom storefronts, or e-commerce solutions. Invoke for Liquid templating, Storefront API, app development, checkout customization, Shopify Plus features."
+      "description": "Use when building Shopify themes, apps, custom storefronts, or e-commerce solutions. Invoke for Liquid templating, Storefront API, app development, checkout customization, Shopify Plus features.",
+      "dependencies": {
+        "recommended": [
+          "api-designer"
+        ]
+      }
     },
     {
       "id": "spring-boot-engineer",
@@ -3674,7 +4078,14 @@
       "toolImportance": {
         "context7": "recommended"
       },
-      "description": "Use when building Spring Boot 3.x applications, microservices, or reactive Java applications. Invoke for Spring Data JPA, Spring Security 6, WebFlux, Spring Cloud integration."
+      "description": "Use when building Spring Boot 3.x applications, microservices, or reactive Java applications. Invoke for Spring Data JPA, Spring Security 6, WebFlux, Spring Cloud integration.",
+      "dependencies": {
+        "recommended": [
+          "devops-engineer",
+          "java-architect",
+          "microservices-architect"
+        ]
+      }
     },
     {
       "id": "sql-pro",
@@ -3700,7 +4111,12 @@
       "toolImportance": {
         "postgres": "essential"
       },
-      "description": "Use when optimizing SQL queries, designing database schemas, or tuning database performance. Invoke for complex queries, window functions, CTEs, indexing strategies, query plan analysis."
+      "description": "Use when optimizing SQL queries, designing database schemas, or tuning database performance. Invoke for complex queries, window functions, CTEs, indexing strategies, query plan analysis.",
+      "dependencies": {
+        "recommended": [
+          "devops-engineer"
+        ]
+      }
     },
     {
       "id": "svg-logo-designer",
@@ -3783,7 +4199,13 @@
         "webapp-testing-plugin",
         "playwright-plugin"
       ],
-      "description": "Use when writing tests, creating test strategies, or building automation frameworks. Invoke for unit tests, integration tests, E2E, coverage analysis, performance testing, security testing."
+      "description": "Use when writing tests, creating test strategies, or building automation frameworks. Invoke for unit tests, integration tests, E2E, coverage analysis, performance testing, security testing.",
+      "dependencies": {
+        "recommended": [
+          "devops-engineer",
+          "fullstack-guardian"
+        ]
+      }
     },
     {
       "id": "typescript-pro",
@@ -3810,7 +4232,13 @@
       "relatedPlugins": [
         "react-dev-plugin"
       ],
-      "description": "Use when building TypeScript applications requiring advanced type systems, generics, or full-stack type safety. Invoke for type guards, utility types, tRPC integration, monorepo setup."
+      "description": "Use when building TypeScript applications requiring advanced type systems, generics, or full-stack type safety. Invoke for type guards, utility types, tRPC integration, monorepo setup.",
+      "dependencies": {
+        "recommended": [
+          "api-designer",
+          "fullstack-guardian"
+        ]
+      }
     },
     {
       "id": "vue-expert",
@@ -3845,7 +4273,13 @@
       "relatedPlugins": [
         "webapp-testing-plugin"
       ],
-      "description": "Use when building Vue 3 applications with Composition API, Nuxt 3, or Quasar. Invoke for Pinia, TypeScript, PWA, Capacitor mobile apps, Vite configuration."
+      "description": "Use when building Vue 3 applications with Composition API, Nuxt 3, or Quasar. Invoke for Pinia, TypeScript, PWA, Capacitor mobile apps, Vite configuration.",
+      "dependencies": {
+        "recommended": [
+          "fullstack-guardian",
+          "typescript-pro"
+        ]
+      }
     },
     {
       "id": "wordpress-pro",
@@ -3869,7 +4303,14 @@
       "mcp": null,
       "plugin": null,
       "source": "jeffallan",
-      "description": "Use when developing WordPress themes, plugins, customizing Gutenberg blocks, implementing WooCommerce features, or optimizing WordPress performance and security."
+      "description": "Use when developing WordPress themes, plugins, customizing Gutenberg blocks, implementing WooCommerce features, or optimizing WordPress performance and security.",
+      "dependencies": {
+        "recommended": [
+          "fullstack-guardian",
+          "laravel-specialist",
+          "php-pro"
+        ]
+      }
     },
     {
       "id": "yara-rule-authoring",
@@ -3925,7 +4366,21 @@
       "toolImportance": {
         "context7": "recommended"
       },
-      "description": "Use when performing a full Next.js security audit or securing a Next.js application end-to-end. Invoke for comprehensive security review, security audit, secure my Next.js app, OWASP compliance. Next.js security audit, secure Next.js, full security review, OWASP Next.js, harden Next.js"
+      "description": "Use when performing a full Next.js security audit or securing a Next.js application end-to-end. Invoke for comprehensive security review, security audit, secure my Next.js app, OWASP compliance. Next.js security audit, secure Next.js, full security review, OWASP Next.js, harden Next.js",
+      "dependencies": {
+        "required": [
+          "nextjs-auth-security",
+          "nextjs-csrf-protection",
+          "nextjs-dependency-security",
+          "nextjs-input-validation",
+          "nextjs-payment-security",
+          "nextjs-rate-limiting",
+          "nextjs-security-headers",
+          "nextjs-security-operations",
+          "nextjs-security-overview",
+          "nextjs-security-testing"
+        ]
+      }
     },
     {
       "id": "fullstack-dev",
@@ -3954,7 +4409,18 @@
         "webapp-testing-plugin",
         "git-workflow-plugin"
       ],
-      "description": "Use when building a full-stack application end-to-end. Invoke for new project setup, full-stack development, building a web app from scratch, frontend + backend + testing + deployment workflow."
+      "description": "Use when building a full-stack application end-to-end. Invoke for new project setup, full-stack development, building a web app from scratch, frontend + backend + testing + deployment workflow.",
+      "dependencies": {
+        "required": [
+          "api-designer",
+          "database-pro",
+          "debugging",
+          "frontend-design",
+          "git-workflow",
+          "react-dev",
+          "webapp-testing"
+        ]
+      }
     },
     {
       "id": "saas-setup",
@@ -3980,7 +4446,20 @@
       "relatedPlugins": [
         "webapp-testing-plugin"
       ],
-      "description": "Use when setting up a SaaS application with auth, payments, database, and deployment. Invoke for SaaS project setup, launch a SaaS, build a subscription app, set up Stripe + Supabase + Vercel."
+      "description": "Use when setting up a SaaS application with auth, payments, database, and deployment. Invoke for SaaS project setup, launch a SaaS, build a subscription app, set up Stripe + Supabase + Vercel.",
+      "dependencies": {
+        "required": [
+          "oauth-setup",
+          "saas-starter-setup",
+          "stripe-integration",
+          "supabase-guide",
+          "vercel-deployment",
+          "webapp-testing"
+        ],
+        "recommended": [
+          "saas-from-scratch"
+        ]
+      }
     },
     {
       "id": "security-audit",
@@ -4006,7 +4485,17 @@
         "security-audit-context-plugin",
         "git-workflow-plugin"
       ],
-      "description": "Use when performing a comprehensive security audit on any codebase (not just Next.js). Invoke for security audit, vulnerability scan, secure my app, code security review, OWASP compliance, penetration testing prep."
+      "description": "Use when performing a comprehensive security audit on any codebase (not just Next.js). Invoke for security audit, vulnerability scan, secure my app, code security review, OWASP compliance, penetration testing prep.",
+      "dependencies": {
+        "required": [
+          "security-code-review",
+          "security-entry-points",
+          "security-insecure-defaults",
+          "security-sharp-edges",
+          "security-static-analysis",
+          "security-variant-analysis"
+        ]
+      }
     },
     {
       "id": "terraform-pro",
@@ -4094,7 +4583,13 @@
       "relatedPlugins": [
         "webapp-testing-plugin"
       ],
-      "description": "Use when writing E2E tests with Playwright, setting up test infrastructure, or debugging flaky browser tests. Invoke for Playwright API patterns, Page Object Model, selectors, network mocking, visual testing, mobile testing, CI/CD integration, and advanced Playwright techniques."
+      "description": "Use when writing E2E tests with Playwright, setting up test infrastructure, or debugging flaky browser tests. Invoke for Playwright API patterns, Page Object Model, selectors, network mocking, visual testing, mobile testing, CI/CD integration, and advanced Playwright techniques.",
+      "dependencies": {
+        "recommended": [
+          "qa-test-planner",
+          "webapp-testing"
+        ]
+      }
     },
     {
       "id": "design-review",

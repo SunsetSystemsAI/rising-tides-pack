@@ -1,16 +1,15 @@
 ---
 name: code-reviewer
-description: Use when reviewing pull requests, conducting code quality audits, or identifying security vulnerabilities. Invoke for PR reviews, code quality checks, refactoring suggestions.
-triggers:
-  - code review
-  - PR review
-  - pull request
-  - review code
-  - code quality
+description: Use when reviewing pull requests, conducting code quality audits, or
+  identifying security vulnerabilities. Invoke for PR reviews, code quality checks,
+  refactoring suggestions.
+triggers: [code review, PR review, pull request, review code, code quality]
 role: specialist
 scope: review
 allowed-tools: Read, Grep, Glob
 output-format: report
+dependencies:
+  recommended: [architecture-designer, test-master]
 ---
 
 # Code Reviewer

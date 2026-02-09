@@ -61,53 +61,63 @@ CATEGORY_CORRECTIONS = {
 
 def parse_frontmatter(content: str) -> dict[str, Any]:
     """Extract YAML frontmatter from markdown content."""
+    import yaml
+
     # Match content between --- markers
     match = re.match(r'^---\s*\n(.*?)\n---', content, re.DOTALL)
     if not match:
         return {}
 
     frontmatter_text = match.group(1)
-    result = {}
 
-    # Parse simple key: value pairs
-    current_key = None
-    current_list = []
+    try:
+        result = yaml.safe_load(frontmatter_text)
+        if result is None:
+            result = {}
+        return result
+    except yaml.YAMLError:
+        # Fallback to simple parsing if YAML fails
+        result = {}
 
-    for line in frontmatter_text.split('\n'):
-        # Check for list item
-        list_match = re.match(r'^\s+-\s+(.+)$', line)
-        if list_match and current_key:
-            current_list.append(list_match.group(1).strip())
-            continue
+        # Parse simple key: value pairs
+        current_key = None
+        current_list = []
 
-        # Check for key: value
-        kv_match = re.match(r'^(\w[\w-]*)\s*:\s*(.*)$', line)
-        if kv_match:
-            # Save previous list if any
-            if current_key and current_list:
-                result[current_key] = current_list
-                current_list = []
+        for line in frontmatter_text.split('\n'):
+            # Check for list item
+            list_match = re.match(r'^\s+-\s+(.+)$', line)
+            if list_match and current_key:
+                current_list.append(list_match.group(1).strip())
+                continue
 
-            key = kv_match.group(1)
-            value = kv_match.group(2).strip()
+            # Check for key: value
+            kv_match = re.match(r'^(\w[\w-]*)\s*:\s*(.*)$', line)
+            if kv_match:
+                # Save previous list if any
+                if current_key and current_list:
+                    result[current_key] = current_list
+                    current_list = []
 
-            if value:
-                # Remove quotes if present
-                if value.startswith('"') and value.endswith('"'):
-                    value = value[1:-1]
-                elif value.startswith("'") and value.endswith("'"):
-                    value = value[1:-1]
-                result[key] = value
-                current_key = None
-            else:
-                # Could be start of a list
-                current_key = key
+                key = kv_match.group(1)
+                value = kv_match.group(2).strip()
 
-    # Don't forget last list
-    if current_key and current_list:
-        result[current_key] = current_list
+                if value:
+                    # Remove quotes if present
+                    if value.startswith('"') and value.endswith('"'):
+                        value = value[1:-1]
+                    elif value.startswith("'") and value.endswith("'"):
+                        value = value[1:-1]
+                    result[key] = value
+                    current_key = None
+                else:
+                    # Could be start of a list
+                    current_key = key
 
-    return result
+        # Don't forget last list
+        if current_key and current_list:
+            result[current_key] = current_list
+
+        return result
 
 
 def find_skill_files(github_dir: Path) -> dict[str, Path]:
@@ -155,6 +165,7 @@ def sync_index(github_dir: Path, dry_run: bool = False) -> dict:
         "triggers_updated": 0,
         "descriptions_added": 0,
         "categories_fixed": 0,
+        "dependencies_added": 0,
         "skills_not_in_index": [],
         "index_skills_not_on_disk": [],
     }
@@ -198,6 +209,18 @@ def sync_index(github_dir: Path, dry_run: bool = False) -> dict:
             if entry.get("category") != correct_category:
                 entry["category"] = correct_category
                 stats["categories_fixed"] += 1
+
+        # Sync dependencies
+        if "dependencies" in frontmatter and isinstance(frontmatter["dependencies"], dict):
+            deps = frontmatter["dependencies"]
+            if deps:  # Only add if not empty
+                if entry.get("dependencies") != deps:
+                    entry["dependencies"] = deps
+                    stats["dependencies_added"] += 1
+            elif "dependencies" in entry:
+                # Remove dependencies if frontmatter has empty deps
+                del entry["dependencies"]
+                stats["dependencies_added"] += 1
 
     # Find index skills not on disk
     for skill_id in index_skills:
@@ -251,6 +274,7 @@ def main():
     print(f"Triggers updated: {stats['triggers_updated']}")
     print(f"Descriptions added: {stats['descriptions_added']}")
     print(f"Categories fixed: {stats['categories_fixed']}")
+    print(f"Dependencies synced: {stats['dependencies_added']}")
 
     if stats["skills_not_in_index"]:
         print(f"\nSkills on disk but NOT in index ({len(stats['skills_not_in_index'])}):")

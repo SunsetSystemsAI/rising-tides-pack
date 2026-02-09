@@ -1,6 +1,17 @@
 ---
 name: saas-setup
-description: "Use when setting up a SaaS application with auth, payments, database, and deployment. Invoke for SaaS project setup, launch a SaaS, build a subscription app, set up Stripe + Supabase + Vercel."
+description: Use when setting up a SaaS application with auth, payments, database,
+  and deployment. Invoke for SaaS project setup, launch a SaaS, build a subscription
+  app, set up Stripe + Supabase + Vercel.
+dependencies:
+  required:
+  - oauth-setup
+  - saas-starter-setup
+  - stripe-integration
+  - supabase-guide
+  - vercel-deployment
+  - webapp-testing
+  recommended: [saas-from-scratch]
 ---
 
 # SaaS Setup Orchestrator

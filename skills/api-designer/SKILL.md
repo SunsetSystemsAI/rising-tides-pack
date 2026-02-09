@@ -1,19 +1,23 @@
 ---
 name: api-designer
-description: Use when designing REST or GraphQL APIs, creating OpenAPI specifications, or planning API architecture. Invoke for resource modeling, versioning strategies, pagination patterns, error handling standards.
+description: Use when designing REST or GraphQL APIs, creating OpenAPI specifications,
+  or planning API architecture. Invoke for resource modeling, versioning strategies,
+  pagination patterns, error handling standards.
 triggers:
-  - API design
-  - REST API
-  - OpenAPI
-  - API specification
-  - API architecture
-  - resource modeling
-  - API versioning
-  - GraphQL schema
-  - API documentation
+- API design
+- REST API
+- OpenAPI
+- API specification
+- API architecture
+- resource modeling
+- API versioning
+- GraphQL schema
+- API documentation
 role: architect
 scope: design
 output-format: specification
+dependencies:
+  recommended: [fastapi-expert, nestjs-expert, spring-boot-engineer]
 ---
 
 # API Designer

@@ -1,19 +1,23 @@
 ---
 name: csharp-developer
-description: Use when building C# applications with .NET 8+, ASP.NET Core APIs, or Blazor web apps. Invoke for Entity Framework Core, minimal APIs, async patterns, CQRS with MediatR.
+description: Use when building C# applications with .NET 8+, ASP.NET Core APIs, or
+  Blazor web apps. Invoke for Entity Framework Core, minimal APIs, async patterns,
+  CQRS with MediatR.
 triggers:
-  - C#
-  - .NET
-  - ASP.NET Core
-  - Blazor
-  - Entity Framework
-  - EF Core
-  - Minimal API
-  - MAUI
-  - SignalR
+- C#
+- .NET
+- ASP.NET Core
+- Blazor
+- Entity Framework
+- EF Core
+- Minimal API
+- MAUI
+- SignalR
 role: specialist
 scope: implementation
 output-format: code
+dependencies:
+  recommended: [api-designer, devops-engineer]
 ---
 
 # C# Developer

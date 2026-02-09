@@ -1,21 +1,25 @@
 ---
 name: sql-pro
-description: Use when optimizing SQL queries, designing database schemas, or tuning database performance. Invoke for complex queries, window functions, CTEs, indexing strategies, query plan analysis.
+description: Use when optimizing SQL queries, designing database schemas, or tuning
+  database performance. Invoke for complex queries, window functions, CTEs, indexing
+  strategies, query plan analysis.
 triggers:
-  - SQL optimization
-  - query performance
-  - database design
-  - PostgreSQL
-  - MySQL
-  - SQL Server
-  - window functions
-  - CTEs
-  - query tuning
-  - EXPLAIN plan
-  - database indexing
+- SQL optimization
+- query performance
+- database design
+- PostgreSQL
+- MySQL
+- SQL Server
+- window functions
+- CTEs
+- query tuning
+- EXPLAIN plan
+- database indexing
 role: specialist
 scope: implementation
 output-format: code
+dependencies:
+  recommended: [devops-engineer]
 ---
 
 # SQL Pro

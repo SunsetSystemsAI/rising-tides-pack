@@ -1,17 +1,21 @@
 ---
 name: react-native-expert
-description: Use when building cross-platform mobile applications with React Native or Expo. Invoke for navigation patterns, platform-specific code, native modules, FlatList optimization.
+description: Use when building cross-platform mobile applications with React Native
+  or Expo. Invoke for navigation patterns, platform-specific code, native modules,
+  FlatList optimization.
 triggers:
-  - React Native
-  - Expo
-  - mobile app
-  - iOS
-  - Android
-  - cross-platform
-  - native module
+- React Native
+- Expo
+- mobile app
+- iOS
+- Android
+- cross-platform
+- native module
 role: specialist
 scope: implementation
 output-format: code
+dependencies:
+  recommended: [flutter-expert, test-master]
 ---
 
 # React Native Expert

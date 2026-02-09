@@ -1,19 +1,23 @@
 ---
 name: kotlin-specialist
-description: Use when building Kotlin applications requiring coroutines, multiplatform development, or Android with Compose. Invoke for Flow API, KMP projects, Ktor servers, DSL design, sealed classes.
+description: Use when building Kotlin applications requiring coroutines, multiplatform
+  development, or Android with Compose. Invoke for Flow API, KMP projects, Ktor servers,
+  DSL design, sealed classes.
 triggers:
-  - Kotlin
-  - coroutines
-  - Kotlin Multiplatform
-  - KMP
-  - Jetpack Compose
-  - Ktor
-  - Flow
-  - Android Kotlin
-  - suspend function
+- Kotlin
+- coroutines
+- Kotlin Multiplatform
+- KMP
+- Jetpack Compose
+- Ktor
+- Flow
+- Android Kotlin
+- suspend function
 role: specialist
 scope: implementation
 output-format: code
+dependencies:
+  recommended: [test-master]
 ---
 
 # Kotlin Specialist

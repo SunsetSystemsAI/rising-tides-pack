@@ -1,20 +1,24 @@
 ---
 name: nestjs-expert
-description: Use when building NestJS applications requiring modular architecture, dependency injection, or TypeScript backend development. Invoke for modules, controllers, services, DTOs, guards, interceptors, TypeORM/Prisma.
+description: Use when building NestJS applications requiring modular architecture,
+  dependency injection, or TypeScript backend development. Invoke for modules, controllers,
+  services, DTOs, guards, interceptors, TypeORM/Prisma.
 triggers:
-  - NestJS
-  - Nest
-  - Node.js backend
-  - TypeScript backend
-  - dependency injection
-  - controller
-  - service
-  - module
-  - guard
-  - interceptor
+- NestJS
+- Nest
+- Node.js backend
+- TypeScript backend
+- dependency injection
+- controller
+- service
+- module
+- guard
+- interceptor
 role: specialist
 scope: implementation
 output-format: code
+dependencies:
+  recommended: [devops-engineer, fullstack-guardian, test-master]
 ---
 
 # NestJS Expert

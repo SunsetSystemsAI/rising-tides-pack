@@ -1,20 +1,24 @@
 ---
 name: prompt-engineer
-description: Use when designing prompts for LLMs, optimizing model performance, building evaluation frameworks, or implementing advanced prompting techniques like chain-of-thought, few-shot learning, or structured outputs.
+description: Use when designing prompts for LLMs, optimizing model performance, building
+  evaluation frameworks, or implementing advanced prompting techniques like chain-of-thought,
+  few-shot learning, or structured outputs.
 triggers:
-  - prompt engineering
-  - prompt optimization
-  - chain-of-thought
-  - few-shot learning
-  - prompt testing
-  - LLM prompts
-  - prompt evaluation
-  - system prompts
-  - structured outputs
-  - prompt design
+- prompt engineering
+- prompt optimization
+- chain-of-thought
+- few-shot learning
+- prompt testing
+- LLM prompts
+- prompt evaluation
+- system prompts
+- structured outputs
+- prompt design
 role: expert
 scope: design
 output-format: document
+dependencies:
+  recommended: [test-master]
 ---
 
 # Prompt Engineer

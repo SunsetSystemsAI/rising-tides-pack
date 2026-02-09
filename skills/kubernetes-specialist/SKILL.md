@@ -1,33 +1,37 @@
 ---
 name: kubernetes-specialist
-description: Use when deploying or managing Kubernetes workloads requiring cluster configuration, security hardening, or troubleshooting. Invoke for Helm charts, RBAC policies, NetworkPolicies, storage configuration, performance optimization.
+description: Use when deploying or managing Kubernetes workloads requiring cluster
+  configuration, security hardening, or troubleshooting. Invoke for Helm charts, RBAC
+  policies, NetworkPolicies, storage configuration, performance optimization.
 triggers:
-  - Kubernetes
-  - K8s
-  - kubectl
-  - Helm
-  - container orchestration
-  - pod deployment
-  - RBAC
-  - NetworkPolicy
-  - Ingress
-  - StatefulSet
-  - Operator
-  - CRD
-  - CustomResourceDefinition
-  - ArgoCD
-  - Flux
-  - GitOps
-  - Istio
-  - Linkerd
-  - service mesh
-  - multi-cluster
-  - cost optimization
-  - VPA
-  - spot instances
+- Kubernetes
+- K8s
+- kubectl
+- Helm
+- container orchestration
+- pod deployment
+- RBAC
+- NetworkPolicy
+- Ingress
+- StatefulSet
+- Operator
+- CRD
+- CustomResourceDefinition
+- ArgoCD
+- Flux
+- GitOps
+- Istio
+- Linkerd
+- service mesh
+- multi-cluster
+- cost optimization
+- VPA
+- spot instances
 role: specialist
 scope: infrastructure
 output-format: manifests
+dependencies:
+  recommended: [cloud-architect, devops-engineer]
 ---
 
 # Kubernetes Specialist

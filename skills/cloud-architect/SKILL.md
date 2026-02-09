@@ -1,24 +1,28 @@
 ---
 name: cloud-architect
-description: Use when designing cloud architectures, planning migrations, or optimizing multi-cloud deployments. Invoke for Well-Architected Framework, cost optimization, disaster recovery, landing zones, security architecture, serverless design.
+description: Use when designing cloud architectures, planning migrations, or optimizing
+  multi-cloud deployments. Invoke for Well-Architected Framework, cost optimization,
+  disaster recovery, landing zones, security architecture, serverless design.
 triggers:
-  - AWS
-  - Azure
-  - GCP
-  - Google Cloud
-  - cloud migration
-  - cloud architecture
-  - multi-cloud
-  - cloud cost
-  - Well-Architected
-  - landing zone
-  - cloud security
-  - disaster recovery
-  - cloud native
-  - serverless architecture
+- AWS
+- Azure
+- GCP
+- Google Cloud
+- cloud migration
+- cloud architecture
+- multi-cloud
+- cloud cost
+- Well-Architected
+- landing zone
+- cloud security
+- disaster recovery
+- cloud native
+- serverless architecture
 role: architect
 scope: infrastructure
 output-format: architecture
+dependencies:
+  recommended: [devops-engineer, kubernetes-specialist, microservices-architect]
 ---
 
 # Cloud Architect

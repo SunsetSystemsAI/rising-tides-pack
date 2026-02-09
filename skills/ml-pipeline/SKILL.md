@@ -1,25 +1,28 @@
 ---
 name: ml-pipeline
-description: Use when building ML pipelines, orchestrating training workflows, automating model lifecycle, implementing feature stores, or managing experiment tracking systems.
+description: Use when building ML pipelines, orchestrating training workflows, automating
+  model lifecycle, implementing feature stores, or managing experiment tracking systems.
 triggers:
-  - ML pipeline
-  - MLflow
-  - Kubeflow
-  - feature engineering
-  - model training
-  - experiment tracking
-  - feature store
-  - hyperparameter tuning
-  - pipeline orchestration
-  - model registry
-  - training workflow
-  - MLOps
-  - model deployment
-  - data pipeline
-  - model versioning
+- ML pipeline
+- MLflow
+- Kubeflow
+- feature engineering
+- model training
+- experiment tracking
+- feature store
+- hyperparameter tuning
+- pipeline orchestration
+- model registry
+- training workflow
+- MLOps
+- model deployment
+- data pipeline
+- model versioning
 role: expert
 scope: implementation
 output-format: code
+dependencies:
+  recommended: [cloud-architect, devops-engineer, kubernetes-specialist, python-pro]
 ---
 
 # ML Pipeline Expert

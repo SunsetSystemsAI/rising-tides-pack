@@ -1,17 +1,22 @@
 ---
 name: playwright-testing
-description: "Use when writing E2E tests with Playwright, setting up test infrastructure, or debugging flaky browser tests. Invoke for Playwright API patterns, Page Object Model, selectors, network mocking, visual testing, mobile testing, CI/CD integration, and advanced Playwright techniques."
+description: Use when writing E2E tests with Playwright, setting up test infrastructure,
+  or debugging flaky browser tests. Invoke for Playwright API patterns, Page Object
+  Model, selectors, network mocking, visual testing, mobile testing, CI/CD integration,
+  and advanced Playwright techniques.
 triggers:
-  - Playwright
-  - E2E test
-  - end-to-end
-  - browser testing
-  - automation
-  - UI testing
-  - visual testing
+- Playwright
+- E2E test
+- end-to-end
+- browser testing
+- automation
+- UI testing
+- visual testing
 role: specialist
 scope: testing
 output-format: code
+dependencies:
+  recommended: [qa-test-planner, webapp-testing]
 ---
 
 # Playwright Testing

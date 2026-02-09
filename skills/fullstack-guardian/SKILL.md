@@ -1,26 +1,30 @@
 ---
 name: fullstack-guardian
-description: Use when implementing features across frontend and backend, building APIs with UI, or creating end-to-end data flows. Invoke for feature implementation, API development, UI building, cross-stack work.
+description: Use when implementing features across frontend and backend, building
+  APIs with UI, or creating end-to-end data flows. Invoke for feature implementation,
+  API development, UI building, cross-stack work.
 triggers:
-  - fullstack
-  - implement feature
-  - build feature
-  - create API
-  - frontend and backend
-  - full stack
-  - new feature
-  - implement
-  - microservices
-  - websocket
-  - real-time
-  - deployment pipeline
-  - monorepo
-  - architecture decision
-  - technology selection
-  - end-to-end
+- fullstack
+- implement feature
+- build feature
+- create API
+- frontend and backend
+- full stack
+- new feature
+- implement
+- microservices
+- websocket
+- real-time
+- deployment pipeline
+- monorepo
+- architecture decision
+- technology selection
+- end-to-end
 role: expert
 scope: implementation
 output-format: code
+dependencies:
+  recommended: [devops-engineer, feature-forge, test-master]
 ---
 
 # Fullstack Guardian

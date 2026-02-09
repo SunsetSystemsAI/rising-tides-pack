@@ -1,19 +1,23 @@
 ---
 name: angular-architect
-description: Use when building Angular 17+ applications with standalone components or signals. Invoke for enterprise apps, RxJS patterns, NgRx state management, performance optimization, advanced routing.
+description: Use when building Angular 17+ applications with standalone components
+  or signals. Invoke for enterprise apps, RxJS patterns, NgRx state management, performance
+  optimization, advanced routing.
 triggers:
-  - Angular
-  - Angular 17
-  - standalone components
-  - signals
-  - RxJS
-  - NgRx
-  - Angular performance
-  - Angular routing
-  - Angular testing
+- Angular
+- Angular 17
+- standalone components
+- signals
+- RxJS
+- NgRx
+- Angular performance
+- Angular routing
+- Angular testing
 role: specialist
 scope: implementation
 output-format: code
+dependencies:
+  recommended: [test-master, typescript-pro]
 ---
 
 # Angular Architect

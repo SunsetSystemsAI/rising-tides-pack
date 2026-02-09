@@ -1,19 +1,23 @@
 ---
 name: java-architect
-description: Use when building enterprise Java applications with Spring Boot 3.x, microservices, or reactive programming. Invoke for WebFlux, JPA optimization, Spring Security, cloud-native patterns.
+description: Use when building enterprise Java applications with Spring Boot 3.x,
+  microservices, or reactive programming. Invoke for WebFlux, JPA optimization, Spring
+  Security, cloud-native patterns.
 triggers:
-  - Spring Boot
-  - Java
-  - microservices
-  - Spring Cloud
-  - JPA
-  - Hibernate
-  - WebFlux
-  - reactive
-  - Java Enterprise
+- Spring Boot
+- Java
+- microservices
+- Spring Cloud
+- JPA
+- Hibernate
+- WebFlux
+- reactive
+- Java Enterprise
 role: architect
 scope: implementation
 output-format: code
+dependencies:
+  recommended: [api-designer, devops-engineer, fullstack-guardian]
 ---
 
 # Java Architect

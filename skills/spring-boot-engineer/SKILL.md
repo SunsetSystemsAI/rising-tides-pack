@@ -1,19 +1,23 @@
 ---
 name: spring-boot-engineer
-description: Use when building Spring Boot 3.x applications, microservices, or reactive Java applications. Invoke for Spring Data JPA, Spring Security 6, WebFlux, Spring Cloud integration.
+description: Use when building Spring Boot 3.x applications, microservices, or reactive
+  Java applications. Invoke for Spring Data JPA, Spring Security 6, WebFlux, Spring
+  Cloud integration.
 triggers:
-  - Spring Boot
-  - Spring Framework
-  - Spring Cloud
-  - Spring Security
-  - Spring Data JPA
-  - Spring WebFlux
-  - Microservices Java
-  - Java REST API
-  - Reactive Java
+- Spring Boot
+- Spring Framework
+- Spring Cloud
+- Spring Security
+- Spring Data JPA
+- Spring WebFlux
+- Microservices Java
+- Java REST API
+- Reactive Java
 role: specialist
 scope: implementation
 output-format: code
+dependencies:
+  recommended: [devops-engineer, java-architect, microservices-architect]
 ---
 
 # Spring Boot Engineer

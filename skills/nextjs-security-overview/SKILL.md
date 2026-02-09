@@ -1,6 +1,20 @@
 ---
 name: nextjs-security-overview
-description: "Use when building secure Next.js applications. Invoke for defense-in-depth architecture, 5-layer security stack, OWASP scoring, security layer decisions. security, OWASP, Next.js, defense in depth, security architecture, security layers, security overview, security principles"
+description: Use when building secure Next.js applications. Invoke for defense-in-depth
+  architecture, 5-layer security stack, OWASP scoring, security layer decisions. security,
+  OWASP, Next.js, defense in depth, security architecture, security layers, security
+  overview, security principles
+dependencies:
+  recommended:
+  - nextjs-auth-security
+  - nextjs-csrf-protection
+  - nextjs-dependency-security
+  - nextjs-error-handling
+  - nextjs-input-validation
+  - nextjs-payment-security
+  - nextjs-rate-limiting
+  - nextjs-security-headers
+  - nextjs-security-testing
 ---
 
 # Security Architecture Overview

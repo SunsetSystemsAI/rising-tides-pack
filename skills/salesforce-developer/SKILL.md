@@ -1,24 +1,28 @@
 ---
 name: salesforce-developer
-description: Use when developing Salesforce applications, Apex code, Lightning Web Components, SOQL queries, triggers, integrations, or CRM customizations. Invoke for governor limits, bulk processing, platform events, Salesforce DX.
+description: Use when developing Salesforce applications, Apex code, Lightning Web
+  Components, SOQL queries, triggers, integrations, or CRM customizations. Invoke
+  for governor limits, bulk processing, platform events, Salesforce DX.
 triggers:
-  - Salesforce
-  - Apex
-  - Lightning Web Components
-  - LWC
-  - SOQL
-  - SOSL
-  - Visualforce
-  - Salesforce DX
-  - governor limits
-  - triggers
-  - platform events
-  - CRM integration
-  - Sales Cloud
-  - Service Cloud
+- Salesforce
+- Apex
+- Lightning Web Components
+- LWC
+- SOQL
+- SOSL
+- Visualforce
+- Salesforce DX
+- governor limits
+- triggers
+- platform events
+- CRM integration
+- Sales Cloud
+- Service Cloud
 role: expert
 scope: implementation
 output-format: code
+dependencies:
+  recommended: [api-designer, cloud-architect, devops-engineer, java-architect]
 ---
 
 # Salesforce Developer

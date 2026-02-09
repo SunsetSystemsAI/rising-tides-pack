@@ -1,21 +1,25 @@
 ---
 name: microservices-architect
-description: Use when designing distributed systems, decomposing monoliths, or implementing microservices patterns. Invoke for service boundaries, DDD, saga patterns, event sourcing, service mesh, distributed tracing.
+description: Use when designing distributed systems, decomposing monoliths, or implementing
+  microservices patterns. Invoke for service boundaries, DDD, saga patterns, event
+  sourcing, service mesh, distributed tracing.
 triggers:
-  - microservices
-  - service mesh
-  - distributed systems
-  - service boundaries
-  - domain-driven design
-  - event sourcing
-  - CQRS
-  - saga pattern
-  - Kubernetes microservices
-  - Istio
-  - distributed tracing
+- microservices
+- service mesh
+- distributed systems
+- service boundaries
+- domain-driven design
+- event sourcing
+- CQRS
+- saga pattern
+- Kubernetes microservices
+- Istio
+- distributed tracing
 role: architect
 scope: system-design
 output-format: architecture
+dependencies:
+  recommended: [architecture-designer, devops-engineer, kubernetes-specialist]
 ---
 
 # Microservices Architect

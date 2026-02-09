@@ -1,18 +1,22 @@
 ---
 name: legacy-modernizer
-description: Use when modernizing legacy systems, implementing incremental migration strategies, or reducing technical debt. Invoke for strangler fig pattern, monolith decomposition, framework upgrades.
+description: Use when modernizing legacy systems, implementing incremental migration
+  strategies, or reducing technical debt. Invoke for strangler fig pattern, monolith
+  decomposition, framework upgrades.
 triggers:
-  - legacy modernization
-  - strangler fig
-  - incremental migration
-  - technical debt
-  - legacy refactoring
-  - system migration
-  - legacy system
-  - modernize codebase
+- legacy modernization
+- strangler fig
+- incremental migration
+- technical debt
+- legacy refactoring
+- system migration
+- legacy system
+- modernize codebase
 role: specialist
 scope: architecture
 output-format: code+analysis
+dependencies:
+  recommended: [devops-engineer, test-master]
 ---
 
 # Legacy Modernizer

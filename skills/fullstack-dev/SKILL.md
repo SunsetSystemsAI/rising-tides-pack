@@ -1,6 +1,17 @@
 ---
 name: fullstack-dev
-description: "Use when building a full-stack application end-to-end. Invoke for new project setup, full-stack development, building a web app from scratch, frontend + backend + testing + deployment workflow."
+description: Use when building a full-stack application end-to-end. Invoke for new
+  project setup, full-stack development, building a web app from scratch, frontend
+  + backend + testing + deployment workflow.
+dependencies:
+  required:
+  - api-designer
+  - database-pro
+  - debugging
+  - frontend-design
+  - git-workflow
+  - react-dev
+  - webapp-testing
 ---
 
 # Full-Stack Development Orchestrator
