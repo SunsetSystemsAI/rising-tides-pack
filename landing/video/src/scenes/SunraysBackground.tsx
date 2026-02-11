@@ -4,38 +4,40 @@ import { COLORS } from "../theme";
 export const SunraysBackground: React.FC = () => {
   const frame = useCurrentFrame();
 
-  const rotation = interpolate(frame, [0, 1080], [0, 10]);
+  // Slow rotation over entire video (75 seconds)
+  const rotation = interpolate(frame, [0, 2250], [0, 15]);
 
-  // Intensity peaks at logo and CTA
+  // Intensity peaks at key moments: logo reveal, architecture, context stats, CTA
   const intensity = interpolate(
     frame,
-    [0, 195, 210, 345, 645, 795, 915, 1080],
-    [0.5, 0.5, 1.0, 0.6, 0.7, 0.85, 1.0, 0.9]
+    [0, 225, 280, 375, 645, 975, 1245, 1605, 1845, 2025, 2250],
+    [0.5, 0.5, 1.0, 0.6, 0.7, 0.75, 0.7, 0.85, 0.8, 1.0, 0.9]
   );
 
+  // Subtle pulsing of the sun orb
   const orbPulse = interpolate(
     frame,
-    [0, 120, 240, 360, 480, 600, 720, 840, 960, 1080],
-    [1, 1.06, 1, 1.04, 1, 1.07, 1, 1.05, 1, 1.03]
+    [0, 200, 400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2250],
+    [1, 1.05, 1, 1.04, 1, 1.06, 1, 1.05, 1, 1.04, 1.08, 1.03]
   );
 
-  // 16 rays — more, brighter
+  // 16 light rays
   const rayCount = 16;
   const rays = Array.from({ length: rayCount }, (_, i) => {
     const baseAngle = (i / (rayCount - 1)) * 170 - 85;
     const isOrange = i % 3 !== 2;
     const color = isOrange ? COLORS.accentBright : COLORS.purpleBright;
-    // Much higher base opacity
     const baseOpacity = isOrange
       ? (i % 2 === 0 ? 0.18 : 0.12)
       : 0.09;
     const width = i % 4 === 0 ? 6 : i % 3 === 0 ? 8 : 3;
     const blur = i % 4 === 0 ? 25 : i % 3 === 0 ? 40 : 18;
 
+    // Individual ray intensity varies over time
     const rayIntensity = interpolate(
-      frame + i * 15,
-      [0, 200, 400, 600, 800, 1080],
-      [0.8, 1.2, 0.9, 1.1, 0.95, 1.0]
+      frame + i * 20,
+      [0, 400, 800, 1200, 1600, 2000, 2250],
+      [0.8, 1.2, 0.9, 1.1, 0.95, 1.15, 1.0]
     );
 
     const opacity = Math.min(baseOpacity * intensity * rayIntensity, 1);
@@ -68,7 +70,7 @@ export const SunraysBackground: React.FC = () => {
         }}
       />
 
-      {/* Purple sky — much stronger */}
+      {/* Purple sky gradient */}
       <AbsoluteFill
         style={{
           background: `radial-gradient(ellipse 100% 60% at 50% -5%, ${COLORS.purple}50 0%, ${COLORS.purple}15 30%, transparent 60%)`,
@@ -97,7 +99,7 @@ export const SunraysBackground: React.FC = () => {
         }}
       />
 
-      {/* Outer bloom — much more visible */}
+      {/* Outer bloom layers */}
       <div
         style={{
           position: "absolute",
@@ -118,10 +120,10 @@ export const SunraysBackground: React.FC = () => {
         }}
       />
 
-      {/* Light beams */}
+      {/* Light rays */}
       {rays}
 
-      {/* Horizon warm band — stronger */}
+      {/* Horizon warm band */}
       <div
         style={{
           position: "absolute",

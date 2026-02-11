@@ -1,31 +1,37 @@
-import { AbsoluteFill, useCurrentFrame, interpolate, spring, useVideoConfig } from "remotion";
+import { AbsoluteFill, useCurrentFrame, interpolate } from "remotion";
 import { COLORS, FONT } from "../theme";
 
 const SESSION_1 = [
   { type: "prompt" as const, text: "> Help me set up Stripe payments for my SaaS", delay: 0 },
-  { type: "match" as const, text: "  ⚡ Auto-matched: stripe-integration", delay: 45 },
-  { type: "detail" as const, text: "  → CLI auth: stripe login", delay: 70 },
-  { type: "detail" as const, text: "  → Products, checkout, webhooks configured", delay: 90 },
-  { type: "success" as const, text: "  ✓ Payments live in 4 commands", delay: 115 },
+  { type: "match" as const, text: "  ⚡ Auto-matched: stripe-integration", delay: 50 },
+  { type: "detail" as const, text: "  → CLI auth: stripe login", delay: 75 },
+  { type: "detail" as const, text: "  → Products, checkout, webhooks configured", delay: 95 },
+  { type: "success" as const, text: "  ✓ Payments live in 4 commands", delay: 120 },
 ];
 
 const SESSION_2 = [
-  { type: "prompt" as const, text: "> Build a dashboard with React and shadcn", delay: 155 },
-  { type: "match" as const, text: "  ⚡ Auto-matched: react-dev + frontend-design", delay: 195 },
-  { type: "detail" as const, text: "  → Fetching React 19 docs via Context7 MCP", delay: 218 },
-  { type: "success" as const, text: "  ✓ Components, hooks, types — all current", delay: 245 },
+  { type: "prompt" as const, text: "> Build a dashboard with React and shadcn", delay: 165 },
+  { type: "match" as const, text: "  ⚡ Auto-matched: react-dev + frontend-design", delay: 210 },
+  { type: "detail" as const, text: "  → Fetching React 19 docs via Context7 MCP", delay: 235 },
+  { type: "detail" as const, text: "  → shadcn components auto-installed", delay: 255 },
+  { type: "success" as const, text: "  ✓ Components, hooks, types — all current", delay: 280 },
 ];
 
-const ALL_LINES = [...SESSION_1, ...SESSION_2];
+const SESSION_3 = [
+  { type: "prompt" as const, text: "> Run SEO audit on my landing page", delay: 320 },
+  { type: "match" as const, text: "  ⚡ Auto-matched: seo-audit", delay: 360 },
+  { type: "success" as const, text: "  ✓ 47 checks, schema markup, Core Web Vitals", delay: 385 },
+];
+
+const ALL_LINES = [...SESSION_1, ...SESSION_2, ...SESSION_3];
 
 export const SkillMatchDemo: React.FC = () => {
   const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
 
-  const termY = interpolate(frame, [0, 25], [60, 0], {
+  const termY = interpolate(frame, [0, 28], [60, 0], {
     extrapolateLeft: "clamp", extrapolateRight: "clamp",
   });
-  const termOpacity = interpolate(frame, [0, 20, 285, 315], [0, 1, 1, 0], {
+  const termOpacity = interpolate(frame, [0, 25, 345, 375], [0, 1, 1, 0], {
     extrapolateLeft: "clamp", extrapolateRight: "clamp",
   });
 
@@ -41,11 +47,11 @@ export const SkillMatchDemo: React.FC = () => {
       <div
         style={{
           position: "absolute",
-          top: 75,
+          top: 55,
           fontFamily: FONT.sans,
-          fontSize: 24,
+          fontSize: 22,
           color: COLORS.textMuted,
-          opacity: interpolate(frame, [8, 25], [0, 1], {
+          opacity: interpolate(frame, [8, 28], [0, 1], {
             extrapolateLeft: "clamp", extrapolateRight: "clamp",
           }),
           letterSpacing: 3,
@@ -58,7 +64,7 @@ export const SkillMatchDemo: React.FC = () => {
 
       <div
         style={{
-          width: 1050,
+          width: 1100,
           transform: `translateY(${termY}px)`,
           borderRadius: 16,
           overflow: "hidden",
@@ -93,30 +99,32 @@ export const SkillMatchDemo: React.FC = () => {
         {/* Terminal body */}
         <div
           style={{
-            padding: "28px 30px",
+            padding: "24px 28px",
             background: `linear-gradient(180deg, ${COLORS.bg} 0%, ${COLORS.bgRaised}80 100%)`,
             fontFamily: FONT.mono,
-            fontSize: 22,
-            lineHeight: 2.1,
-            minHeight: 440,
+            fontSize: 20,
+            lineHeight: 2.0,
+            minHeight: 520,
           }}
         >
           {ALL_LINES.map((line, i) => {
             const lineOpacity = interpolate(
-              frame, [line.delay, line.delay + 15], [0, 1],
+              frame, [line.delay, line.delay + 18], [0, 1],
               { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
             );
             const lineX = interpolate(
-              frame, [line.delay, line.delay + 15],
-              [line.type === "prompt" ? 0 : 12, 0],
+              frame, [line.delay, line.delay + 18],
+              [line.type === "prompt" ? 0 : 14, 0],
               { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
             );
 
-            if (i === SESSION_1.length) {
+            // Add divider before session 2 and 3
+            if (i === SESSION_1.length || i === SESSION_1.length + SESSION_2.length) {
+              const dividerStart = i === SESSION_1.length ? 155 : 310;
               return (
                 <div key={`gap-${i}`} style={{
                   height: 20,
-                  opacity: interpolate(frame, [140, 150], [0, 1], {
+                  opacity: interpolate(frame, [dividerStart, dividerStart + 12], [0, 1], {
                     extrapolateLeft: "clamp", extrapolateRight: "clamp",
                   }),
                 }}>
@@ -174,14 +182,15 @@ export const SkillMatchDemo: React.FC = () => {
             );
           })}
 
-          {frame > 260 && (
+          {/* Blinking cursor at end */}
+          {frame > 400 && (
             <div style={{ marginTop: 4 }}>
               <span style={{ color: COLORS.accentBright, textShadow: `0 0 8px ${COLORS.accent}60` }}>&gt; </span>
               <span
                 style={{
                   display: "inline-block",
                   width: 12,
-                  height: 24,
+                  height: 22,
                   background: COLORS.accentBright,
                   verticalAlign: "text-bottom",
                   opacity: Math.sin(frame * 0.2) > 0 ? 1 : 0,
