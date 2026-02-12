@@ -1,36 +1,47 @@
 import { AbsoluteFill, useCurrentFrame, spring, useVideoConfig, interpolate } from "remotion";
 import { COLORS, FONT } from "../theme";
 
-const STATS = [
-  {
-    number: "187",
-    label: "Skills Available",
-    sub: "All indexed, all discoverable",
-    isHero: false,
-  },
-  {
-    number: "~7%",
-    label: "Context Cost",
-    sub: "Not 40%. Seven percent.",
-    isHero: true,
-  },
-  {
-    number: "0",
-    label: "Manual Loading",
-    sub: "Auto-discovery handles it",
-    isHero: false,
-  },
-];
-
 export const ContextEfficiency: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  const headerOpacity = interpolate(frame, [0, 20], [0, 1], {
+  // Header animation
+  const headerOpacity = interpolate(frame, [0, 25], [0, 1], {
     extrapolateLeft: "clamp", extrapolateRight: "clamp",
   });
 
-  const fadeOut = interpolate(frame, [225, 255], [1, 0], {
+  // Fade out at end of 300 frame duration
+  const fadeOut = interpolate(frame, [260, 300], [1, 0], {
+    extrapolateLeft: "clamp", extrapolateRight: "clamp",
+  });
+
+  // "187" animation
+  const stat1Scale = spring({
+    frame: frame - 40,
+    fps,
+    config: { damping: 8, stiffness: 200, mass: 0.4 },
+  });
+  const stat1Opacity = interpolate(frame, [40, 65], [0, 1], {
+    extrapolateLeft: "clamp", extrapolateRight: "clamp",
+  });
+
+  // "~7%" animation (hero stat)
+  const stat2Scale = spring({
+    frame: frame - 90,
+    fps,
+    config: { damping: 6, stiffness: 180, mass: 0.5 },
+  });
+  const stat2Opacity = interpolate(frame, [90, 120], [0, 1], {
+    extrapolateLeft: "clamp", extrapolateRight: "clamp",
+  });
+
+  // "Not 40%" comparison
+  const comparisonOpacity = interpolate(frame, [140, 165], [0, 1], {
+    extrapolateLeft: "clamp", extrapolateRight: "clamp",
+  });
+
+  // Bottom benefit text
+  const benefitOpacity = interpolate(frame, [190, 220], [0, 1], {
     extrapolateLeft: "clamp", extrapolateRight: "clamp",
   });
 
@@ -72,7 +83,7 @@ export const ContextEfficiency: React.FC = () => {
         </div>
       </div>
 
-      {/* Stats */}
+      {/* Main stats area */}
       <div
         style={{
           position: "absolute",
@@ -83,89 +94,135 @@ export const ContextEfficiency: React.FC = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          gap: 80,
+          gap: 120,
           paddingTop: 40,
         }}
       >
-        {STATS.map((stat, i) => {
-          const delay = 40 + i * 45;
-          const numScale = spring({
-            frame: frame - delay,
-            fps,
-            config: { damping: 8, stiffness: 200, mass: 0.4 },
-          });
-          const opacity = interpolate(frame, [delay, delay + 25], [0, 1], {
-            extrapolateLeft: "clamp", extrapolateRight: "clamp",
-          });
-          const subOpacity = interpolate(frame, [delay + 25, delay + 45], [0, 1], {
-            extrapolateLeft: "clamp", extrapolateRight: "clamp",
-          });
+        {/* 187 Skills */}
+        <div
+          style={{
+            textAlign: "center",
+            opacity: stat1Opacity,
+            transform: `scale(${Math.min(stat1Scale, 1)})`,
+          }}
+        >
+          <div
+            style={{
+              fontFamily: FONT.mono,
+              fontSize: 120,
+              fontWeight: 700,
+              color: COLORS.textBright,
+              lineHeight: 1,
+              textShadow: `0 0 30px ${COLORS.accentBright}60, 0 0 60px ${COLORS.accent}30`,
+            }}
+          >
+            187
+          </div>
+          <div
+            style={{
+              fontFamily: FONT.mono,
+              fontSize: 20,
+              color: COLORS.textMuted,
+              textTransform: "uppercase",
+              letterSpacing: 4,
+              marginTop: 18,
+            }}
+          >
+            Skills Available
+          </div>
+        </div>
 
-          return (
-            <div
-              key={i}
-              style={{
-                textAlign: "center",
-                opacity,
-                transform: `scale(${Math.min(numScale, 1)})`,
-              }}
-            >
-              <div
-                style={{
-                  fontFamily: FONT.mono,
-                  fontSize: stat.isHero ? 180 : 120,
-                  fontWeight: 700,
-                  color: stat.isHero ? COLORS.accentBright : COLORS.textBright,
-                  lineHeight: 1,
-                  textShadow: stat.isHero
-                    ? `0 0 50px ${COLORS.accentBright}, 0 0 100px ${COLORS.accent}cc, 0 0 180px ${COLORS.accent}50`
-                    : `0 0 30px ${COLORS.accentBright}60, 0 0 60px ${COLORS.accent}30`,
-                }}
-              >
-                {stat.number}
-              </div>
+        {/* ~7% Context Cost (Hero Stat) */}
+        <div
+          style={{
+            textAlign: "center",
+            opacity: stat2Opacity,
+            transform: `scale(${Math.min(stat2Scale, 1)})`,
+          }}
+        >
+          <div
+            style={{
+              fontFamily: FONT.mono,
+              fontSize: 180,
+              fontWeight: 700,
+              color: COLORS.accentBright,
+              lineHeight: 1,
+              textShadow: `
+                0 0 50px ${COLORS.accentBright},
+                0 0 100px ${COLORS.accent}cc,
+                0 0 180px ${COLORS.accent}50
+              `,
+            }}
+          >
+            ~7%
+          </div>
+          <div
+            style={{
+              fontFamily: FONT.mono,
+              fontSize: 20,
+              color: COLORS.accentWarm,
+              textTransform: "uppercase",
+              letterSpacing: 4,
+              marginTop: 18,
+              textShadow: `0 0 15px ${COLORS.accentWarm}50`,
+            }}
+          >
+            Context Cost
+          </div>
+        </div>
+      </div>
 
-              <div
-                style={{
-                  fontFamily: FONT.mono,
-                  fontSize: 20,
-                  color: COLORS.textMuted,
-                  textTransform: "uppercase",
-                  letterSpacing: 4,
-                  marginTop: 18,
-                }}
-              >
-                {stat.label}
-              </div>
-
-              <div
-                style={{
-                  fontFamily: FONT.sans,
-                  fontSize: 18,
-                  color: stat.isHero ? COLORS.accentWarm : COLORS.textMuted,
-                  marginTop: 10,
-                  opacity: subOpacity,
-                  textShadow: stat.isHero ? `0 0 15px ${COLORS.accentWarm}50` : "none",
-                }}
-              >
-                {stat.sub}
-              </div>
-            </div>
-          );
-        })}
+      {/* "Not 40%. Seven." comparison */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: 160,
+          left: 0,
+          right: 0,
+          textAlign: "center",
+          opacity: comparisonOpacity,
+        }}
+      >
+        <div
+          style={{
+            fontFamily: FONT.mono,
+            fontSize: 32,
+            color: COLORS.textMuted,
+          }}
+        >
+          Not{" "}
+          <span
+            style={{
+              color: COLORS.red,
+              textDecoration: "line-through",
+              opacity: 0.7,
+            }}
+          >
+            40%
+          </span>
+          .{" "}
+          <span
+            style={{
+              color: COLORS.accentBright,
+              fontWeight: 700,
+              textShadow: `0 0 20px ${COLORS.accent}60`,
+            }}
+          >
+            Seven
+          </span>
+          .
+        </div>
       </div>
 
       {/* Benefit statement */}
       <div
         style={{
           position: "absolute",
-          bottom: 90,
+          bottom: 80,
           left: 0,
           right: 0,
           textAlign: "center",
-          opacity: interpolate(frame, [160, 190], [0, 1], {
-            extrapolateLeft: "clamp", extrapolateRight: "clamp",
-          }),
+          opacity: benefitOpacity,
         }}
       >
         <div
@@ -173,15 +230,13 @@ export const ContextEfficiency: React.FC = () => {
             fontFamily: FONT.sans,
             fontSize: 28,
             color: COLORS.textMuted,
-            maxWidth: 800,
-            margin: "0 auto",
-            lineHeight: 1.5,
           }}
         >
-          More context for{" "}
-          <span style={{ color: COLORS.accentBright, fontWeight: 700 }}>your actual work</span>.
-          <br />
-          Less wasted on skill overhead.
+          More room for{" "}
+          <span style={{ color: COLORS.accentBright, fontWeight: 700 }}>
+            your actual work
+          </span>
+          .
         </div>
       </div>
     </AbsoluteFill>

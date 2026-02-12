@@ -19,15 +19,24 @@ const PLATFORMS = [
   },
 ];
 
+const FEATURES = [
+  { text: "Installs prerequisites", icon: "⚙️" },
+  { text: "Installs Claude Code", icon: "🤖" },
+  { text: "Configures everything", icon: "✨" },
+  { text: "Skips what's installed", icon: "⏭️" },
+];
+
 export const OneCommandInstall: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  const headerOpacity = interpolate(frame, [0, 20], [0, 1], {
+  // Header animation
+  const headerOpacity = interpolate(frame, [0, 25], [0, 1], {
     extrapolateLeft: "clamp", extrapolateRight: "clamp",
   });
 
-  const fadeOut = interpolate(frame, [165, 195], [1, 0], {
+  // Fade out at end of 300 frame duration
+  const fadeOut = interpolate(frame, [260, 300], [1, 0], {
     extrapolateLeft: "clamp", extrapolateRight: "clamp",
   });
 
@@ -37,7 +46,7 @@ export const OneCommandInstall: React.FC = () => {
       <div
         style={{
           position: "absolute",
-          top: 120,
+          top: 70,
           textAlign: "center",
           opacity: headerOpacity,
         }}
@@ -58,7 +67,7 @@ export const OneCommandInstall: React.FC = () => {
         <div
           style={{
             fontFamily: FONT.mono,
-            fontSize: 56,
+            fontSize: 52,
             fontWeight: 700,
             color: COLORS.textBright,
           }}
@@ -71,8 +80,8 @@ export const OneCommandInstall: React.FC = () => {
       <div
         style={{
           display: "flex",
-          gap: 40,
-          marginTop: 80,
+          gap: 32,
+          marginTop: 40,
         }}
       >
         {PLATFORMS.map((platform, i) => {
@@ -90,19 +99,19 @@ export const OneCommandInstall: React.FC = () => {
             <div
               key={i}
               style={{
-                width: 480,
+                width: 420,
                 background: COLORS.bgCard,
                 border: `1px solid ${COLORS.border}`,
                 borderRadius: 16,
-                padding: "28px 32px",
+                padding: "24px 28px",
                 opacity: cardOpacity,
                 transform: `scale(${Math.min(cardScale, 1)})`,
                 boxShadow: `0 10px 40px rgba(0,0,0,0.4)`,
               }}
             >
               {/* Platform header */}
-              <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 18 }}>
-                <span style={{ fontSize: 36 }}>{platform.icon}</span>
+              <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 16 }}>
+                <span style={{ fontSize: 32 }}>{platform.icon}</span>
                 <div
                   style={{
                     fontFamily: FONT.mono,
@@ -119,10 +128,10 @@ export const OneCommandInstall: React.FC = () => {
               <div
                 style={{
                   fontFamily: FONT.mono,
-                  fontSize: 16,
+                  fontSize: 14,
                   color: COLORS.accentBright,
                   background: COLORS.bg,
-                  padding: "14px 18px",
+                  padding: "12px 16px",
                   borderRadius: 10,
                   border: `1px solid ${COLORS.border}`,
                   wordBreak: "break-all",
@@ -136,38 +145,67 @@ export const OneCommandInstall: React.FC = () => {
         })}
       </div>
 
-      {/* Features list */}
+      {/* Features row */}
       <div
         style={{
           position: "absolute",
-          bottom: 100,
+          bottom: 130,
           display: "flex",
-          gap: 50,
-          opacity: interpolate(frame, [100, 130], [0, 1], {
+          gap: 40,
+        }}
+      >
+        {FEATURES.map((feature, i) => {
+          const delay = 120 + i * 20;
+          const opacity = interpolate(frame, [delay, delay + 20], [0, 1], {
+            extrapolateLeft: "clamp", extrapolateRight: "clamp",
+          });
+
+          return (
+            <div
+              key={i}
+              style={{
+                opacity,
+                fontFamily: FONT.sans,
+                fontSize: 18,
+                color: COLORS.green,
+                display: "flex",
+                alignItems: "center",
+                gap: 10,
+                background: COLORS.bgRaised,
+                padding: "10px 16px",
+                borderRadius: 8,
+                border: `1px solid ${COLORS.green}30`,
+              }}
+            >
+              <span style={{ fontSize: 18 }}>{feature.icon}</span>
+              {feature.text}
+            </div>
+          );
+        })}
+      </div>
+
+      {/* "Done" text */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: 60,
+          textAlign: "center",
+          opacity: interpolate(frame, [220, 245], [0, 1], {
             extrapolateLeft: "clamp", extrapolateRight: "clamp",
           }),
         }}
       >
-        {[
-          "Installs Node.js, Git, Python",
-          "Installs or updates Claude Code",
-          "Configures 187 skills",
-        ].map((text, i) => (
-          <div
-            key={i}
-            style={{
-              fontFamily: FONT.sans,
-              fontSize: 18,
-              color: COLORS.green,
-              display: "flex",
-              alignItems: "center",
-              gap: 10,
-            }}
-          >
-            <span style={{ fontSize: 20 }}>✓</span>
-            {text}
-          </div>
-        ))}
+        <div
+          style={{
+            fontFamily: FONT.mono,
+            fontSize: 32,
+            fontWeight: 700,
+            color: COLORS.accentBright,
+            textShadow: `0 0 30px ${COLORS.accent}60`,
+          }}
+        >
+          Done.
+        </div>
       </div>
     </AbsoluteFill>
   );

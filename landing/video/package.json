@@ -1,21 +1,31 @@
 {
   "name": "rising-tides-promo",
-  "version": "1.0.0",
+  "version": "2.0.0",
+  "description": "Rising Tides promotional video",
   "private": true,
   "scripts": {
-    "start": "remotion studio src/index.tsx",
+    "dev": "remotion studio --port 6824",
+    "start": "remotion studio --port 6824",
     "build": "remotion render src/index.tsx RisingTidesPromo out/rising-tides-promo.mp4",
     "build:gif": "remotion render src/index.tsx RisingTidesPromo out/rising-tides-promo.gif --image-format png",
-    "compositions": "remotion compositions src/index.tsx"
+    "compositions": "remotion compositions src/index.tsx",
+    "upgrade": "remotion upgrade",
+    "lint": "tsc --noEmit"
   },
   "dependencies": {
-    "@remotion/cli": "^4.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "remotion": "^4.0.0"
+    "@remotion/animation-utils": "4.0.421",
+    "@remotion/cli": "4.0.421",
+    "@remotion/media-utils": "4.0.421",
+    "@remotion/noise": "4.0.421",
+    "@remotion/paths": "4.0.421",
+    "@remotion/shapes": "4.0.421",
+    "@remotion/transitions": "4.0.421",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.421"
   },
   "devDependencies": {
-    "@types/react": "^18.2.0",
-    "typescript": "^5.3.0"
+    "@types/react": "18.3.0",
+    "typescript": "5.3.3"
   }
 }

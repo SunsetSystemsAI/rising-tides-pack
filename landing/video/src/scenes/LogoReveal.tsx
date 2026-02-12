@@ -5,34 +5,52 @@ export const LogoReveal: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  const fadeIn = interpolate(frame, [0, 12], [0, 1], {
+  // Initial fade in
+  const fadeIn = interpolate(frame, [0, 15], [0, 1], {
     extrapolateLeft: "clamp", extrapolateRight: "clamp",
   });
 
+  // "There's a better way" intro text
+  const introOpacity = interpolate(frame, [0, 15, 45, 60], [0, 1, 1, 0], {
+    extrapolateLeft: "clamp", extrapolateRight: "clamp",
+  });
+
+  // Wave and brand appear after intro
   const waveScale = spring({
-    frame: frame - 8, fps,
+    frame: frame - 50, fps,
     config: { damping: 8, stiffness: 200, mass: 0.5 },
   });
 
-  // Much brighter burst
-  const burstOpacity = interpolate(frame, [8, 18, 55], [0, 1, 0], {
+  // Golden burst effect
+  const burstOpacity = interpolate(frame, [50, 65, 120], [0, 1, 0], {
     extrapolateLeft: "clamp", extrapolateRight: "clamp",
   });
-  const burstScale = interpolate(frame, [8, 50], [0.3, 3], {
+  const burstScale = interpolate(frame, [50, 120], [0.3, 3], {
     extrapolateLeft: "clamp", extrapolateRight: "clamp",
   });
 
+  // Brand name animation
   const brandText = "Rising Tides";
-  const brandStart = 30;
+  const brandStart = 70;
 
-  const tagOpacity = interpolate(frame, [70, 90], [0, 1], {
+  // "Starter Pack" subtitle
+  const starterOpacity = interpolate(frame, [130, 150], [0, 1], {
     extrapolateLeft: "clamp", extrapolateRight: "clamp",
   });
-  const tagY = interpolate(frame, [70, 90], [15, 0], {
+  const starterY = interpolate(frame, [130, 150], [15, 0], {
     extrapolateLeft: "clamp", extrapolateRight: "clamp",
   });
 
-  const fadeOut = interpolate(frame, [140, 165], [1, 0], {
+  // Tagline
+  const tagOpacity = interpolate(frame, [160, 180], [0, 1], {
+    extrapolateLeft: "clamp", extrapolateRight: "clamp",
+  });
+  const tagY = interpolate(frame, [160, 180], [15, 0], {
+    extrapolateLeft: "clamp", extrapolateRight: "clamp",
+  });
+
+  // Final fade out
+  const fadeOut = interpolate(frame, [210, 240], [1, 0], {
     extrapolateLeft: "clamp", extrapolateRight: "clamp",
   });
 
@@ -44,6 +62,20 @@ export const LogoReveal: React.FC = () => {
         opacity: fadeIn * fadeOut,
       }}
     >
+      {/* "There's a better way" intro */}
+      <div
+        style={{
+          position: "absolute",
+          fontFamily: FONT.sans,
+          fontSize: 48,
+          color: COLORS.textBright,
+          opacity: introOpacity,
+          textShadow: `0 0 30px ${COLORS.accent}40`,
+        }}
+      >
+        There's a better way.
+      </div>
+
       {/* Bright orange burst */}
       <div
         style={{
@@ -74,6 +106,7 @@ export const LogoReveal: React.FC = () => {
             `,
             lineHeight: 1,
             marginBottom: 10,
+            opacity: frame > 50 ? 1 : 0,
           }}
         >
           ~
@@ -89,6 +122,7 @@ export const LogoReveal: React.FC = () => {
             letterSpacing: -2,
             display: "flex",
             justifyContent: "center",
+            opacity: frame > 50 ? 1 : 0,
           }}
         >
           {brandText.split("").map((char, i) => {
@@ -117,19 +151,35 @@ export const LogoReveal: React.FC = () => {
           })}
         </div>
 
+        {/* "Starter Pack" subtitle */}
+        <div
+          style={{
+            fontSize: 36,
+            fontFamily: FONT.mono,
+            fontWeight: 600,
+            color: COLORS.accentBright,
+            opacity: starterOpacity,
+            transform: `translateY(${starterY}px)`,
+            marginTop: 12,
+            textShadow: `0 0 20px ${COLORS.accent}60`,
+          }}
+        >
+          Starter Pack
+        </div>
+
         {/* Tagline */}
         <div
           style={{
-            fontSize: 28,
+            fontSize: 26,
             fontFamily: FONT.sans,
             color: COLORS.purpleBright,
             opacity: tagOpacity,
             transform: `translateY(${tagY}px)`,
-            marginTop: 22,
-            letterSpacing: 2,
+            marginTop: 20,
+            letterSpacing: 1,
           }}
         >
-          A rising tide lifts all boats.
+          The complete starter pack for Claude Code.
         </div>
       </div>
     </AbsoluteFill>
