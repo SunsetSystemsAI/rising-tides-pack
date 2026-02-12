@@ -38,7 +38,7 @@ const features = [
     number: "05",
     icon: Zap,
     title: "One-command install",
-    description: "Mac, Linux, or Windows. Run one command. Prerequisites checked, Claude Code installed, skills configured. Done.",
+    description: "Installs everything: Node.js, Git, Python, Claude Code, and the skills pack. Already have some? It skips what's installed and updates Claude Code to the latest version.",
     highlight: false,
   },
   {

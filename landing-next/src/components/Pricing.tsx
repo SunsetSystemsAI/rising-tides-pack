@@ -13,7 +13,7 @@ const plans = [
       "All 187 production-ready skills",
       "38 MCP plugin bundles",
       "9 CLI integration guides",
-      "One-command setup scripts",
+      "One-command setup (installs Claude Code + all prerequisites)",
       "Private GitHub repo access",
       "Lifetime updates",
       "Community access",

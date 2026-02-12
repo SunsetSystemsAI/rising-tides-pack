@@ -28,7 +28,7 @@ const faqs = [
   {
     question: "What OS do you support?",
     answer:
-      "Mac, Linux, and Windows. Each platform has a dedicated one-command setup script that handles prerequisites, installation, and configuration.",
+      "Mac, Linux, and Windows. Each platform has a dedicated setup script that installs everything — Node.js, Git, Python, Claude Code, and the skills pack. If you already have some prerequisites, it detects them and skips ahead. New users and existing Claude Code users run the same script.",
   },
   {
     question: "Do I get updates?",

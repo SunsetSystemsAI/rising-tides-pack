@@ -10,7 +10,7 @@ const steps = [
     number: "1",
     icon: Download,
     title: "Install",
-    description: "Run the one-line setup script for your OS. It handles prerequisites, Claude Code, and the skills pack.",
+    description: "One command installs Node.js, Git, Claude Code — everything. Already set up? It skips what you have and updates the rest.",
   },
   {
     number: "2",
