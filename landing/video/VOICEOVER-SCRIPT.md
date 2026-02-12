@@ -36,13 +36,13 @@
 
 ## SCENE 3: What It Is (0:12.5 - 0:22)
 
-**[Visual: Stats appear one by one: 180, 37, 17, 9]**
+**[Visual: Stats appear one by one: 187, 38, 18, 9]**
 
-> A curated library of one hundred eighty production-ready skills.
+> A curated library of one hundred eighty-seven production-ready skills.
 >
-> Thirty-seven pre-configured plugins.
+> Thirty-eight pre-configured plugins.
 >
-> Seventeen MCP integrations.
+> Eighteen MCP integrations.
 >
 > Nine CLI tools — fully documented.
 >
@@ -116,7 +116,7 @@
 
 ## SCENE 7: Context Efficiency (0:53.5 - 1:02)
 
-**[Visual: Large stats - 180, ~7%, 0]**
+**[Visual: Large stats - 187, ~7%, 0]**
 
 > Here's the magic.
 >
@@ -142,9 +142,9 @@
 >
 > Mac, Linux, or Windows — one command.
 >
-> Prerequisites auto-detected. Claude Code installed. Skills configured.
+> Installs Node, Git, Python — everything you need. Installs or updates Claude Code. Configures all one hundred eighty-seven skills.
 >
-> Done.
+> Already have some prerequisites? It skips what's installed. Done.
 
 **Timing:** Quick and punchy — emphasize simplicity
 
@@ -158,7 +158,7 @@
 >
 > Start shipping code.
 >
-> One hundred eighty skills. Thirty-seven plugins. One command.
+> One hundred eighty-seven skills. Thirty-eight plugins. One command.
 >
 > Get Rising Tides today.
 >
@@ -172,7 +172,7 @@
 
 ### Voice Direction
 - **Pace:** Moderate, not rushed. Allow visuals to breathe.
-- **Emphasis points:** Numbers (180, 37, 7%), "automatically," "zero," "one command"
+- **Emphasis points:** Numbers (187, 38, 7%), "automatically," "zero," "one command"
 - **Energy:** Builds from problem (lower) to solution (higher) to CTA (confident)
 
 ### Sync Points (Critical)
@@ -212,7 +212,7 @@ Sound familiar?
 
 There's a better way. Rising Tides.
 
-A curated library of one hundred eighty production-ready skills. Thirty-seven pre-configured plugins. Seventeen MCP integrations. Nine CLI tools — fully documented. Everything you need to ship faster. Nothing you don't.
+A curated library of one hundred eighty-seven production-ready skills. Thirty-eight pre-configured plugins. Eighteen MCP integrations. Nine CLI tools — fully documented. Everything you need to ship faster. Nothing you don't.
 
 The architecture is simple. Skills teach Claude workflows and best practices. Plugins bundle skills with MCP configurations for zero-config setup. MCPs provide rich API operations — live documentation, browser control, video generation. And CLIs handle authentication and simple commands. Four layers. One unified system.
 
@@ -220,8 +220,8 @@ Here's how it works. You describe your task: "Build me a React dashboard with St
 
 Watch this in action. "Help me set up Stripe payments." Auto-matched: stripe-integration. CLI auth configured. Payments live in four commands. "Build a dashboard with React and shadcn." Auto-matched: react-dev, frontend-design. Live docs via Context7. Components installed. "Run an SEO audit." Auto-matched: seo-audit. Forty-seven checks, schema markup, Core Web Vitals — all covered.
 
-Here's the magic. One hundred eighty skills available. Seven percent context cost. Not forty percent. Seven. Zero manual loading. Auto-discovery handles everything. More context for your actual work. Less wasted on skill overhead.
+Here's the magic. One hundred eighty-seven skills available. Seven percent context cost. Not forty percent. Seven. Zero manual loading. Auto-discovery handles everything. More context for your actual work. Less wasted on skill overhead.
 
-Getting started is easy. Mac, Linux, or Windows — one command. Prerequisites auto-detected. Claude Code installed. Skills configured. Done.
+Getting started is easy. Mac, Linux, or Windows — one command. Installs Node, Git, Python — everything you need. Installs or updates Claude Code. Configures all one hundred eighty-seven skills. Already have some prerequisites? It skips what's installed. Done.
 
-Stop building skills from scratch. Start shipping code. One hundred eighty skills. Thirty-seven plugins. One command. Get Rising Tides today. A rising tide lifts all boats.
+Stop building skills from scratch. Start shipping code. One hundred eighty-seven skills. Thirty-eight plugins. One command. Get Rising Tides today. A rising tide lifts all boats.

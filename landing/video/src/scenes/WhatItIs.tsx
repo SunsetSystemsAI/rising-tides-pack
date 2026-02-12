@@ -2,9 +2,9 @@ import { AbsoluteFill, useCurrentFrame, interpolate, spring, useVideoConfig } fr
 import { COLORS, FONT } from "../theme";
 
 const STATS = [
-  { number: "180", label: "Production-Ready Skills", color: COLORS.accentBright },
-  { number: "37", label: "Pre-Configured Plugins", color: COLORS.purpleBright },
-  { number: "17", label: "MCP Integrations", color: COLORS.accentWarm },
+  { number: "187", label: "Production-Ready Skills", color: COLORS.accentBright },
+  { number: "38", label: "Pre-Configured Plugins", color: COLORS.purpleBright },
+  { number: "18", label: "MCP Integrations", color: COLORS.accentWarm },
   { number: "9", label: "CLI Tools Documented", color: COLORS.green },
 ];
 

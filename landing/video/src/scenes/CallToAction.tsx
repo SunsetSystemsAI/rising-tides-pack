@@ -78,7 +78,7 @@ export const CallToAction: React.FC = () => {
             letterSpacing: 1,
           }}
         >
-          180 skills · 37 plugins · 17 MCPs · One command
+          187 skills · 38 plugins · 18 MCPs · One command
         </div>
 
         {/* CTA Button */}

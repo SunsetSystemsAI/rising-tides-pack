@@ -149,9 +149,9 @@ export const OneCommandInstall: React.FC = () => {
         }}
       >
         {[
-          "Prerequisites auto-detected",
-          "Claude Code installed",
-          "Skills configured",
+          "Installs Node.js, Git, Python",
+          "Installs or updates Claude Code",
+          "Configures 187 skills",
         ].map((text, i) => (
           <div
             key={i}

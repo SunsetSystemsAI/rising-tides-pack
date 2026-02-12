@@ -3,7 +3,7 @@ import { COLORS, FONT } from "../theme";
 
 const STATS = [
   {
-    number: "180",
+    number: "187",
     label: "Skills Available",
     sub: "All indexed, all discoverable",
     isHero: false,
