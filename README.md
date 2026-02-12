@@ -2,12 +2,12 @@
 
 # Rising Tides Skills Pack
 
-**170 skills + 37 plugins + 9 CLIs + 17 MCPs — Everything you need to supercharge Claude Code.**
+**187 skills + 38 plugins + 9 CLIs + 18 MCPs — Everything you need to supercharge Claude Code.**
 
 [![Security Audit](https://img.shields.io/badge/Security%20Audit-PASSED-brightgreen?style=for-the-badge&logo=shield)](SECURITY.md)
-[![Skills](https://img.shields.io/badge/Skills-170-blue?style=for-the-badge)](skills/)
-[![Plugins](https://img.shields.io/badge/Plugins-37-purple?style=for-the-badge)](plugins/)
-[![MCPs](https://img.shields.io/badge/MCPs-17-orange?style=for-the-badge)](MCP_REGISTRY.md)
+[![Skills](https://img.shields.io/badge/Skills-187-blue?style=for-the-badge)](skills/)
+[![Plugins](https://img.shields.io/badge/Plugins-38-purple?style=for-the-badge)](plugins/)
+[![MCPs](https://img.shields.io/badge/MCPs-18-orange?style=for-the-badge)](MCP_REGISTRY.md)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
 *A curated, security-audited collection of Claude Code skills from the open-source community.*
@@ -23,16 +23,16 @@
 **Skills** are markdown instruction files that teach Claude Code specialized behaviors. Instead of explaining what you want every time, skills pre-load expertise for specific domains.
 
 **This collection includes:**
-- **170 skills** — Security, React, DevOps, marketing, SEO, architecture, and more
-- **37 plugins** — Bundle skills with MCP servers for zero-config setup
+- **187 skills** — Security, React, DevOps, marketing, SEO, n8n automation, architecture, and more
+- **38 plugins** — Bundle skills with MCP servers for zero-config setup
 - **9 CLI integrations** — GitHub, Stripe, Supabase, Firebase, Vercel, Netlify, Google Cloud
-- **17 MCPs** — context7, playwright, github, remotion, memory, and more
+- **18 MCPs** — context7, playwright, github, n8n, remotion, memory, and more
 
 ---
 
 ## How It Works
 
-The Rising Tides system uses **progressive disclosure** — you don't load 170 skills into context. Claude discovers what's available through a lightweight index and loads full skill content only when needed.
+The Rising Tides system uses **progressive disclosure** — you don't load 187 skills into context. Claude discovers what's available through a lightweight index and loads full skill content only when needed.
 
 ```mermaid
 flowchart TB
@@ -49,8 +49,8 @@ flowchart TB
     end
 
     subgraph Global["~/.claude/ (Global Library)"]
-        Skills["skills/<br/>170 folders"]
-        Plugins["plugins/<br/>37 bundles"]
+        Skills["skills/<br/>187 folders"]
+        Plugins["plugins/<br/>38 bundles"]
         Registry["MCP_REGISTRY.md"]
     end
 
@@ -75,7 +75,7 @@ flowchart TB
 | Full SKILL.md content | 500-5000 per skill | On invoke only |
 | MCP tool schemas | ~500 total | On-demand (with Tool Search) |
 
-**You're paying ~6% context for 170 skills.** Full content loads only when you invoke a skill.
+**You're paying ~6% context for 187 skills.** Full content loads only when you invoke a skill.
 
 ---
 
@@ -103,7 +103,11 @@ Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/SunsetSystemsAI/rising
 curl -fsSL https://raw.githubusercontent.com/SunsetSystemsAI/rising-tides-starter/main/scripts/setup-linux.sh -o /tmp/setup.sh && bash /tmp/setup.sh
 ```
 
-This installs Node.js, Git, Claude Code, and the full skills pack automatically.
+**What it does:**
+- Installs Node.js, Git, and other prerequisites (skips what you already have)
+- Installs Claude Code (skips if already installed)
+- Installs the full skills pack to `~/.claude/`
+- Enables Tool Search for context efficiency
 
 ---
 
@@ -153,12 +157,13 @@ claude mcp add memory --scope user
 | **Backend** | 22 | Django, FastAPI, Spring Boot, NestJS, Rails, Laravel |
 | **DevOps** | 15 | Kubernetes, Terraform, Docker, CI/CD, GitOps |
 | **Marketing** | 23 | Copywriting, SEO, CRO, analytics, email sequences |
+| **Integrations** | 12 | n8n workflows, Datadog, Jira, Perplexity, Gemini |
 | **Architecture** | 12 | C4 diagrams, API design, microservices, cloud |
 | **Documentation** | 11 | READMEs, Mermaid, presentations, Office docs |
 | **Workflow** | 14 | Git, debugging, handoffs, requirements |
 | **Languages** | 31+ | Python, Go, Rust, C++, Java, Kotlin, Swift |
 
-**Total: 170 skills**
+**Total: 187 skills**
 
 See `SKILLS_INDEX.json` for the complete list with invoke commands.
 
@@ -193,6 +198,7 @@ graph LR
 | `browser-automation-plugin` | browser-automation | claude-in-chrome | Chrome automation |
 | `video-generator-plugin` | video-generator | remotion | Programmatic video |
 | `git-workflow-plugin` | commit-work | github | Git commit automation |
+| `n8n-plugin` | n8n-mcp-tools-expert | n8n | Workflow automation (1,084+ nodes) |
 
 ### Using Plugins
 
@@ -239,7 +245,7 @@ Every skill and script has been security audited.
 
 **Skills are safe** — they're markdown files you can read and audit.
 
-**MCPs require trust** — we only include MCPs from verified publishers (Anthropic, Upstash).
+**MCPs require trust** — we only include MCPs from verified publishers (Anthropic, Upstash, community-verified).
 
 See [SECURITY.md](SECURITY.md) for the full audit report.
 
@@ -262,6 +268,7 @@ See [SECURITY.md](SECURITY.md) for the full audit report.
 | **[Jeff Allan](https://github.com/Jeffallan/claude-skills)** | 60+ | Languages, frameworks | MIT |
 | **[Softaworks](https://github.com/softaworks/agent-toolkit)** | 40 | Dev workflow, architecture | MIT |
 | **[harperaa](https://github.com/harperaa/secure-claude-skills)** | 11 | Next.js security (OWASP) | MIT |
+| **[Romuald Czlonkowski](https://github.com/czlonkowski/n8n-skills)** | 7 | n8n workflow automation | MIT |
 | **[Vercel Labs](https://github.com/vercel-labs/agent-skills)** | 3 | React, web design | MIT |
 | **[Ahmed Asmar](https://github.com/ahmedasmar/devops-claude-skills)** | 6 | DevOps, SRE | MIT |
 | **[Chris Wiles](https://github.com/ChrisWiles/claude-code-showcase)** | 5 | Claude Code patterns | MIT |
@@ -288,6 +295,7 @@ Claude analyzes your project and suggests relevant skills.
 /react-dev create a login form component
 /security-audit check this codebase
 /copywriting write a headline for my app
+/n8n-workflow-patterns create a webhook workflow
 ```
 
 ### With Plugins
@@ -301,14 +309,16 @@ claude --plugin-dir ~/.claude/plugins/react-dev-plugin
 
 ```
 ~/.claude/                          # GLOBAL LIBRARY
-├── skills/                         # All 170 skills
+├── skills/                         # All 187 skills
 │   ├── react-dev/
 │   │   └── SKILL.md
 │   ├── security-audit/
 │   │   └── SKILL.md
-│   └── ... (170 folders)
+│   ├── n8n-workflow-patterns/
+│   │   └── SKILL.md
+│   └── ... (187 folders)
 ├── plugins/                        # Plugin bundles
-│   └── ... (37 folders)
+│   └── ... (38 folders)
 ├── SKILLS_INDEX.json               # Master catalog
 ├── MCP_REGISTRY.md                 # MCP configs
 └── ATTRIBUTION.md                  # Credits
