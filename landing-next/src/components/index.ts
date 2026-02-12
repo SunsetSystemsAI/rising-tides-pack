@@ -1,5 +1,6 @@
 export { Navigation } from "./Navigation";
 export { Hero } from "./Hero";
+export { VideoHero } from "./VideoHero";
 export { Problem } from "./Problem";
 export { Features } from "./Features";
 export { HowItWorks } from "./HowItWorks";

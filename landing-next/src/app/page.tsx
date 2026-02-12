@@ -1,6 +1,7 @@
 import {
   Navigation,
   Hero,
+  VideoHero,
   Problem,
   Features,
   HowItWorks,
@@ -18,6 +19,7 @@ export default function Home() {
     <main className="relative">
       <Navigation />
       <Hero />
+      <VideoHero />
       <hr className="section-divider" />
       <Problem />
       <hr className="section-divider" />

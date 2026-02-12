@@ -88,24 +88,6 @@ export function Demo() {
           </div>
         </motion.div>
 
-        {/* Video */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="rounded-2xl border border-[#2a2a3a] overflow-hidden bg-[#151520]"
-        >
-          <video
-            src="/video/rising-tides-promo.mp4"
-            poster="/video/poster.png"
-            preload="metadata"
-            muted
-            loop
-            playsInline
-            controls
-            className="w-full aspect-video"
-          />
-        </motion.div>
       </div>
     </section>
   );

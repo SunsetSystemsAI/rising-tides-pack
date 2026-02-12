@@ -26,7 +26,9 @@ const plans = [
   {
     name: "Done-With-You",
     price: "$399",
-    description: "Get set up on a call with Nick",
+    originalPrice: "$499",
+    limitedTime: true,
+    description: "Get set up on a call with Nick, creator of Rising Tides Pack",
     badge: "Most Popular",
     features: [
       "Everything in Pro",
@@ -108,8 +110,14 @@ export function Pricing() {
                   <h3 className="text-xl font-semibold">{plan.name}</h3>
                 </div>
                 <div className="flex items-baseline gap-2">
+                  {plan.originalPrice && (
+                    <span className="text-2xl text-gray-500 line-through">{plan.originalPrice}</span>
+                  )}
                   <span className="text-4xl font-bold">{plan.price}</span>
                   {plan.priceNote && <span className="text-gray-500 text-sm">{plan.priceNote}</span>}
+                  {plan.limitedTime && (
+                    <span className="text-xs text-amber-500 font-medium uppercase tracking-wide">Limited time</span>
+                  )}
                 </div>
                 <p className="text-gray-400 mt-2">{plan.description}</p>
               </div>
@@ -118,7 +126,21 @@ export function Pricing() {
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-300">{feature}</span>
+                    {feature.includes("community access") ? (
+                      <span className="text-gray-300">
+                        {feature.replace("community access", "")}
+                        <a
+                          href="https://www.skool.com/rising-tides-9034/about"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-amber-500 hover:text-amber-400 transition-colors"
+                        >
+                          community access
+                        </a>
+                      </span>
+                    ) : (
+                      <span className="text-gray-300">{feature}</span>
+                    )}
                   </li>
                 ))}
               </ul>

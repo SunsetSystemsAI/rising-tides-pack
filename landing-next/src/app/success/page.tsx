@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle, Mail, Github, Calendar, ArrowRight } from "lucide-react";
+import { CheckCircle, Calendar, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export default function SuccessPage() {
@@ -53,24 +53,37 @@ export default function SuccessPage() {
         >
           <div className="flex items-start gap-4 p-6 rounded-2xl border border-[#2a2a3a] bg-[#151520]/50 text-left">
             <div className="w-10 h-10 rounded-xl bg-amber-500/20 flex items-center justify-center flex-shrink-0">
-              <Mail className="w-5 h-5 text-amber-500" />
+              <span className="text-amber-500 font-bold">1</span>
             </div>
             <div>
-              <h3 className="font-semibold mb-1">Check your email</h3>
+              <h3 className="font-semibold mb-1">Receipt on the way</h3>
               <p className="text-gray-400 text-sm">
-                You'll receive a confirmation email with your receipt and next steps within a few minutes.
+                Stripe will send your receipt within a few minutes. Check your inbox (and spam folder).
               </p>
             </div>
           </div>
 
           <div className="flex items-start gap-4 p-6 rounded-2xl border border-[#2a2a3a] bg-[#151520]/50 text-left">
             <div className="w-10 h-10 rounded-xl bg-purple-500/20 flex items-center justify-center flex-shrink-0">
-              <Github className="w-5 h-5 text-purple-500" />
+              <span className="text-purple-500 font-bold">2</span>
             </div>
             <div>
-              <h3 className="font-semibold mb-1">GitHub repo invite</h3>
+              <h3 className="font-semibold mb-1">GitHub repo invite coming</h3>
               <p className="text-gray-400 text-sm">
-                You'll get an invite to the private Rising Tides GitHub repo. Accept it to access all 170 skills and 37 plugins.
+                Within 24 hours, you'll receive a GitHub invitation to the private Rising Tides repo.
+                The invite comes from <span className="text-white">github.com</span> — check your spam folder and GitHub notifications.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4 p-6 rounded-2xl border border-[#2a2a3a] bg-[#151520]/50 text-left">
+            <div className="w-10 h-10 rounded-xl bg-green-500/20 flex items-center justify-center flex-shrink-0">
+              <span className="text-green-500 font-bold">3</span>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-1">Accept invite & clone</h3>
+              <p className="text-gray-400 text-sm">
+                Once you accept the invite, clone the repo and follow the README to install 170+ skills and 37 plugins.
               </p>
             </div>
           </div>
@@ -80,9 +93,9 @@ export default function SuccessPage() {
               <Calendar className="w-5 h-5 text-blue-500" />
             </div>
             <div>
-              <h3 className="font-semibold mb-1">Done-With-You customers</h3>
+              <h3 className="font-semibold mb-1">Done-With-You bonus</h3>
               <p className="text-gray-400 text-sm">
-                If you purchased Done-With-You, you'll also receive a Cal.com link to book your 45-minute setup call with Nick.
+                Purchased Done-With-You? You'll also receive a Cal.com link to book your 45-minute setup call with Nick.
               </p>
             </div>
           </div>
@@ -113,17 +126,21 @@ export default function SuccessPage() {
         </motion.div>
 
         {/* Footer note */}
-        <motion.p
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
-          className="mt-12 text-gray-500 text-sm"
+          className="mt-12 p-4 rounded-xl bg-[#1a1a2e] border border-[#2a2a3a]"
         >
-          Questions? Email{" "}
-          <a href="mailto:nick@sunsetsystems.co" className="text-amber-500 hover:underline">
-            nick@sunsetsystems.co
-          </a>
-        </motion.p>
+          <p className="text-gray-400 text-sm">
+            <span className="text-white font-medium">Didn't get your GitHub invite within 24 hours?</span>
+            {" "}Email{" "}
+            <a href="mailto:nick@sunsetsystems.co" className="text-amber-500 hover:underline">
+              nick@sunsetsystems.co
+            </a>
+            {" "}with your order confirmation and GitHub username — we'll get you access right away.
+          </p>
+        </motion.div>
       </div>
     </main>
   );
