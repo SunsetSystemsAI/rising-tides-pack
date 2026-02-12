@@ -47,7 +47,9 @@ const plans = [
   {
     name: "Team",
     price: "$399",
+    originalPrice: "$495",
     priceNote: "up to 5 seats",
+    savings: "Save $96 vs 5× Pro",
     description: "For teams building with Claude Code",
     features: [
       "Everything in Pro",
@@ -109,7 +111,7 @@ export function Pricing() {
                   {plan.icon && <plan.icon className="w-5 h-5 text-amber-500" />}
                   <h3 className="text-xl font-semibold">{plan.name}</h3>
                 </div>
-                <div className="flex items-baseline gap-2">
+                <div className="flex items-baseline gap-2 flex-wrap">
                   {plan.originalPrice && (
                     <span className="text-2xl text-gray-500 line-through">{plan.originalPrice}</span>
                   )}
@@ -117,6 +119,9 @@ export function Pricing() {
                   {plan.priceNote && <span className="text-gray-500 text-sm">{plan.priceNote}</span>}
                   {plan.limitedTime && (
                     <span className="text-xs text-amber-500 font-medium uppercase tracking-wide">Limited time</span>
+                  )}
+                  {plan.savings && (
+                    <span className="text-xs text-green-500 font-medium">{plan.savings}</span>
                   )}
                 </div>
                 <p className="text-gray-400 mt-2">{plan.description}</p>

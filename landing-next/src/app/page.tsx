@@ -19,11 +19,11 @@ export default function Home() {
     <main className="relative">
       <Navigation />
       <Hero />
-      <VideoHero />
       <hr className="section-divider" />
       <Problem />
       <hr className="section-divider" />
       <Features />
+      <VideoHero />
       <hr className="section-divider" />
       <HowItWorks />
       <hr className="section-divider" />
