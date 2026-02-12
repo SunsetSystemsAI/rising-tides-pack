@@ -148,6 +148,38 @@ claude mcp add memory --scope user
 
 ---
 
+## Uninstall
+
+### Remove Skills Pack Only (Keep Claude Code)
+
+Removes Rising Tides content but keeps Claude Code and prerequisites intact.
+
+**Mac/Linux:**
+```bash
+curl -fsSL https://raw.githubusercontent.com/SunsetSystemsAI/rising-tides-starter/main/scripts/uninstall-skills.sh -o /tmp/uninstall-skills.sh && bash /tmp/uninstall-skills.sh
+```
+
+**Windows:**
+```powershell
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/SunsetSystemsAI/rising-tides-starter/main/scripts/uninstall-skills.ps1' -OutFile "$env:TEMP\uninstall-skills.ps1"; & "$env:TEMP\uninstall-skills.ps1"
+```
+
+### Full Uninstall (Everything)
+
+> **⚠️ WARNING:** Removes Claude Code, all configuration, and Rising Tides content. Cannot be undone.
+
+**Mac/Linux:**
+```bash
+curl -fsSL https://raw.githubusercontent.com/SunsetSystemsAI/rising-tides-starter/main/scripts/uninstall-full.sh -o /tmp/uninstall-full.sh && bash /tmp/uninstall-full.sh
+```
+
+**Windows (as Administrator):**
+```powershell
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/SunsetSystemsAI/rising-tides-starter/main/scripts/uninstall-full.ps1' -OutFile "$env:TEMP\uninstall-full.ps1"; & "$env:TEMP\uninstall-full.ps1"
+```
+
+---
+
 ## Skills by Category
 
 | Category | Skills | Highlights |
