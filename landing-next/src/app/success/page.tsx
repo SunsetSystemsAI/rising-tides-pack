@@ -83,7 +83,7 @@ export default function SuccessPage() {
             <div>
               <h3 className="font-semibold mb-1">Accept invite & clone</h3>
               <p className="text-gray-400 text-sm">
-                Once you accept the invite, clone the repo and follow the README to install 170+ skills and 37 plugins.
+                Once you accept the invite, clone the repo and follow the README to install 187 skills and 38 plugins.
               </p>
             </div>
           </div>

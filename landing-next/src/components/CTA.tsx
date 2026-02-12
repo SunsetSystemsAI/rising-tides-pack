@@ -22,7 +22,7 @@ export function CTA() {
             <span className="gradient-text">Start with a system that works.</span>
           </h2>
           <p className="text-xl text-gray-400 mb-10">
-            170 skills. 37 plugins. ~7% context. One command.
+            187 skills. 38 plugins. ~7% context. One command.
           </p>
           <a
             href="#pricing"

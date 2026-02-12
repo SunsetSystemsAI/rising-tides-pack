@@ -8,7 +8,7 @@ const comparisons = [
   {
     feature: "Finding skills",
     diy: "Scattered across GitHub, blogs, Twitter",
-    rt: "180 curated, tested, indexed",
+    rt: "187 curated, tested, indexed",
   },
   {
     feature: "Context cost",

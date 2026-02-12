@@ -33,7 +33,7 @@ export function Categories() {
           className="text-center mb-16"
         >
           <span className="text-amber-500 font-mono text-sm tracking-wider uppercase">What&apos;s Inside</span>
-          <h2 className="text-3xl sm:text-4xl font-bold mt-4">180 skills across 13 categories</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mt-4">187 skills across 13 categories</h2>
         </motion.div>
 
         <motion.div

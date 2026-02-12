@@ -18,7 +18,7 @@ const faqs = [
   {
     question: 'How does "~7% context cost" work?',
     answer:
-      "Claude Code has a 200k token context window. Most skill collections burn 20-40% of that just loading. Rising Tides is architected so skills load on-demand — you get access to all 170 skills while using under 7% of your context. The rest stays free for actual work.",
+      "Claude Code has a 200k token context window. Most skill collections burn 20-40% of that just loading. Rising Tides is architected so skills load on-demand — you get access to all 187 skills while using under 7% of your context. The rest stays free for actual work.",
   },
   {
     question: "What if I only need a few skills?",

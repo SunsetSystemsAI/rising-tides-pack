@@ -10,8 +10,8 @@ const plans = [
     price: "$99",
     description: "Everything you need to supercharge Claude Code",
     features: [
-      "All 170 production-ready skills",
-      "37 MCP plugin bundles",
+      "All 187 production-ready skills",
+      "38 MCP plugin bundles",
       "9 CLI integration guides",
       "One-command setup scripts",
       "Private GitHub repo access",

@@ -15,8 +15,8 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Rising Tides Skills Pack — 180 Skills for Claude Code",
-  description: "180 curated skills, 37 plugins, 17 MCPs for Claude Code. One install. ~7% context cost. Ship faster with the most comprehensive Claude Code enhancement pack.",
+  title: "Rising Tides Skills Pack — 187 Skills for Claude Code",
+  description: "187 curated skills, 38 plugins, 18 MCPs for Claude Code. One install. ~7% context cost. Ship faster with the most comprehensive Claude Code enhancement pack.",
   keywords: ["Claude Code", "AI coding", "skills pack", "MCP plugins", "developer tools"],
   authors: [{ name: "Rising Tides" }],
   icons: {
@@ -26,14 +26,14 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: "Rising Tides Skills Pack — 180 Skills for Claude Code",
-    description: "180 curated skills, 37 plugins, 17 MCPs. One install. Ship faster.",
+    title: "Rising Tides Skills Pack — 187 Skills for Claude Code",
+    description: "187 curated skills, 38 plugins, 18 MCPs. One install. Ship faster.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Rising Tides Skills Pack",
-    description: "180 curated skills for Claude Code. One install. Ship faster.",
+    description: "187 curated skills for Claude Code. One install. Ship faster.",
   },
 };
 

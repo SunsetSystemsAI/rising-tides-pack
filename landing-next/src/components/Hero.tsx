@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import { ArrowRight, Shield, Zap, Package } from "lucide-react";
 
 const stats = [
-  { number: "180", label: "Skills", icon: Zap },
-  { number: "37", label: "Plugins", icon: Package },
+  { number: "187", label: "Skills", icon: Zap },
+  { number: "38", label: "Plugins", icon: Package },
   { number: "~7%", label: "Context Cost", icon: null },
   { number: "1", label: "Command Setup", icon: null },
 ];
@@ -30,7 +30,7 @@ export function Hero() {
           <Shield className="w-4 h-4 text-green-500" />
           <span className="text-sm text-gray-300">Security Audited</span>
           <span className="text-gray-500">•</span>
-          <span className="text-sm text-amber-500 font-mono">180 skills • 37 plugins • 17 MCPs</span>
+          <span className="text-sm text-amber-500 font-mono">187 skills • 38 plugins • 18 MCPs</span>
         </motion.div>
 
         {/* Headline */}
@@ -52,7 +52,7 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto mb-10"
         >
-          A curated library of 180 production-ready skills for Claude Code — from React patterns to Stripe integration,
+          A curated library of 187 production-ready skills for Claude Code — from React patterns to Stripe integration,
           SEO audits to deployment pipelines. One install. ~7% context cost.
         </motion.p>
 
