@@ -6,7 +6,7 @@ export const RisingTidesPromo: React.FC = () => {
     <Composition
       id="RisingTidesPromo"
       component={PromoVideo}
-      durationInFrames={2850} // 95 seconds at 30fps
+      durationInFrames={3330} // 111 seconds at 30fps
       fps={30}
       width={1920}
       height={1080}
